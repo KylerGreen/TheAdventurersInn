@@ -34,7 +34,7 @@ text = "			The
 Aventurer's Inn"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_ratio = -0.0434783
+visible_characters_behavior = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
