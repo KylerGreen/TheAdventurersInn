@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnn1ckl1lp2of"]
+
+[node name="Combat_Screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 576.0
+offset_bottom = 323.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

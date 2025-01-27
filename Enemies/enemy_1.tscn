@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bde8vyu82ygpk"]
+
+[ext_resource type="Script" path="res://Enemies/enemy_1.gd" id="1_ex4qt"]
+[ext_resource type="Texture2D" uid="uid://b0eh8dnghymct" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/1/Idle.png" id="1_iqsau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08nli"]
+atlas = ExtResource("1_iqsau")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksdnn"]
+atlas = ExtResource("1_iqsau")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqkm3"]
+atlas = ExtResource("1_iqsau")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag5x5"]
+atlas = ExtResource("1_iqsau")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwkdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08nli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksdnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqkm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag5x5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxgbo"]
+size = Vector2(25, 32)
+
+[node name="Enemy1" type="CharacterBody2D"]
+script = ExtResource("1_ex4qt")
+
+[node name="Enemy1_Animation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_bwkdp")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 7)
+shape = SubResource("RectangleShape2D_lxgbo")

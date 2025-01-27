@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnn1ckl1lp2of"]
+
+[ext_resource type="PackedScene" uid="uid://c4h3lrphnxcfo" path="res://Player/player.tscn" id="1_e7l32"]
+[ext_resource type="PackedScene" uid="uid://bde8vyu82ygpk" path="res://Enemies/enemy_1.tscn" id="2_7xa2j"]
+
+[node name="Combat_Screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -578.0
+offset_top = -321.0
+offset_right = 576.0
+offset_bottom = 323.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_e7l32")]
+position = Vector2(-236, -113)
+
+[node name="Enemy1" parent="." instance=ExtResource("2_7xa2j")]
+position = Vector2(154, -113)
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
