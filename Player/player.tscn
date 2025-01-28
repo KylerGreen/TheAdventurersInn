@@ -1,7 +1,83 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4h3lrphnxcfo"]
+[gd_scene load_steps=24 format=3 uid="uid://c4h3lrphnxcfo"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_raysf"]
 [ext_resource type="Texture2D" uid="uid://b5h0huppvt2j3" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Idle.png" id="2_bjbs7"]
+[ext_resource type="Texture2D" uid="uid://c8ctwkxsv7gpg" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Attack.png" id="2_pkn8v"]
+[ext_resource type="Texture2D" uid="uid://cr0ycd47jjqe1" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/3.png" id="4_npr85"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qa2f"]
+atlas = ExtResource("4_npr85")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv3wb"]
+atlas = ExtResource("4_npr85")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4eu4"]
+atlas = ExtResource("4_npr85")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br3bb"]
+atlas = ExtResource("4_npr85")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy5ep"]
+atlas = ExtResource("4_npr85")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncs8o"]
+atlas = ExtResource("4_npr85")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pueq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qa2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv3wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4eu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br3bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy5ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncs8o")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm6gi"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msgs8"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shqi1"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd38k"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8klmg"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gle5"]
+atlas = ExtResource("2_pkn8v")
+region = Rect2(168, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivuwj"]
 atlas = ExtResource("2_bjbs7")
@@ -21,6 +97,29 @@ region = Rect2(126, 0, 42, 42)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hb7p"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm6gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msgs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shqi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd38k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8klmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gle5")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ivuwj")
@@ -45,11 +144,19 @@ size = Vector2(28, 29)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_raysf")
 
+[node name="Arm_Animation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1, 2)
+sprite_frames = SubResource("SpriteFrames_pueq4")
+animation = &"Attack"
+frame_progress = 0.966284
+
 [node name="Player_Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_1hb7p")
-animation = &"Idle"
-frame_progress = 0.479631
+animation = &"Attack"
+frame_progress = 0.188224
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 7.5)

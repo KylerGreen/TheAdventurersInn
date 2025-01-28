@@ -6,7 +6,14 @@ func _ready():
 	%Enemy1_Animation.play("Idle")
 	%EnemyHealth.value = health
 
-func _on_button_pressed():
+#func _on_button_pressed():
+	#health -= 2
+	#%EnemyHealth.value = health
+	#if health <= 0:
+		#queue_free()
+
+
+func _on_timer_timeout():
 	health -= 2
 	%EnemyHealth.value = health
 	if health <= 0:
