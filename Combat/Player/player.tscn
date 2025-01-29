@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://c4h3lrphnxcfo"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_raysf"]
+[ext_resource type="Script" path="res://Combat/Player/player.gd" id="1_raysf"]
 [ext_resource type="Texture2D" uid="uid://b5h0huppvt2j3" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Idle.png" id="2_bjbs7"]
 [ext_resource type="Texture2D" uid="uid://c8ctwkxsv7gpg" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Attack.png" id="2_pkn8v"]
 [ext_resource type="Texture2D" uid="uid://cr0ycd47jjqe1" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/3.png" id="4_npr85"]
