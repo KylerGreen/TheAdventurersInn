@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c4h3lrphnxcfo" path="res://Player/player.tscn" id="1_eujwl"]
 [ext_resource type="Script" path="res://Combat/combat_screen.gd" id="1_h4aju"]
-[ext_resource type="PackedScene" uid="uid://bde8vyu82ygpk" path="res://Enemies/enemy_1.tscn" id="2_5i270"]
+[ext_resource type="PackedScene" uid="uid://bde8vyu82ygpk" path="res://Enemy/enemy_1.tscn" id="2_5i270"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdtl3"]
 corner_radius_top_left = 5
