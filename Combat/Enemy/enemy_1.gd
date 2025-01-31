@@ -19,3 +19,4 @@ func _on_timer_timeout():
 
 func _on_enemy_attack_timeout():
 	%Enemy_Attack.stop()
+	%Player.is_defending = false
