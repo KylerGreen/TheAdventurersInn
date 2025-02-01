@@ -10,7 +10,8 @@ var IsAttacking = false
 var IsHealing = false
 var action = 0
 var reaction = 0
-
+var rng = RandomNumberGenerator.new()
+var DmgRecieved = 0
 
 func _ready():
 	%Player_Animation.play("Idle")
@@ -31,22 +32,46 @@ func _on_timer_timeout():
 	%Player_Animation.play("Idle")
 
 func _on_enemy_attack_timeout():
+	
 	if IsCountering == true:
 		AttackAnimation()
 		attack.emit()
+		DmgRecieved = 10
 		health -= 10
 		IsCountering = false
+		%DamageOnPlayer.visible = true
+		%DamageOnPlayer.text = str('-', DmgRecieved)
+		
 	elif IsDefending == true:
+		DmgRecieved = 5
 		health -= 5
 		IsDefending = false
+		%DamageOnPlayer.visible = true
+		%DamageOnPlayer.text = str('-', DmgRecieved)
+		
 	elif IsDodging == true:
-		health -= 0
+		var DodgeChance = rng.randi_range(0,100)
+		if DodgeChance >= 70:
+			health -= 0
+			DmgRecieved = 0
+			%DamageOnPlayer.visible = true
+			%DamageOnPlayer.text = str('-', DmgRecieved)
+		else:
+			health -= 20
+			DmgRecieved = 20
+			%DamageOnPlayer.visible = true
+			%DamageOnPlayer.text = str('-', DmgRecieved)
 		IsDodging = false
+		
 	else:
 		health -= 20
+		DmgRecieved = 20
+		%DamageOnPlayer.visible = true
+		%DamageOnPlayer.text = str('-', DmgRecieved)
 	%PlayerHealth.value = health
 	if %PlayerHealth.value <= 0:
 		queue_free()
+	%DisplayDmg.start()
 	%PlayerHand.visible = true
 	
 	
@@ -57,15 +82,21 @@ func Player_turn():
 		attack.emit()
 		IsAttacking = false
 	elif IsHealing == true:
-		health += 25
+		health += 15
+		DmgRecieved = 15
+		%DamageOnPlayer.visible = true
+		%DamageOnPlayer.text = str('+', DmgRecieved)
 		IsHealing = false
+		%DisplayDmg.start()
 		if health >= 100:
 			health = 100
 		%PlayerHealth.value = health
 	action -= 1
 	reaction -= 1
 	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if %Enemy1.health > 0:
+		%EnemyTurn.start()
+
 
 
 func _on_player_hand_defend():
@@ -117,3 +148,12 @@ func _on_player_hand_dodge():
 	else:
 		if action == 1 and reaction == 1:
 			Player_turn()
+
+
+func _on_display_dmg_timeout():
+	%DamageOnPlayer.visible = false
+
+
+func _on_enemy_turn_timeout():
+	%Enemy1.Enemy_turn()
+	%EnemyTurn.stop()

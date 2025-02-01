@@ -66,6 +66,7 @@ size_flags_horizontal = 3
 text = "Counter"
 
 [node name="Reaction" type="Label" parent="HBoxContainer/Counter"]
+layout_mode = 0
 offset_left = 30.415
 offset_top = 129.074
 offset_right = 73.415
@@ -79,6 +80,7 @@ size_flags_horizontal = 3
 text = "Heal"
 
 [node name="Action" type="Label" parent="HBoxContainer/Heal"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 129.0
 offset_right = 69.0
@@ -92,6 +94,7 @@ size_flags_horizontal = 3
 text = "Dodge"
 
 [node name="Reaction" type="Label" parent="HBoxContainer/Dodge"]
+layout_mode = 0
 offset_left = 31.415
 offset_top = 129.074
 offset_right = 74.415

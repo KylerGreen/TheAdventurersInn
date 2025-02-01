@@ -74,6 +74,9 @@ show_percentage = false
 [node name="Player_Attack" type="Timer" parent="Player"]
 unique_name_in_owner = true
 
+[node name="EnemyTurn" type="Timer" parent="Player"]
+unique_name_in_owner = true
+
 [node name="Enemy1" parent="." instance=ExtResource("2_5i270")]
 unique_name_in_owner = true
 position = Vector2(149, -110)
@@ -91,6 +94,38 @@ show_percentage = false
 [node name="Enemy_Attack" type="Timer" parent="Enemy1"]
 unique_name_in_owner = true
 
+[node name="DamageOnPlayer" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 1)
+top_level = true
+z_index = 2
+offset_left = -273.0
+offset_top = -292.0
+offset_right = -181.0
+offset_bottom = -204.0
+theme_override_font_sizes/font_size = 30
+
+[node name="DisplayDmg" type="Timer" parent="DamageOnPlayer"]
+unique_name_in_owner = true
+wait_time = 1.25
+
+[node name="DamageOnEnemy" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 1)
+top_level = true
+z_index = 2
+offset_left = 133.0
+offset_top = -276.0
+offset_right = 208.0
+offset_bottom = -208.0
+theme_override_font_sizes/font_size = 30
+
+[node name="DisplayDmg2" type="Timer" parent="DamageOnEnemy"]
+unique_name_in_owner = true
+wait_time = 1.25
+
 [connection signal="attack" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_attack"]
 [connection signal="counter" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_counter"]
 [connection signal="defend" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_defend"]
@@ -99,5 +134,8 @@ unique_name_in_owner = true
 [connection signal="attack" from="Player" to="Enemy1" method="_on_player_attack"]
 [connection signal="timeout" from="Player/Player_Attack" to="Player" method="_on_timer_timeout"]
 [connection signal="timeout" from="Player/Player_Attack" to="Enemy1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Player/EnemyTurn" to="Player" method="_on_enemy_turn_timeout"]
 [connection signal="timeout" from="Enemy1/Enemy_Attack" to="Player" method="_on_enemy_attack_timeout"]
 [connection signal="timeout" from="Enemy1/Enemy_Attack" to="Enemy1" method="_on_enemy_attack_timeout"]
+[connection signal="timeout" from="DamageOnPlayer/DisplayDmg" to="Player" method="_on_display_dmg_timeout"]
+[connection signal="timeout" from="DamageOnEnemy/DisplayDmg2" to="Enemy1" method="_on_display_dmg_2_timeout"]
