@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 10
+var health = 100
 
 func _ready():
 	%Enemy1_Animation.play("Idle")
@@ -10,13 +10,14 @@ func Enemy_turn():
 	%Enemy_Attack.start()
 
 func _on_timer_timeout():
-	health -= 2
 	%EnemyHealth.value = health
-	if health <= 0:
-		queue_free()
-	Enemy_turn()
-
 
 func _on_enemy_attack_timeout():
 	%Enemy_Attack.stop()
-	%Player.is_defending = false
+
+
+func _on_player_attack():
+		health -= 15
+		#%EnemyHealth.value = health
+		if health <= 0:
+			queue_free()

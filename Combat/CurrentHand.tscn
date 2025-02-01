@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dqkhcwr2tr01r"]
+[gd_scene load_steps=2 format=3 uid="uid://dqkhcwr2tr01r"]
+
+[ext_resource type="Script" path="res://Combat/current_hand.gd" id="1_aeg3t"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +12,7 @@ offset_left = -136.528
 offset_top = -227.784
 offset_right = 508.472
 offset_bottom = -27.784
+script = ExtResource("1_aeg3t")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(20, 20)
@@ -53,3 +56,9 @@ text = "Heal"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Dodge"
+
+[connection signal="pressed" from="HBoxContainer/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="HBoxContainer/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="HBoxContainer/Counter" to="." method="_on_counter_pressed"]
+[connection signal="pressed" from="HBoxContainer/Heal" to="." method="_on_heal_pressed"]
+[connection signal="pressed" from="HBoxContainer/Dodge" to="." method="_on_dodge_pressed"]
