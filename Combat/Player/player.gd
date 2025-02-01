@@ -6,6 +6,10 @@ var health = 100
 var IsDefending = false
 var IsCountering = false
 var IsDodging = false
+var IsAttacking = false
+var IsHealing = false
+var action = 0
+var reaction = 0
 
 
 func _ready():
@@ -44,33 +48,72 @@ func _on_enemy_attack_timeout():
 	if %PlayerHealth.value <= 0:
 		queue_free()
 	%PlayerHand.visible = true
+	
+	
+	
+func Player_turn():
+	if IsAttacking == true:
+		AttackAnimation()
+		attack.emit()
+		IsAttacking = false
+	elif IsHealing == true:
+		health += 25
+		IsHealing = false
+		if health >= 100:
+			health = 100
+		%PlayerHealth.value = health
+	action -= 1
+	reaction -= 1
+	%PlayerHand.visible = false
+	%Enemy1.Enemy_turn()
 
 
 func _on_player_hand_defend():
-	IsDefending = true
-	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if reaction == 0:
+		reaction += 1
+		IsDefending = true
+		if action == 1 and reaction == 1:
+			Player_turn()
+	else:
+		if action == 1 and reaction == 1:
+			Player_turn()
 
 func _on_player_hand_attack():
-	AttackAnimation()
-	attack.emit()
-	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if action == 0:
+		action += 1
+		IsAttacking = true
+		if action == 1 and reaction == 1:
+			Player_turn()
+	else:
+		if action == 1 and reaction == 1:
+			Player_turn()
 	
 func _on_player_hand_heal():
-	health += 25
-	if health >= 100:
-		health = 100
-	%PlayerHealth.value = health
-	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if action == 0:
+		action += 1
+		IsHealing = true
+		if action == 1 and reaction == 1:
+			Player_turn()
+	else:
+		if action == 1 and reaction == 1:
+			Player_turn()
 
 func _on_player_hand_counter():
-	IsCountering = true
-	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if reaction == 0:
+		reaction += 1
+		IsCountering = true
+		if action == 1 and reaction == 1:
+			Player_turn()
+	else:
+		if action == 1 and reaction == 1:
+			Player_turn()
 
 func _on_player_hand_dodge():
-	IsDodging = true
-	%PlayerHand.visible = false
-	%Enemy1.Enemy_turn()
+	if reaction == 0:
+		reaction += 1
+		IsDodging = true
+		if action == 1 and reaction == 1:
+			Player_turn()
+	else:
+		if action == 1 and reaction == 1:
+			Player_turn()

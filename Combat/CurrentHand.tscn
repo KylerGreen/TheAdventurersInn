@@ -34,6 +34,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack"
 
+[node name="Action" type="Label" parent="HBoxContainer/Attack"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 129.0
+offset_right = 69.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 10
+text = "Action"
+
 [node name="Defend" type="Button" parent="HBoxContainer"]
 layout_direction = 2
 layout_mode = 2
@@ -42,20 +51,53 @@ size_flags_stretch_ratio = 1.21
 action_mode = 0
 text = "Defend"
 
+[node name="Reaction" type="Label" parent="HBoxContainer/Defend"]
+layout_mode = 0
+offset_left = 42.415
+offset_top = 129.074
+offset_right = 85.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
+
 [node name="Counter" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Counter"
+
+[node name="Reaction" type="Label" parent="HBoxContainer/Counter"]
+offset_left = 30.415
+offset_top = 129.074
+offset_right = 73.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
 
 [node name="Heal" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Heal"
 
+[node name="Action" type="Label" parent="HBoxContainer/Heal"]
+offset_left = 35.0
+offset_top = 129.0
+offset_right = 69.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 10
+text = "Action"
+
 [node name="Dodge" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Dodge"
+
+[node name="Reaction" type="Label" parent="HBoxContainer/Dodge"]
+offset_left = 31.415
+offset_top = 129.074
+offset_right = 74.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
 
 [connection signal="pressed" from="HBoxContainer/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="HBoxContainer/Defend" to="." method="_on_defend_pressed"]
