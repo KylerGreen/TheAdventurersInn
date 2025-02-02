@@ -14,11 +14,11 @@ func _ready():
 
 
 func Enemy_turn():
-	var TurnAction = rng.randi_range(0, 2)
-	if TurnAction == 0:
+	var TurnAction = rng.randi_range(0, 10)
+	if TurnAction >= 0 and TurnAction <= 4:
 		IsDefending = true
 		%Enemy_Attack.start()
-	elif TurnAction == 1:
+	elif TurnAction >= 5 and TurnAction <= 7:
 		health += 10
 		DmgRecieved = 10
 		%DamageOnEnemy.visible = true
@@ -27,7 +27,7 @@ func Enemy_turn():
 		%EnemyHealth.value = health
 		IsCountering = true
 		%PlayerHand.visible = true
-	elif TurnAction == 2:
+	elif TurnAction >= 8 and TurnAction <= 10:
 		IsDodging = true
 		%Enemy_Attack.start()
 

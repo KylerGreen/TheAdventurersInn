@@ -36,8 +36,8 @@ func _on_enemy_attack_timeout():
 	if IsCountering == true:
 		AttackAnimation()
 		attack.emit()
-		DmgRecieved = 10
-		health -= 10
+		DmgRecieved = 20
+		health -= 20
 		IsCountering = false
 		%DamageOnPlayer.visible = true
 		%DamageOnPlayer.text = str('-', DmgRecieved)
