@@ -82,6 +82,7 @@ func _on_player_attack():
 		
 	if health <= 0:
 		queue_free()
+		%DamageOnEnemy.queue_free()
 	
 
 func _on_display_dmg_2_timeout():
