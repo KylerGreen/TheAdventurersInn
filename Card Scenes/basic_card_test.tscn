@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu8bct6qfdmxi"]
+
+[ext_resource type="Texture2D" uid="uid://db06kc7nkf7iu" path="res://Card Textures/basic_background.png" id="1_4ynie"]
+[ext_resource type="Texture2D" uid="uid://bi8ern5xxbma2" path="res://Card Textures/basic_upper.png" id="2_o46bu"]
+[ext_resource type="Texture2D" uid="uid://uxuq3wa3ogy1" path="res://Card Textures/costTracker.png" id="3_g4t1m"]
+[ext_resource type="Texture2D" uid="uid://b5g4t8i7v4b1s" path="res://Card Textures/basic_textbox.png" id="4_r7dr0"]
+
+[node name="BasicCardTest" type="Node2D"]
+
+[node name="CardBackground" type="Sprite2D" parent="."]
+texture = ExtResource("1_4ynie")
+
+[node name="Label" type="Label" parent="CardBackground"]
+light_mask = 2
+visibility_layer = 2
+offset_left = -293.0
+offset_top = -509.0
+offset_right = 293.0
+offset_bottom = -454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Placeholder Name"
+horizontal_alignment = 1
+
+[node name="Art" type="Sprite2D" parent="."]
+position = Vector2(-2, 29)
+texture = ExtResource("2_o46bu")
+
+[node name="CRDisplay" type="Node2D" parent="."]
+position = Vector2(-2, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="CRDisplay"]
+position = Vector2(272.5, -327)
+texture = ExtResource("3_g4t1m")
+
+[node name="Label" type="Label" parent="CRDisplay"]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+offset_left = 239.0
+offset_top = -328.0
+offset_right = 304.0
+offset_bottom = -252.0
+theme_override_font_sizes/font_size = 55
+text = "X"
+horizontal_alignment = 1
+
+[node name="Description" type="Node2D" parent="."]
+position = Vector2(-2, 29)
+
+[node name="Textbox" type="Sprite2D" parent="Description"]
+position = Vector2(0, 237)
+texture = ExtResource("4_r7dr0")
+
+[node name="Label" type="Label" parent="Description"]
+light_mask = 2
+visibility_layer = 2
+offset_left = -338.0
+offset_top = 83.0
+offset_right = 338.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Lorem ipsum odor amet, consectetuer adipiscing elit. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ActionReaction" type="Node2D" parent="."]
+position = Vector2(-2, 12)
+
+[node name="Label" type="Label" parent="ActionReaction"]
+light_mask = 2
+visibility_layer = 2
+offset_left = -232.0
+offset_top = 417.0
+offset_right = 234.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "RE/ACTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

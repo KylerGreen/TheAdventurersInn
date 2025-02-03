@@ -1,21 +1,88 @@
 extends CharacterBody2D
 
-var health = 10
+var health = 100
+var IsDefending = false
+var IsCountering = false
+var IsDodging = false
+var rng = RandomNumberGenerator.new()
+var DmgRecieved = 0
+
 
 func _ready():
 	%Enemy1_Animation.play("Idle")
 	%EnemyHealth.value = health
+	%EnemyHPCount.text = str('HP: ', health, '/100')
+
 
 func Enemy_turn():
-	%Enemy_Attack.start()
+	var TurnAction = rng.randi_range(0, 10)
+	if TurnAction >= 0 and TurnAction <= 4:
+		IsDefending = true
+		%Enemy_Attack.start()
+	elif TurnAction >= 5 and TurnAction <= 7:
+		health += 10
+		DmgRecieved = 10
+		%DamageOnEnemy.visible = true
+		%DamageOnEnemy.text = str('+', DmgRecieved)
+		await get_tree().create_timer(1.0).timeout
+		%DisplayDmg2.start()
+		%EnemyHealth.value = health
+		IsCountering = true
+		%PlayerHand.visible = true
+	elif TurnAction >= 8 and TurnAction <= 10:
+		IsDodging = true
+		%Enemy_Attack.start()
+	%EnemyHPCount.text = str('HP: ', health, '/100')
+
 
 func _on_timer_timeout():
-	health -= 2
 	%EnemyHealth.value = health
-	if health <= 0:
-		queue_free()
-	Enemy_turn()
-
+	%EnemyHPCount.text = str('HP: ', health, '/100')
 
 func _on_enemy_attack_timeout():
 	%Enemy_Attack.stop()
+
+
+func _on_player_attack():
+	if IsDefending == true:
+		health -= 5
+		DmgRecieved = 5
+		%DamageOnEnemy.visible = true
+		%DamageOnEnemy.text = str('-', DmgRecieved)
+		IsDefending = false
+		
+	elif IsCountering == true:
+		%Enemy_Attack.start()
+		IsCountering = false
+		health -= 15
+		DmgRecieved = 15
+		%DamageOnEnemy.visible = true
+		%DamageOnEnemy.text = str('-', DmgRecieved)
+		
+	elif IsDodging == true:
+		var DodgeChance = rng.randi_range(0,100)
+		if DodgeChance >= 70:
+			health = health
+			DmgRecieved = 0
+			%DamageOnEnemy.visible = true
+			%DamageOnEnemy.text = str(DmgRecieved)
+		else:
+			health -= 15
+			DmgRecieved = 15
+			%DamageOnEnemy.visible = true
+			%DamageOnEnemy.text = str('-', DmgRecieved)
+		IsDodging = false
+		
+	else:
+		health -= 15
+		DmgRecieved = 15
+		%DamageOnEnemy.visible = true
+		%DamageOnEnemy.text = str('-', DmgRecieved)
+	%DisplayDmg2.start()
+		
+	if health <= 0:
+		queue_free()
+	
+
+func _on_display_dmg_2_timeout():
+	%DamageOnEnemy.visible = false

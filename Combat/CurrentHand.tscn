@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqkhcwr2tr01r"]
+
+[ext_resource type="Script" path="res://Combat/current_hand.gd" id="1_aeg3t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_left = -0.161
+anchor_top = 0.208
+anchor_right = -0.161
+anchor_bottom = 0.208
+offset_left = -136.528
+offset_top = -227.784
+offset_right = 508.472
+offset_bottom = -27.784
+script = ExtResource("1_aeg3t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.013
+anchor_right = 0.006
+anchor_bottom = 0.013
+offset_left = -0.284998
+offset_top = 0.326006
+offset_right = 627.715
+offset_bottom = 189.326
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Attack" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack"
+
+[node name="Action" type="Label" parent="HBoxContainer/Attack"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 129.0
+offset_right = 69.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 10
+text = "Action"
+
+[node name="Defend" type="Button" parent="HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.21
+action_mode = 0
+text = "Defend"
+
+[node name="Reaction" type="Label" parent="HBoxContainer/Defend"]
+layout_mode = 0
+offset_left = 42.415
+offset_top = 129.074
+offset_right = 85.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
+
+[node name="Counter" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Counter"
+
+[node name="Reaction" type="Label" parent="HBoxContainer/Counter"]
+layout_mode = 0
+offset_left = 30.415
+offset_top = 129.074
+offset_right = 73.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
+
+[node name="Heal" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heal"
+
+[node name="Action" type="Label" parent="HBoxContainer/Heal"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 129.0
+offset_right = 69.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 10
+text = "Action"
+
+[node name="Dodge" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dodge"
+
+[node name="Reaction" type="Label" parent="HBoxContainer/Dodge"]
+layout_mode = 0
+offset_left = 31.415
+offset_top = 129.074
+offset_right = 74.415
+offset_bottom = 152.074
+theme_override_font_sizes/font_size = 10
+text = "Reaction"
+
+[connection signal="pressed" from="HBoxContainer/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="HBoxContainer/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="HBoxContainer/Counter" to="." method="_on_counter_pressed"]
+[connection signal="pressed" from="HBoxContainer/Heal" to="." method="_on_heal_pressed"]
+[connection signal="pressed" from="HBoxContainer/Dodge" to="." method="_on_dodge_pressed"]
