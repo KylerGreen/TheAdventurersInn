@@ -16,6 +16,7 @@ var DmgRecieved = 0
 func _ready():
 	%Player_Animation.play("Idle")
 	%PlayerHealth.value = health
+	%HPCount.text = str('HP: ', health, '/100')
 
 func AttackAnimation():
 	%Arm_Animation.visible = true
@@ -69,11 +70,11 @@ func _on_enemy_attack_timeout():
 		%DamageOnPlayer.visible = true
 		%DamageOnPlayer.text = str('-', DmgRecieved)
 	%PlayerHealth.value = health
+	%HPCount.text = str('HP: ', health, '/100')
 	if %PlayerHealth.value <= 0:
 		queue_free()
 	%DisplayDmg.start()
 	%PlayerHand.visible = true
-	
 	
 	
 func Player_turn():
@@ -91,6 +92,7 @@ func Player_turn():
 		if health >= 100:
 			health = 100
 		%PlayerHealth.value = health
+	%HPCount.text = str('HP: ', health, '/100')
 	action -= 1
 	reaction -= 1
 	%PlayerHand.visible = false

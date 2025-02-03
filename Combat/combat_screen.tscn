@@ -23,9 +23,9 @@ script = ExtResource("1_h4aju")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -578.0
-offset_top = -321.0
+offset_top = -322.0
 offset_right = 576.0
-offset_bottom = 323.0
+offset_bottom = 322.0
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 z_index = 1
@@ -71,6 +71,14 @@ theme_override_styles/background = SubResource("StyleBoxFlat_tdtl3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hbimm")
 show_percentage = false
 
+[node name="HPCount" type="Label" parent="Player/PlayerHealth"]
+unique_name_in_owner = true
+offset_left = 79.0
+offset_top = 3.0
+offset_right = 154.0
+offset_bottom = 26.0
+text = "HP:"
+
 [node name="Player_Attack" type="Timer" parent="Player"]
 unique_name_in_owner = true
 
@@ -90,6 +98,14 @@ offset_bottom = -51.0
 theme_override_styles/background = SubResource("StyleBoxFlat_tdtl3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hbimm")
 show_percentage = false
+
+[node name="EnemyHPCount" type="Label" parent="Enemy1/EnemyHealth"]
+unique_name_in_owner = true
+offset_left = 79.0
+offset_top = 3.0
+offset_right = 154.0
+offset_bottom = 26.0
+text = "HP:"
 
 [node name="Enemy_Attack" type="Timer" parent="Enemy1"]
 unique_name_in_owner = true
