@@ -11,6 +11,7 @@ var DmgRecieved = 0
 func _ready():
 	%Enemy1_Animation.play("Idle")
 	%EnemyHealth.value = health
+	%EnemyHPCount.text = str('HP: ', health, '/100')
 
 
 func Enemy_turn():
@@ -23,6 +24,7 @@ func Enemy_turn():
 		DmgRecieved = 10
 		%DamageOnEnemy.visible = true
 		%DamageOnEnemy.text = str('+', DmgRecieved)
+		await get_tree().create_timer(1.0).timeout
 		%DisplayDmg2.start()
 		%EnemyHealth.value = health
 		IsCountering = true
@@ -30,10 +32,12 @@ func Enemy_turn():
 	elif TurnAction >= 8 and TurnAction <= 10:
 		IsDodging = true
 		%Enemy_Attack.start()
+	%EnemyHPCount.text = str('HP: ', health, '/100')
 
 
 func _on_timer_timeout():
 	%EnemyHealth.value = health
+	%EnemyHPCount.text = str('HP: ', health, '/100')
 
 func _on_enemy_attack_timeout():
 	%Enemy_Attack.stop()
