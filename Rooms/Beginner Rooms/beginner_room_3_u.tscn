@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=4 uid="uid://dvjyf7v6s0a4w"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_tvvho"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="1_ynub6"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="2_2gwat"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_u06x4"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_fm2tm"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_5yvbd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g00i4"]
-texture = ExtResource("1_tvvho")
+texture = ExtResource("1_u06x4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -55,7 +55,7 @@ texture = ExtResource("1_tvvho")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1boc"]
-texture = ExtResource("1_ynub6")
+texture = ExtResource("2_fm2tm")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -103,7 +103,7 @@ texture = ExtResource("1_ynub6")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fey8"]
-texture = ExtResource("2_2gwat")
+texture = ExtResource("3_5yvbd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -257,7 +257,7 @@ sources/2 = SubResource("TileSetAtlasSource_j1boc")
 sources/3 = SubResource("TileSetAtlasSource_8fey8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjc1f"]
-texture = ExtResource("1_tvvho")
+texture = ExtResource("1_u06x4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -307,7 +307,7 @@ texture = ExtResource("1_tvvho")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71iyg"]
-texture = ExtResource("1_ynub6")
+texture = ExtResource("2_fm2tm")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -355,7 +355,7 @@ texture = ExtResource("1_ynub6")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddrb3"]
-texture = ExtResource("2_2gwat")
+texture = ExtResource("3_5yvbd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
