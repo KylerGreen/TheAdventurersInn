@@ -73,6 +73,7 @@ show_percentage = false
 
 [node name="HPCount" type="Label" parent="Player/PlayerHealth"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 79.0
 offset_top = 3.0
 offset_right = 154.0
@@ -101,6 +102,7 @@ show_percentage = false
 
 [node name="EnemyHPCount" type="Label" parent="Enemy1/EnemyHealth"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 79.0
 offset_top = 3.0
 offset_right = 154.0

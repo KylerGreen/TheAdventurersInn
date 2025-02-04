@@ -34,7 +34,9 @@ func _on_timer_timeout():
 
 func _on_enemy_attack_timeout():
 	
+	%Player_Animation.play("Hurt")
 	if IsCountering == true:
+		await get_tree().create_timer(1.0).timeout
 		AttackAnimation()
 		attack.emit()
 		DmgRecieved = 20
@@ -71,8 +73,10 @@ func _on_enemy_attack_timeout():
 		%DamageOnPlayer.text = str('-', DmgRecieved)
 	%PlayerHealth.value = health
 	%HPCount.text = str('HP: ', health, '/100')
+	
 	if %PlayerHealth.value <= 0:
 		queue_free()
+		%DamageOnPlayer.queue_free()
 	%DisplayDmg.start()
 	%PlayerHand.visible = true
 	
