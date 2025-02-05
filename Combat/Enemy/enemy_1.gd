@@ -40,9 +40,11 @@ func Enemy_turn():
 func _on_timer_timeout():
 	%EnemyHealth.value = health
 	%EnemyHPCount.text = str('HP: ', health, '/100')
+	%Enemy1_Animation.play("Idle")
 
 func _on_enemy_attack_timeout():
 	%Enemy_Attack.stop()
+	%Enemy1_Animation.play("Idle")
 
 
 func _on_player_attack():
@@ -87,10 +89,10 @@ func _on_player_attack():
 	%DisplayDmg2.start()
 		
 	if health <= 0:
-		queue_free()
 		%Enemy1_Animation.play("Death")
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
 		%DamageOnEnemy.queue_free()
-	
 
 func _on_display_dmg_2_timeout():
 	%DamageOnEnemy.visible = false

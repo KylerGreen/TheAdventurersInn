@@ -75,8 +75,9 @@ func _on_enemy_attack_timeout():
 	%HPCount.text = str('HP: ', health, '/100')
 	
 	if %PlayerHealth.value <= 0:
-		queue_free()
 		%Player_Animation.play("Death")
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
 		%DamageOnPlayer.queue_free()
 	%DisplayDmg.start()
 	%PlayerHand.visible = true
