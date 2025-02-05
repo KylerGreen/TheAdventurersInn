@@ -19,7 +19,7 @@ preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"),
 preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), 
 preload("res://Rooms/Advanced Rooms/advanced_room_4.tscn")]
 
-@onready var player_scene = preload("res://Combat/Player/player.tscn")
+@onready var player_scene = preload("res://Player.tscn")
 @onready var camera = $Camera2D
 var player
 var last_room_position := Vector2(0,0)
@@ -29,10 +29,9 @@ var max_rooms := 5
 var room_spawned := false
 
 func _ready():
-	player = player_scene.instantiate()
+	player_scene.instantiate()
 	player.position = Vector2(200, 200)
 	add_child(player)
-	add_child(camera)
 	camera.make_current()
 	_spawn_new_room()
 	
