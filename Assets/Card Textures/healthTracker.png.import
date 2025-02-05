@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drxxolbtx1sg3"
-path="res://.godot/imported/basic_statblock.png-1137c45bf0fe1385db5d92f396a234ee.ctex"
+uid="uid://bpfw8yg288i5n"
+path="res://.godot/imported/healthTracker.png-88eb7ab7cbd887ca451dd431103284c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Card Textures/basic_statblock.png"
-dest_files=["res://.godot/imported/basic_statblock.png-1137c45bf0fe1385db5d92f396a234ee.ctex"]
+source_file="res://Assets/Card Textures/healthTracker.png"
+dest_files=["res://.godot/imported/healthTracker.png-88eb7ab7cbd887ca451dd431103284c8.ctex"]
 
 [params]
 

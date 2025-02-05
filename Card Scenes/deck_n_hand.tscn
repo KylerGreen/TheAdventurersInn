@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj3l7eh6at782"]
+
+[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/basic_card_test.tscn" id="1_67f3a"]
+
+[node name="DeckNHand" type="Node2D"]
+
+[node name="BasicCardTest" parent="." instance=ExtResource("1_67f3a")]
