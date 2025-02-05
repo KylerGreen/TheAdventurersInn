@@ -76,6 +76,7 @@ func _on_enemy_attack_timeout():
 	
 	if %PlayerHealth.value <= 0:
 		queue_free()
+		%Player_Animation.play("Death")
 		%DamageOnPlayer.queue_free()
 	%DisplayDmg.start()
 	%PlayerHand.visible = true

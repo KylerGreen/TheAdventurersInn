@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1sm0ib4bb2sc"]
 
-[ext_resource type="Script" path="res://start.gd" id="1_2xwpo"]
+[ext_resource type="Script" path="res://Title Screen/start.gd" id="1_2xwpo"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -25,18 +25,20 @@ color = Color(0.394124, 0.583762, 0.638652, 1)
 [node name="Start" type="Button" parent="ColorRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 499.0
-offset_top = 375.0
-offset_right = 635.0
-offset_bottom = 427.0
+offset_left = 500.0
+offset_top = 439.0
+offset_right = 636.0
+offset_bottom = 491.0
 theme_override_font_sizes/font_size = 30
 text = "Start"
 script = ExtResource("1_2xwpo")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_right = 1148.0
-offset_bottom = 357.0
+offset_left = 1.0
+offset_top = 81.0
+offset_right = 1149.0
+offset_bottom = 438.0
 theme_override_font_sizes/font_size = 80
 text = "The 
 Adventurer's Inn

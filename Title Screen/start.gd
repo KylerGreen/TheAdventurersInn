@@ -1,5 +1,4 @@
-extends Node2D
+extends Button
 
-
-func _on_button_pressed() -> void:
+func _on_pressed():
 	get_tree().change_scene_to_file("res://Combat/combat_screen.tscn")
