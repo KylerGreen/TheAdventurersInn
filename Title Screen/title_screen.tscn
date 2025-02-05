@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1sm0ib4bb2sc"]
+[gd_scene load_steps=4 format=3 uid="uid://c1sm0ib4bb2sc"]
 
 [ext_resource type="Script" path="res://Title Screen/start.gd" id="1_2xwpo"]
+[ext_resource type="Script" path="res://Title Screen/title_screen.gd" id="1_553u5"]
+[ext_resource type="AudioStream" uid="uid://lyrm3fortfy" path="res://Title Screen/crafterx27s-mallets-286976.mp3" id="2_2sj5x"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ offset_top = -3.0
 offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_553u5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -45,5 +48,9 @@ Adventurer's Inn
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_2sj5x")
 
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
