@@ -19,9 +19,8 @@ preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"),
 preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), 
 preload("res://Rooms/Advanced Rooms/advanced_room_4.tscn")]
 
-@onready var player_scene = get_node("/root/Player")
+@onready var player = %Player2
 @onready var camera = $Camera2D
-var player
 var last_room_position := Vector2(0,0)
 var room_offset := Vector2(400, 0)
 var active_rooms := []
@@ -29,10 +28,7 @@ var max_rooms := 5
 var room_spawned := false
 
 func _ready():
-	player_scene.instantiate()
-	player.global_position = Vector2(200, 200)
-	add_child(player)
-	camera.make_current()
+	player.global_position = Vector2(16,16)
 	_spawn_new_room()
 	
 func _process(_delta) -> void:
