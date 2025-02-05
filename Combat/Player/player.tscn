@@ -195,9 +195,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6r2mn")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -256,3 +256,5 @@ animation = &"Death"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 7.5)
 shape = SubResource("RectangleShape2D_i8gp2")
+
+[connection signal="animation_finished" from="Player_Animation" to="." method="_on_player_animation_animation_finished"]

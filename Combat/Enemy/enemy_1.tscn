@@ -146,7 +146,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,9 +192,7 @@ script = ExtResource("1_ex4qt")
 [node name="Enemy1_Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_bwkdp")
-animation = &"Attack"
-frame = 5
-frame_progress = 1.0
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.75, 7)
