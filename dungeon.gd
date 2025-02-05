@@ -19,13 +19,48 @@ preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"),
 preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), 
 preload("res://Rooms/Advanced Rooms/advanced_room_4.tscn")]
 
-onready var player: KinematicBody2D = get_node("res://Combat/Player/player.tscn")
+@onready var player_scene = preload("res://Combat/Player/player.tscn")
+@onready var camera = $Camera2D
+var player
+var last_room_position := Vector2(0,0)
+var room_offset := Vector2(400, 0)
+var active_rooms := []
+var max_rooms := 5
+var room_spawned := false
 
-func _ready() -> void 
-	_spawn_rooms()
+func _ready():
+	player = player_scene.instantiate()
+	player.position = Vector2(200, 200)
+	add_child(player)
+	add_child(camera)
+	camera.make_current()
+	_spawn_new_room()
 	
-func _spawn_rooms() -> void 
-	var room_count := 5
-	var previous_rooms: Node2D = null
-	var room_posiiton := Vector2(0,0)
+func _process(_delta) -> void:
+	if not room_spawned and player.position.distance_to(last_room_position) < 600:
+		_spawn_new_room()
+		room_spawned = true
+		
+func _spawn_new_room(): 
+	var room_scene: PackedScene
+	if active_rooms.size() < 1:
+		room_scene = SPAWN_ROOMS.pick_random()
+		
+	elif active_rooms.size() <  4:
+		room_scene = INTERMEDIATE_ROOMS.pick_random()
+
+	else: 
+		room_scene = END_ROOMS.pick_random()
+	
+	var room_instance = room_scene.instantiate()
+	room_instance.position = last_room_position
+	
+	add_child(room_instance)
+	active_rooms.append(room_instance)
+	
+	last_room_position += room_offset
+	
+	if active_rooms.size() > max_rooms:
+		var old_room = active_rooms.pop_front()
+		old_room.queue_free()	
 	

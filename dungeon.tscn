@@ -843,3 +843,6 @@ sources/2 = SubResource("TileSetAtlasSource_iec3q")
 
 [node name="Room Tiles" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_fr0ad")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
