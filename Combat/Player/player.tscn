@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4h3lrphnxcfo"]
+[gd_scene load_steps=38 format=3 uid="uid://c4h3lrphnxcfo"]
 
 [ext_resource type="Script" path="res://Combat/Player/player.gd" id="1_raysf"]
 [ext_resource type="Texture2D" uid="uid://b5h0huppvt2j3" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Idle.png" id="2_bjbs7"]
 [ext_resource type="Texture2D" uid="uid://c8ctwkxsv7gpg" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Attack.png" id="2_pkn8v"]
+[ext_resource type="Texture2D" uid="uid://dekie46wwxveq" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Death.png" id="4_am8h8"]
 [ext_resource type="Texture2D" uid="uid://b7a06ch05ptbs" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Hurt.png" id="4_j5goh"]
 [ext_resource type="Texture2D" uid="uid://cr0ycd47jjqe1" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/3.png" id="4_npr85"]
 
@@ -80,6 +81,38 @@ region = Rect2(126, 0, 42, 42)
 atlas = ExtResource("2_pkn8v")
 region = Rect2(168, 0, 42, 42)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s8xu"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgwpj"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b56p5"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnerx"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eom3y"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hww1p"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tns3"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(252, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r2mn"]
+atlas = ExtResource("4_am8h8")
+region = Rect2(294, 0, 42, 42)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qp6f"]
 atlas = ExtResource("4_j5goh")
 region = Rect2(0, 0, 42, 42)
@@ -139,6 +172,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1s8xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgwpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b56p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnerx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eom3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hww1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tns3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r2mn")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3qp6f")
 }, {
 "duration": 1.0,
@@ -189,7 +251,7 @@ frame_progress = 0.966284
 [node name="Player_Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_1hb7p")
-animation = &"Attack"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 7.5)
