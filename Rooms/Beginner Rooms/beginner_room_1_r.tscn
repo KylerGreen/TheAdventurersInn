@@ -283,6 +283,15 @@ size = Vector2(11, 12)
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
+[node name="The Skull" type="TileMapLayer" parent="."]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-125, 250)
+tile_map_data = PackedByteArray("AAAeAPH/AgABAAUAAAA=")
+tile_set = SubResource("TileSet_c0xg6")
+y_sort_origin = 1
+
 [node name="Ground" type="TileMapLayer" parent="."]
 z_index = -1
 y_sort_enabled = true
