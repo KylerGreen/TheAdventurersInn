@@ -262,6 +262,7 @@ sources/3 = SubResource("TileSetAtlasSource_uuqni")
 size = Vector2(11, 12)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1, -2)
 
 [node name="Object" type="TileMapLayer" parent="."]
 use_parent_material = true
