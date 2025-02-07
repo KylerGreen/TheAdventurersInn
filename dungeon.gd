@@ -28,7 +28,7 @@ var max_rooms := 5
 var room_spawned := false
 
 func _ready():
-	player.global_position = Vector2(16,16)
+	player.global_position = Vector2(15,-15)
 	_spawn_new_room()
 	
 func _process(_delta) -> void:
