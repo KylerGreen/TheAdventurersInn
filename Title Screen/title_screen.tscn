@@ -21,27 +21,27 @@ z_index = -1
 layout_mode = 0
 offset_left = -4.0
 offset_top = 5.0
-offset_right = 1143.0
-offset_bottom = 650.0
+offset_right = 1276.0
+offset_bottom = 719.0
 color = Color(0.394124, 0.583762, 0.638652, 1)
 
 [node name="Start" type="Button" parent="ColorRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 500.0
-offset_top = 439.0
-offset_right = 636.0
-offset_bottom = 491.0
+offset_left = 576.0
+offset_top = 442.0
+offset_right = 712.0
+offset_bottom = 494.0
 theme_override_font_sizes/font_size = 30
 text = "Start"
 script = ExtResource("1_2xwpo")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 81.0
-offset_right = 1149.0
-offset_bottom = 438.0
+offset_left = 75.0
+offset_top = 78.0
+offset_right = 1223.0
+offset_bottom = 435.0
 theme_override_font_sizes/font_size = 80
 text = "The 
 Adventurer's Inn
