@@ -1,7 +1,32 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj3l7eh6at782"]
 
-[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/basic_card_test.tscn" id="1_67f3a"]
+[ext_resource type="Script" path="res://Card Scenes/deck_n_hand.gd" id="1_nbc0s"]
 
 [node name="DeckNHand" type="Node2D"]
+script = ExtResource("1_nbc0s")
 
-[node name="BasicCardTest" parent="." instance=ExtResource("1_67f3a")]
+[node name="Testing Camera" type="Camera2D" parent="."]
+position = Vector2(642, 359)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 26.0
+offset_right = 127.0
+offset_bottom = 57.0
+text = "Create Card 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 70.0
+offset_right = 124.0
+offset_bottom = 101.0
+text = "Create Card2
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Spawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2(341, 404)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
