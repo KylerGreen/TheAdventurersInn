@@ -27,6 +27,8 @@ func Enemy_turn():
 		%DamageOnEnemy.text = str('+', DmgRecieved)
 		await get_tree().create_timer(1.0).timeout
 		%DisplayDmg2.start()
+		if health >= 100:
+			health = 100
 		%EnemyHealth.value = health
 		IsCountering = true
 		%PlayerHand.visible = true
