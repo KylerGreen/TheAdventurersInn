@@ -3,7 +3,7 @@ class_name Card extends Node2D
 @export var card_name: String = "Card Name"
 @export var card_ability: String = "Card Ability"
 @export var card_rank: int = 1
-@export var card_image: Node2D
+@export var card_image: Sprite2D
 @export var action_reaction: String = "Re?Action"
 
 @onready var name_lbl: Label = $CardBackground/Name
@@ -13,7 +13,6 @@ class_name Card extends Node2D
 
 func _ready():
 	set_card_values(card_rank, card_name, card_ability, action_reaction)
-	visible = false
 	
 
 func set_card_values(_cr: int, _name: String, _card_ability: String, _action_reaction: String):
