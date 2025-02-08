@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Card Scenes/deck_n_hand.gd" id="1_nbc0s"]
 
 [node name="DeckNHand" type="Node2D"]
+position = Vector2(-2, 0)
 script = ExtResource("1_nbc0s")
 
 [node name="Testing Camera" type="Camera2D" parent="."]
