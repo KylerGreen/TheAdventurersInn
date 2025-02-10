@@ -15,7 +15,6 @@ script = ExtResource("1_lar1v")
 [node name="AbilityBox" type="Node2D" parent="."]
 z_index = 1
 position = Vector2(-2, 29)
-scale = Vector2(1, 1)
 
 [node name="Textbox" type="Sprite2D" parent="AbilityBox"]
 self_modulate = Color(0.326024, 0.288117, 0.259698, 1)
@@ -32,7 +31,7 @@ offset_right = 342.0
 offset_bottom = 378.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
-text = "Lorem ipsum dolor tor suut ducat vor yun beo"
+text = "Lorum ipsum dolor tor suut"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -49,8 +48,9 @@ offset_left = -301.853
 offset_top = -473.834
 offset_right = 284.147
 offset_bottom = -383.834
+pivot_offset = Vector2(-150.412, 54.6728)
 theme_override_font_sizes/font_size = 65
-text = "Placeholder Name"
+text = "Placeholder"
 horizontal_alignment = 1
 
 [node name="CRDisplay" type="Node2D" parent="."]
