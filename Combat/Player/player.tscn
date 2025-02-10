@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c4h3lrphnxcfo"]
+[gd_scene load_steps=37 format=3 uid="uid://c4h3lrphnxcfo"]
 
 [ext_resource type="Script" path="res://Combat/Player/player.gd" id="1_raysf"]
 [ext_resource type="Texture2D" uid="uid://b5h0huppvt2j3" path="res://Assets/craftpix-net-661050-free-tiny-pixel-hero-sprites-with-bow-attacks/2/Idle.png" id="2_bjbs7"]
@@ -234,9 +234,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gp2"]
-size = Vector2(28, 29)
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_raysf")
 
@@ -254,9 +251,5 @@ sprite_frames = SubResource("SpriteFrames_1hb7p")
 animation = &"Death"
 frame = 7
 frame_progress = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 7.5)
-shape = SubResource("RectangleShape2D_i8gp2")
 
 [connection signal="animation_finished" from="Player_Animation" to="." method="_on_player_animation_animation_finished"]
