@@ -865,4 +865,3 @@ position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_lvdfq")
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
-unique_name_in_owner = true

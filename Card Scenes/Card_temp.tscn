@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu8bct6qfdmxi"]
+[gd_scene load_steps=6 format=3 uid="uid://c1ohq85ubkwjq"]
 
 [ext_resource type="Script" path="res://Card Scenes/Card_temp.gd" id="1_lar1v"]
 [ext_resource type="Texture2D" uid="uid://brloi64vtae2q" path="res://Assets/Card Textures/basic_background_anycolor.png" id="2_1xwqn"]
