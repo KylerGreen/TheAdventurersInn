@@ -6,27 +6,27 @@
 script = ExtResource("1_nbc0s")
 
 [node name="Testing Camera" type="Camera2D" parent="."]
-position = Vector2(642, 359)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 14.0
-offset_top = 26.0
-offset_right = 127.0
-offset_bottom = 57.0
-text = "Create Card 1"
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 70.0
-offset_right = 124.0
-offset_bottom = 101.0
-text = "Create Card2
-"
+position = Vector2(582, 328)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Spawn" type="Node2D" parent="CanvasLayer"]
 position = Vector2(341, 404)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 125.0
+offset_bottom = 57.0
+text = "Create Card 1"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 70.0
+offset_right = 122.0
+offset_bottom = 101.0
+text = "Create Card2
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

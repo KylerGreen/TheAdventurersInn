@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c4h3lrphnxcfo" path="res://Combat/Player/player.tscn" id="1_eujwl"]
 [ext_resource type="Script" path="res://Combat/combat_screen.gd" id="1_h4aju"]
-[ext_resource type="PackedScene" uid="uid://bde8vyu82ygpk" path="res://Combat/Enemy/enemy_1.tscn" id="2_5i270"]
+[ext_resource type="PackedScene" uid="uid://bde8vyu82ygpk" path="res://Combat/Enemies/enemy_1.tscn" id="2_5i270"]
 [ext_resource type="AudioStream" uid="uid://b6gffh1te7in7" path="res://Combat/battle-sword-139313.mp3" id="2_jx6p5"]
 [ext_resource type="PackedScene" uid="uid://dqkhcwr2tr01r" path="res://Combat/CurrentHand.tscn" id="2_s8k0x"]
 

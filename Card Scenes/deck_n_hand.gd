@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var card_scene: PackedScene = preload("res://Card Scenes/Card_temp.tscn")
+@onready var action_card_scene: PackedScene = preload("res://Card Scenes/Cards/action_punch-good.tscn")
+@onready var reaction_card_scene: PackedScene = preload("res://Card Scenes/Cards/reaction_dodge.tscn")
 
 @onready var spawn_point = $CanvasLayer/Spawn
 
@@ -15,14 +16,10 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	var card = card_scene.instantiate()
-	spawn_point.add_child(card)
-	card.set_card_values(3, "Ralph Bohner", "Card go BRRR", "ACTION")
-	card.visible = true
+	var action_card = action_card_scene.instantiate()
+	spawn_point.add_child(action_card)
 
 
 func _on_button_2_pressed():
-	var card = card_scene.instantiate()
-	spawn_point.add_child(card)
-	card.set_card_values(1, "Korg", "WALL CARD GO", "REACTION")
-	card.visible = true
+	var reaction_card = reaction_card_scene.instantiate()
+	spawn_point.add_child(reaction_card)
