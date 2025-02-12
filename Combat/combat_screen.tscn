@@ -25,6 +25,7 @@ script = ExtResource("1_h4aju")
 [node name="Battle Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_jx6p5")
+volume_db = -30.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -578.0

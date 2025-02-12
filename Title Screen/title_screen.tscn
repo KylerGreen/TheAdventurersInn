@@ -52,5 +52,6 @@ vertical_alignment = 1
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_2sj5x")
+volume_db = -30.0
 
 [connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
