@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lrt6k4fvaiab"
-path="res://.godot/imported/BootScreen FrFr.png-7084d9b5af45e8c52f1c6481477db659.ctex"
+uid="uid://brloi64vtae2q"
+path="res://.godot/imported/basic_background_anycolor.png-2a9ab33447f41936cf7b0015122768cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Title Screen/BootScreen FrFr.png"
-dest_files=["res://.godot/imported/BootScreen FrFr.png-7084d9b5af45e8c52f1c6481477db659.ctex"]
+source_file="res://Assets/CardAssets/basic_background_anycolor.png"
+dest_files=["res://.godot/imported/basic_background_anycolor.png-2a9ab33447f41936cf7b0015122768cb.ctex"]
 
 [params]
 

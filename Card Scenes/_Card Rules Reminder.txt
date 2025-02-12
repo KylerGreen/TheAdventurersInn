@@ -1,0 +1,21 @@
+Combat Rules
+	Upkeep: If not first turn,
+		a. Draw up to 5 cards from the deck
+			i. if you cannot draw anymore cards AND have no cards in your hand, you lose the combat.
+		b. If status effects are applied, tick down the timer
+			i. 
+	1. Both parties choose an Action and Reaction at the same time
+	2. Player-Action happens first
+		a. If opponents reaction modifies player action, apply opponent action then continue.
+		b. If opponents reaction does NOT modify the player action, wait till End of Turn.
+	3. Opponent-Action happens,
+		a. If opponent reaction has not been used, apply opponent reaction
+		b. Repeat 2a/2b
+	4. End of Turn effects activate
+		- Whatever actions/reactions that are only to apply next turn apply at the "start of the turn"/carry over?
+
+	
+Deck Building Rules
+- Cards have a "weight" CR
+	- A deck cannot have cards with more than 20CR
+- A deck must have a minimum of 3 Actions & 3 Reactions

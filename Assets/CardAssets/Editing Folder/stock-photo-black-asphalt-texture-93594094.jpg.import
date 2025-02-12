@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uxuq3wa3ogy1"
-path="res://.godot/imported/costTracker.png-685e287683069e8b27fdc9a42e8156e7.ctex"
+uid="uid://ix7r5gjniu8y"
+path="res://.godot/imported/stock-photo-black-asphalt-texture-93594094.jpg-a4d2ae3f818f54b0c8311036b45f4423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/costTracker.png"
-dest_files=["res://.godot/imported/costTracker.png-685e287683069e8b27fdc9a42e8156e7.ctex"]
+source_file="res://Assets/CardAssets/Editing Folder/stock-photo-black-asphalt-texture-93594094.jpg"
+dest_files=["res://.godot/imported/stock-photo-black-asphalt-texture-93594094.jpg-a4d2ae3f818f54b0c8311036b45f4423.ctex"]
 
 [params]
 
