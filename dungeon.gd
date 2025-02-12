@@ -9,15 +9,9 @@ const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1_
 #preload("res://Rooms/Beginner Rooms/beginner_room_7uldr.tscn"), 
 #preload("res://Rooms/Beginner Rooms/beginner_room_8_ud.tscn")]
 
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_1.tscn"), 
-preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), 
-preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn"), 
-preload("res://Rooms/Intermediate Rooms/intermediate_room_4.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), ]
 
-const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_1.tscn"), 
-preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"),	
-preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), 
-preload("res://Rooms/Advanced Rooms/advanced_room_4.tscn")]
+const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 
 @onready var player = %Player3
 @onready var camera = $Camera2D
