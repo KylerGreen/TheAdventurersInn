@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bicahnbwrx3ef"]
+
+[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_88jne"]
+
+[node name="ReactionCounter" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_88jne")]
+card_name = "Counter"
+card_ability = "If you take damage, deal 10 DMG to your opponent."
+card_rank = 2
+action_reaction = "Reaction"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

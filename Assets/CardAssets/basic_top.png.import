@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ix7r5gjniu8y"
-path="res://.godot/imported/stock-photo-black-asphalt-texture-93594094.jpg-fe1b6c81e33abd784002a81678be2c14.ctex"
+uid="uid://bj6yxo7nycxyn"
+path="res://.godot/imported/basic_top.png-18efbf2f2018adea7099f9cce6611eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/Editing Folder/stock-photo-black-asphalt-texture-93594094.jpg"
-dest_files=["res://.godot/imported/stock-photo-black-asphalt-texture-93594094.jpg-fe1b6c81e33abd784002a81678be2c14.ctex"]
+source_file="res://Assets/CardAssets/basic_top.png"
+dest_files=["res://.godot/imported/basic_top.png-18efbf2f2018adea7099f9cce6611eb3.ctex"]
 
 [params]
 

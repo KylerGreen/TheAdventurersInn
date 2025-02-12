@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wvxdg05rsby0"
-path="res://.godot/imported/basic_lower.png-100c39977f8756aeeb596f2ae9c80107.ctex"
+uid="uid://uxuq3wa3ogy1"
+path="res://.godot/imported/costTracker.png-a193239417aa74af3e69079223db92e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/basic_lower.png"
-dest_files=["res://.godot/imported/basic_lower.png-100c39977f8756aeeb596f2ae9c80107.ctex"]
+source_file="res://Assets/CardAssets/costTracker.png"
+dest_files=["res://.godot/imported/costTracker.png-a193239417aa74af3e69079223db92e1.ctex"]
 
 [params]
 

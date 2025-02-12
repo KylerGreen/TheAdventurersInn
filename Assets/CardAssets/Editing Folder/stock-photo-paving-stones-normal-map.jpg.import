@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpfw8yg288i5n"
-path="res://.godot/imported/healthTracker.png-88eb7ab7cbd887ca451dd431103284c8.ctex"
+uid="uid://ddnlfc8rnhgfx"
+path="res://.godot/imported/stock-photo-paving-stones-normal-map.jpg-58d96316a3061b6e2025e8d8d8250c2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/healthTracker.png"
-dest_files=["res://.godot/imported/healthTracker.png-88eb7ab7cbd887ca451dd431103284c8.ctex"]
+source_file="res://Assets/CardAssets/Editing Folder/stock-photo-paving-stones-normal-map.jpg"
+dest_files=["res://.godot/imported/stock-photo-paving-stones-normal-map.jpg-58d96316a3061b6e2025e8d8d8250c2b.ctex"]
 
 [params]
 

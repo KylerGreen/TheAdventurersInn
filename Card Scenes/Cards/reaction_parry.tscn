@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://6kixwt07v2bw"]
+
+[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_w6sd1"]
+
+[node name="ReactionParry" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_w6sd1")]
+card_name = "Parry"
+card_ability = "If your opponent plays 'Disarm', ignore it's effect."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

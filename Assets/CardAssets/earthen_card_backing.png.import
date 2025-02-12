@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj6yxo7nycxyn"
-path="res://.godot/imported/basic_top.png-723146bf05ad0325efa96d88b6bbdf7e.ctex"
+uid="uid://c73un0dlaljfu"
+path="res://.godot/imported/earthen_card_backing.png-63973eed080ca9b1d976ed1c646cca14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/basic_top.png"
-dest_files=["res://.godot/imported/basic_top.png-723146bf05ad0325efa96d88b6bbdf7e.ctex"]
+source_file="res://Assets/CardAssets/earthen_card_backing.png"
+dest_files=["res://.godot/imported/earthen_card_backing.png-63973eed080ca9b1d976ed1c646cca14.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2hgejwi82f1r"
-path="res://.godot/imported/stock-photo-texture-bump-map-snow-on-glass-bump-mapping-2422381653.jpg-026af991916c879847a44f6dfb261763.ctex"
+uid="uid://db06kc7nkf7iu"
+path="res://.godot/imported/basic_background.png-b0e9e626b244c0259a75a8cc04e9001c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/Editing Folder/stock-photo-texture-bump-map-snow-on-glass-bump-mapping-2422381653.jpg"
-dest_files=["res://.godot/imported/stock-photo-texture-bump-map-snow-on-glass-bump-mapping-2422381653.jpg-026af991916c879847a44f6dfb261763.ctex"]
+source_file="res://Assets/CardAssets/basic_background.png"
+dest_files=["res://.godot/imported/basic_background.png-b0e9e626b244c0259a75a8cc04e9001c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddnlfc8rnhgfx"
-path="res://.godot/imported/stock-photo-paving-stones-normal-map.jpg-c9e50e8da22bb33a249c46f418766063.ctex"
+uid="uid://drxxolbtx1sg3"
+path="res://.godot/imported/basic_statblock.png-0919e203262fd957e0b487f3d7df5492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/Editing Folder/stock-photo-paving-stones-normal-map.jpg"
-dest_files=["res://.godot/imported/stock-photo-paving-stones-normal-map.jpg-c9e50e8da22bb33a249c46f418766063.ctex"]
+source_file="res://Assets/CardAssets/basic_statblock.png"
+dest_files=["res://.godot/imported/basic_statblock.png-0919e203262fd957e0b487f3d7df5492.ctex"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds3n15crtqygr"]
+
+[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_3bjwy"]
+
+[node name="ActionHeal" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_3bjwy")]
+card_name = "Heal Minor Wound"
+card_ability = "Heal 15 HP"
+action_reaction = "Action"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

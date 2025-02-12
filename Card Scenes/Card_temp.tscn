@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1ohq85ubkwjq"]
 
 [ext_resource type="Script" path="res://Card Scenes/Card_temp.gd" id="1_lar1v"]
-[ext_resource type="Texture2D" uid="uid://c73un0dlaljfu" path="res://Assets/Card Textures/earthen_card_backing.png" id="2_mrj3y"]
-[ext_resource type="Texture2D" uid="uid://b5g4t8i7v4b1s" path="res://Assets/Card Textures/basic_textbox.png" id="3_t8rbp"]
-[ext_resource type="Texture2D" uid="uid://uxuq3wa3ogy1" path="res://Assets/Card Textures/costTracker.png" id="4_lkdsv"]
-[ext_resource type="Texture2D" uid="uid://bi8ern5xxbma2" path="res://Assets/Card Textures/basic_upper.png" id="5_hte17"]
+[ext_resource type="Texture2D" uid="uid://c73un0dlaljfu" path="res://Assets/CardAssets/earthen_card_backing.png" id="2_mrj3y"]
+[ext_resource type="Texture2D" uid="uid://b5g4t8i7v4b1s" path="res://Assets/CardAssets/basic_textbox.png" id="3_t8rbp"]
+[ext_resource type="Texture2D" uid="uid://uxuq3wa3ogy1" path="res://Assets/CardAssets/costTracker.png" id="4_lkdsv"]
+[ext_resource type="Texture2D" uid="uid://bi8ern5xxbma2" path="res://Assets/CardAssets/basic_upper.png" id="5_hte17"]
 
 [node name="Card" type="Node2D"]
 z_index = 1
@@ -31,7 +31,7 @@ offset_right = 342.0
 offset_bottom = 378.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
-text = "Lorum ipsum dolor tor suut"
+text = "Card Ability"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -50,7 +50,7 @@ offset_right = 284.147
 offset_bottom = -383.834
 pivot_offset = Vector2(-150.412, 54.6728)
 theme_override_font_sizes/font_size = 65
-text = "Placeholder"
+text = "Card Name"
 horizontal_alignment = 1
 
 [node name="CRDisplay" type="Node2D" parent="."]
@@ -75,7 +75,7 @@ offset_bottom = -62.0
 scale = Vector2(1.53407, 1.53407)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-text = "X"
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -92,7 +92,7 @@ offset_right = 288.0
 offset_bottom = 508.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-text = "RE?ACTION"
+text = "Re?Action"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

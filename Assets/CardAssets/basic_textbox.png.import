@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deigjpw2d8da0"
-path="res://.godot/imported/test_earth_background.png-b493cb76eede275b2d69cc91524def0a.ctex"
+uid="uid://b5g4t8i7v4b1s"
+path="res://.godot/imported/basic_textbox.png-35ce30a03f58b0b78b7bf674258cc17a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Card Textures/test_earth_background.png"
-dest_files=["res://.godot/imported/test_earth_background.png-b493cb76eede275b2d69cc91524def0a.ctex"]
+source_file="res://Assets/CardAssets/basic_textbox.png"
+dest_files=["res://.godot/imported/basic_textbox.png-35ce30a03f58b0b78b7bf674258cc17a.ctex"]
 
 [params]
 
