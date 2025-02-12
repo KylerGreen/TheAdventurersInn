@@ -36,17 +36,17 @@ func _process(_delta) -> void:
 		var last_room = active_rooms.back()
 		var next_room = last_room.position + room_size
 		
-		if player.global_position.x >= last_room.position.x + (room_size.x / 5):
+		if player.global_position.x >= last_room.position.x:
 			print("Player moved far enough, spawning new room...")
 			_spawn_new_room(next_room)
 		
 func _spawn_new_room(pos: Vector2):
 	var room_scene: PackedScene
 	
-	if active_rooms.size() < 1:
+	if active_rooms.size() > 0:
 		room_scene = SPAWN_ROOMS.pick_random()
 		
-	elif active_rooms.size() <  4:
+	elif active_rooms.size() > 2:
 		room_scene = INTERMEDIATE_ROOMS.pick_random()
 
 	else: 
