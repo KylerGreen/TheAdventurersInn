@@ -153,6 +153,7 @@ texture = ExtResource("2_1lxpi")
 5:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
@@ -341,8 +342,7 @@ pattern_14 = SubResource("TileMapPattern_3o0be")
 pattern_15 = SubResource("TileMapPattern_nbpda")
 pattern_16 = SubResource("TileMapPattern_xhjtf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvts3"]
-size = Vector2(16, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxvl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ejv1"]
 size = Vector2(11, 12)
@@ -350,7 +350,7 @@ size = Vector2(11, 12)
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
-[node name="The Skull" type="TileMapLayer" parent="."]
+[node name="The Skull" type="TileMapLayer" parent="." groups=["Skull"]]
 z_index = -1
 y_sort_enabled = true
 use_parent_material = true
@@ -358,6 +358,13 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAeAPH/AgABAAUAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 y_sort_origin = 1
+
+[node name="Area2D" type="Area2D" parent="The Skull" groups=["Skull"]]
+position = Vector2(125, -250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="The Skull/Area2D"]
+position = Vector2(363, 20)
+shape = SubResource("CircleShape2D_xxvl3")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_index = -1
@@ -381,23 +388,25 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAPAPD/AwAMAAQAAAAPAO//AwAMAAMAAAATAPL/AwAPAAQAAAASAO7/AwAPAAQAAAAMAO7/AwAPAAQAAAAPAOv/AwAPAAQAAAAPAPT/AwAPAAQAAAALAPL/AwAPAAQAAAASAO//AwASAAIAAAAMAO//AwASAAIAAAALAPP/AwASAAIAAAAPAPX/AwASAAIAAAATAPP/AwASAAIAAAAPAOz/AwASAAIAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(363, 18)
-shape = SubResource("RectangleShape2D_fvts3")
-
 [node name="Player2" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_v044a")
-
-[node name="AngelRunAnimF1" type="Sprite2D" parent="Player2"]
-position = Vector2(2, 1)
-texture = ExtResource("5_lkftx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_6ejv1")
 
+[node name="AngelRunAnimF1" type="Sprite2D" parent="Player2"]
+position = Vector2(2, 1)
+texture = ExtResource("5_lkftx")
+
 [node name="Camera2D" type="Camera2D" parent="Player2"]
 unique_name_in_owner = true
+
+[node name="Area2D" type="Area2D" parent="Player2" groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/Area2D"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_xxvl3")
+
+[connection signal="area_entered" from="Player2/Area2D" to="Player2" method="_on_area_2d_area_entered"]
