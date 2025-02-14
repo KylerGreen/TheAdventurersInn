@@ -3,7 +3,7 @@ Combat Rules
 		a. Draw up to 5 cards from the deck
 			i. if you cannot draw anymore cards AND have no cards in your hand, you lose the combat.
 		b. If status effects are applied, tick down the timer
-			i. 
+			i. If the timer == 0, do not apply the effect/despawn the timer
 	1. Both parties choose an Action and Reaction at the same time
 	2. Player-Action happens first
 		a. If opponents reaction modifies player action, apply opponent action then continue.
@@ -12,7 +12,7 @@ Combat Rules
 		a. If opponent reaction has not been used, apply opponent reaction
 		b. Repeat 2a/2b
 	4. End of Turn effects activate
-		- Whatever actions/reactions that are only to apply next turn apply at the "start of the turn"/carry over?
+		- Whatever reactions are to happen the next turn acts as your reaction next turn, but plays before your action
 
 	
 Deck Building Rules

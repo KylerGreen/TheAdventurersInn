@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var action_card_scene: PackedScene = preload("res://Card Scenes/Cards/action_punch-good.tscn")
+@onready var action_card_scene: PackedScene = preload("res://Card Scenes/Cards/action_swing.tscn")
 @onready var reaction_card_scene: PackedScene = preload("res://Card Scenes/Cards/reaction_dodge.tscn")
 
 @onready var spawn_point = $CanvasLayer/Spawn

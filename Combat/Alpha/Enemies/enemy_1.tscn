@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bde8vyu82ygpk"]
 
-[ext_resource type="Script" path="res://Combat/Enemies/enemy_1.gd" id="1_ex4qt"]
+[ext_resource type="Script" path="res://Combat/Alpha/Enemies/enemy_1.gd" id="1_ex4qt"]
 [ext_resource type="Texture2D" uid="uid://bjvn2qc1qxm10" path="res://Assets/craftpix-net-154153-free-tiny-pixel-hero-sprites-with-melee-attacks/1/Attack1.png" id="2_4nuul"]
 [ext_resource type="Texture2D" uid="uid://4t2t4njwl7ky" path="res://Assets/craftpix-net-154153-free-tiny-pixel-hero-sprites-with-melee-attacks/1/Idle.png" id="2_85fdw"]
 [ext_resource type="Texture2D" uid="uid://dmryxpk1cf4oj" path="res://Assets/craftpix-net-154153-free-tiny-pixel-hero-sprites-with-melee-attacks/1/Death.png" id="3_igu4v"]
