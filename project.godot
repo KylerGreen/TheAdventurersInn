@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+CombatSignals="*res://Combat/Beta/combat_signals.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
