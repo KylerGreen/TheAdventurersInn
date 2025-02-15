@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxgk44up8rslb"]
 
-[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_86wpj"]
+[ext_resource type="PackedScene" uid="uid://c1ohq85ubkwjq" path="res://Card Scenes/Card_temp.tscn" id="1_86wpj"]
 
 [node name="ActionDisarm" type="Node2D"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://nxdkjuynrp4m"]
 
-[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_asmhw"]
+[ext_resource type="PackedScene" uid="uid://c1ohq85ubkwjq" path="res://Card Scenes/Card_temp.tscn" id="1_asmhw"]
 
 [node name="ReactionBolster" type="Node2D"]
 

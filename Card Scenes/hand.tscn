@@ -7,13 +7,12 @@
 radius = 1000.0
 
 [node name="Hand" type="Node2D"]
+position = Vector2(562, 1503)
 script = ExtResource("1_gtww2")
 hand_radius = 1000
-card_angle = -90.0
 
 [node name="ActionSwing" parent="." instance=ExtResource("2_1ffhw")]
 position = Vector2(6.12303e-14, -1000)
-rotation = -1.5708
 
 [node name="DebugShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rgcub")
