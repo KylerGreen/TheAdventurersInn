@@ -10,9 +10,6 @@ position = Vector2(582, 328)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Spawn" type="Node2D" parent="CanvasLayer"]
-position = Vector2(341, 404)
-
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 12.0
 offset_top = 26.0

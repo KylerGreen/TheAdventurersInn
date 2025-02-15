@@ -5,7 +5,6 @@
 [node name="ActionHeal" type="Node2D"]
 
 [node name="Card" parent="." instance=ExtResource("1_3bjwy")]
-position = Vector2(0, 0)
 card_name = "Heal Minor Wound"
 card_ability = "Heal 15 HP"
 action_reaction = "Action"
