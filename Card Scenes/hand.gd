@@ -18,6 +18,8 @@ func add_card(card: Node2D):
 #	Adds a card physically; Sort via position
 	in_hand.push_back(card)
 	add_child(card)
+	card.mouse_entered.connect(handle_card_touched)
+	card.mouse_exited.connect(handle_card_untouched)
 	reposition_cards()
 
 func remove_card(index: int) -> Node2D:
@@ -45,7 +47,17 @@ func get_card_position(angle_in_degree: float) -> Vector2:
 	
 func update_card_transform(card: Node2D, angle_in_drag: float):
 	card.set_position(get_card_position(angle_in_drag))
-	card.set_rotation(deg_to_rad(0))
+# Rotation is relative to the origin point of the circle; 0 will always be straight up
+	card.set_rotation(deg_to_rad(angle_in_drag*0))
+
+func handle_card_touched(card: Card):
+	print("touched : " +card.card_name)
+	pass
+
+func handle_card_untouched(card: Card):
+	print("untouched : " +card.card_name)
+	pass
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
