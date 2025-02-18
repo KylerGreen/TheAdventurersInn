@@ -17,8 +17,10 @@ const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room
 @onready var camera = $Camera2D
 
 var active_rooms := []
+var occupied_positions := {} 
 var max_rooms := 5
-var room_size = Vector2(31, 0)
+var room_width = 380
+var room_margin = 100
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -28,13 +30,22 @@ func _ready():
 func _process(_delta) -> void:
 	if active_rooms.size() > 0:
 		var last_room = active_rooms.back()
-		var next_room = last_room.position + room_size
+		var next_room = last_room.position + Vector2(room_width + room_margin, 0)
 		
-		if player.global_position.x >= last_room.position.x:
+		if player.global_position.x >= last_room.position.x + room_width:
 			print("Player moved far enough, spawning new room...")
-			_spawn_new_room(next_room)
+			
+			if Vector2i(next_room) not in occupied_positions:
+				_spawn_new_room(next_room)
+			
+			else: 
+				print("Room at", next_room, "already exists")
 		
 func _spawn_new_room(pos: Vector2):
+	var pos_int = Vector2i(pos)
+	if pos_int in occupied_positions:
+		print("Room at", pos, "already occupied")
+		return
 	var room_scene: PackedScene
 	
 	if active_rooms.size() > 0:
@@ -53,11 +64,17 @@ func _spawn_new_room(pos: Vector2):
 	room_instance.position = pos
 	add_child(room_instance)
 	active_rooms.append(room_instance)
+	occupied_positions[pos_int] = true  
+
+	
+	print("Spawned room at:", room_instance.position) 
+	print("Occupied positions:", occupied_positions.keys())
 		
 	print("Total active rooms:", active_rooms.size())
 	print("Spawned new room at: ", room_instance.position)
 	
 	if active_rooms.size() > max_rooms:
 		var old_room = active_rooms.pop_front()
+		occupied_positions.erase(Vector2i(old_room.position))
 		old_room.queue_free()	
 	
