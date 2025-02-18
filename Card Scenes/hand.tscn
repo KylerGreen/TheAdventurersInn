@@ -7,11 +7,12 @@
 radius = 1000.0
 
 [node name="Hand" type="Node2D"]
-position = Vector2(562, 1503)
+position = Vector2(640, 1560)
 script = ExtResource("1_gtww2")
 hand_radius = 1000
 
 [node name="ActionSwing" parent="." instance=ExtResource("2_1ffhw")]
+visible = false
 position = Vector2(6.12303e-14, -1000)
 
 [node name="DebugShape" type="CollisionShape2D" parent="."]

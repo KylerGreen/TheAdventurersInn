@@ -17,14 +17,24 @@ var in_hand : Array = []
 func add_card(card: Node2D):
 #	Adds a card physically; Sort via position
 	in_hand.push_back(card)
+	add_child(card)
 	reposition_cards()
-#
+
+func remove_card(index: int) -> Node2D:
+	var removing_card = in_hand[index]
+	in_hand.remove_at(index)
+	remove_child(removing_card)
+	reposition_cards()
+	return removing_card
+
 func reposition_cards():
+# TO Change the direction of the card spread: 
+# At line 26 add a "-" to the start of the formula, and at line 29 replace "-=" with "+="
 	var card_spread = min(angle_limit / in_hand.size(), max_card_spread_angle)
-	var current_angle = -(card_spread * in_hand.size())-90
+	var current_angle = (card_spread * in_hand.size() - 1)/2 - 90
 	for card in in_hand:
 		update_card_transform(card, current_angle)
-		current_angle += card_spread
+		current_angle -= card_spread
 		
 
 func get_card_position(angle_in_degree: float) -> Vector2:
@@ -35,7 +45,7 @@ func get_card_position(angle_in_degree: float) -> Vector2:
 	
 func update_card_transform(card: Node2D, angle_in_drag: float):
 	card.set_position(get_card_position(angle_in_drag))
-	card.set_rotation(deg_to_rad(angle_in_drag+90))
+	card.set_rotation(deg_to_rad(0))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,9 +62,9 @@ func _process(delta):
 	test_card.set_position(get_card_position(card_angle))
 	
 	# Card remains upright regardless of where it is on the circle
-	test_card.set_rotation(deg_to_rad(0))
+	#test_card.set_rotation(deg_to_rad(0))
 	# Rotates the cards perpendicular to the circles curvature
-		#test_card.set_rotation(deg_to_rad(card_angle+90))
+	test_card.set_rotation(deg_to_rad(card_angle+90))
 
 	
 	

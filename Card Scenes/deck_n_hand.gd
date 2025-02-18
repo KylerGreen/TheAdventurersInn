@@ -5,6 +5,9 @@ extends Node2D
 
 @onready var spawn_point = $CanvasLayer/Spawn
 
+@onready var hand: Hand = $CanvasLayer/Hand
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,7 +20,7 @@ func _process(delta):
 
 func _on_button_pressed():
 	var action_card = action_card_scene.instantiate()
-	spawn_point.add_child(action_card)
+	hand.add_card(action_card)
 
 
 func _on_button_2_pressed():
