@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://coykl7x8228ua"]
+[gd_scene load_steps=3 format=3 uid="uid://coykl7x8228ua"]
 
-[ext_resource type="PackedScene" uid="uid://bu8bct6qfdmxi" path="res://Card Scenes/Card_temp.tscn" id="1_83ncv"]
+[ext_resource type="PackedScene" uid="uid://c1ohq85ubkwjq" path="res://Card Scenes/Card_temp.tscn" id="1_83ncv"]
+[ext_resource type="Script" path="res://Card Scenes/Cards/reaction_dodge.gd" id="1_rqe74"]
 
 [node name="ReactionDodge" type="Node2D"]
+script = ExtResource("1_rqe74")
 
 [node name="Card" parent="." instance=ExtResource("1_83ncv")]
 card_name = "Dodge"

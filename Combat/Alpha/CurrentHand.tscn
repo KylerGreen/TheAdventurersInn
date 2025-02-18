@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqkhcwr2tr01r"]
 
-[ext_resource type="Script" path="res://Combat/current_hand.gd" id="1_aeg3t"]
+[ext_resource type="Script" path="res://Combat/Alpha/current_hand.gd" id="1_aeg3t"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
