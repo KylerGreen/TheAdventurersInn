@@ -13,10 +13,10 @@ func _ready():
 	CombatSignals.Player_Dodge.connect(Dodging)
 	CombatSignals.Player_Parry.connect(Parrying)
 	CombatSignals.Player_Counter.connect(Countering)
-
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+
 
 func Bolstered():
 	pass

@@ -17,6 +17,7 @@ func _ready():
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
 
+
 func Bolstered():
 	pass
 	
