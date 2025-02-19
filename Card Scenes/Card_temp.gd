@@ -2,8 +2,8 @@
 class_name Card extends Node2D
 
 
-signal mouse_entered()
-signal mouse_exited()
+signal mouse_entered(card: Card)
+signal mouse_exited(card: Card)
 
 @export var card_name: String = "Card Name"
 @export var card_ability: String = "Card Ability"
@@ -18,9 +18,9 @@ signal mouse_exited()
 
 # Used for Highlighting the cards
 # Doesn't address the issue of highlighting multiple cards, replaced with signals
-#@onready var card_background: Sprite2D = $CardBackground
-#@onready var card_textbox: Sprite2D = $AbilityBox/Textbox
-#@onready var card_cr: Sprite2D = $CRDisplay/CrRating
+@onready var card_background: Sprite2D = $CardBackground
+@onready var card_textbox: Sprite2D = $AbilityBox/Textbox
+@onready var card_cr: Sprite2D = $CRDisplay/CrRating
 
 func _ready():
 	set_card_values(card_rank, card_name, card_ability, action_reaction)
@@ -64,21 +64,23 @@ func _process(delta):
 	update_graphics()
 
 
-#func highlight():
-	#card_background.set_modulate(Color(1, 0.5, 0.1, 1))
+func highlight(card: ):
+	card_background.set_modulate(Color(1, 0.5, 0.1, 1))
 	#card_textbox.set_modulate(Color(1, 0.5, 0.1, 1))
 	#card_cr.set_modulate(Color(1, 0.5, 0.1, 1))
 	
-#func unhighlight():
-	#card_background.set_modulate(Color(1, 1, 1, 1))
+func unhighlight():
+	card_background.set_modulate(Color(1, 1, 1, 1))
 	#card_textbox.set_modulate(Color(1, 1, 1, 1))
 	#card_cr.set_modulate(Color(1, 1, 1, 1))
 	
 func _on_area_2d_mouse_entered():
+	highlight()
 	mouse_entered.emit(self)
 
 
 func _on_area_2d_mouse_exited():
+	unhighlight()
 	mouse_exited.emit(self)
 
 

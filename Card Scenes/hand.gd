@@ -20,8 +20,8 @@ func add_card(card: Node2D):
 #	Adds a card physically; Sort via position
 	in_hand.push_back(card)
 	add_child(card)
-	card.mouse_entered.connect(handle_card_touched)
-	card.mouse_exited.connect(handle_card_untouched)
+	card.connect("mouse_entered", _handle_card_touched)
+	card.connect("mouse_exited", _handle_card_untouched)
 	reposition_cards()
 
 func remove_card(index: int) -> Node2D:
@@ -52,29 +52,27 @@ func update_card_transform(card: Node2D, angle_in_drag: float):
 # Rotation is relative to the origin point of the circle; 0 will always be straight up
 	card.set_rotation(deg_to_rad(angle_in_drag*0))
 
-func handle_card_touched(card: Card):
+func _handle_card_touched(card: Card):
 	touched.push_back(card)
-	#var card_index = in_hand.find(card)
-	#if highlight_index < card_index:
-		#if highlight_index >= 0:
-			#in_hand[highlight_index].unhighlight()
-		#highlight_index = card_index
-	##print("touched : " +card.card_name)
-	##pass
+	var card_index = in_hand.find(card)
+	if highlight_index < card_index:
+		if highlight_index >= 0:
+			in_hand[highlight_index].unhighlight()
+		highlight_index = card_index
+	print("touched : " + card.card_name)
 
-func handle_card_untouched(card: Card):
+func _handle_card_untouched(card: Card):
 	touched.remove_at(touched.find(card))
-	#var card_index = in_hand.find(card)
-	#if highlight_index == card_index:
-		#in_hand[highlight_index].unhighlight()
-		#highlight_index = -1
-	##print("untouched : " +card.card_name)
-	##pass
+	var card_index = in_hand.find(card)
+	if highlight_index == card_index:
+		in_hand[highlight_index].unhighlight()
+		highlight_index = -1
+	print("untouched : " + card.card_name)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -90,19 +88,21 @@ func _process(delta):
 		if highest_touched_index >= 0 && highest_touched_index < in_hand.size():
 			in_hand[highest_touched_index].highlight()
 
-	#if highlight_index >= 0 && highlight_index < in_hand.size():
-		#in_hand[highlight_index].highlight()
+	if highlight_index >= 0 && highlight_index < in_hand.size():
+		in_hand[highlight_index].highlight()
 
 	# tool logic
 	if (collision_shape.shape as CircleShape2D).radius != hand_radius:
 		(collision_shape.shape as CircleShape2D).set_radius(hand_radius)
 
+
+# Testing Card Functions
 	test_card.set_position(get_card_position(card_angle))
 	
 	# Card remains upright regardless of where it is on the circle
 	#test_card.set_rotation(deg_to_rad(0))
 	# Rotates the cards perpendicular to the circles curvature
-	test_card.set_rotation(deg_to_rad(card_angle+90))
+	#test_card.set_rotation(deg_to_rad(card_angle+90))
 
 	
 	
