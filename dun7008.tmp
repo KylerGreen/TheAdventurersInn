@@ -856,15 +856,6 @@ tile_set = SubResource("TileSet_fr0ad")
 unique_name_in_owner = true
 script = ExtResource("7_4b4dx")
 
-[node name="ColorRect" type="ColorRect" parent="Player3"]
-z_index = -2
-y_sort_enabled = true
-offset_left = -444.0
-offset_top = -261.0
-offset_right = 413.0
-offset_bottom = 276.0
-color = Color(0.197937, 0.197937, 0.197937, 1)
-
 [node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
 position = Vector2(2, 1)
 texture = ExtResource("6_y42l5")
@@ -875,4 +866,4 @@ shape = SubResource("RectangleShape2D_lvdfq")
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
 unique_name_in_owner = true
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
