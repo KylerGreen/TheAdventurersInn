@@ -44,7 +44,18 @@ func Healing():
 
 func Damaged():
 	if Dodge == true:
-		pass
+		HP = HP
+		Dodge = false
+	elif Counter == true:
+		HP -= %Skeleton.Damage
+		%Skeleton.HP -= (Damage * 0.5)
+		Counter = false
+	elif Parry == true:
+		HP -= (%Skeleton.Damage * 0.5)
+		Parry = false
+	elif %Skeleton.Bolster == true:
+		HP -= (%Skeleton.Damage * 1.5)
+		%Skeleton.Bolster = false
 	else:
 		HP -= %Skeleton.Damage
 	
