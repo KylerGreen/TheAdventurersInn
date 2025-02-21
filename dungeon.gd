@@ -9,7 +9,6 @@ const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room
 
 @onready var player = %Player3
 @onready var camera = $Camera2D
-
 var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
