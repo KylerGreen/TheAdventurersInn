@@ -3,7 +3,10 @@ extends Node2D
 @onready var action_card_scene: PackedScene = preload("res://Card Scenes/Cards/action_swing.tscn")
 @onready var reaction_card_scene: PackedScene = preload("res://Card Scenes/Cards/reaction_dodge.tscn")
 
-@onready var spawn_point = $CanvasLayer/Spawn
+#@onready var spawn_point = $CanvasLayer/Spawn
+
+@onready var hand: Hand = $CanvasLayer/Hand
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +20,9 @@ func _process(delta):
 
 func _on_button_pressed():
 	var action_card = action_card_scene.instantiate()
-	spawn_point.add_child(action_card)
+	hand.add_card(action_card)
 
 
 func _on_button_2_pressed():
 	var reaction_card = reaction_card_scene.instantiate()
-	spawn_point.add_child(reaction_card)
+	hand.add_card(reaction_card)

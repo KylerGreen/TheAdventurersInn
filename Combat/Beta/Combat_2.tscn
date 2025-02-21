@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b13cvbon0j1py"]
+
+[ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
+[ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
+[ext_resource type="Script" path="res://Combat/Beta/enemy_hp.gd" id="3_hrp41"]
+
+[node name="Combat2" type="Node2D"]
+script = ExtResource("1_j1xjl")
+
+[node name="Player_HP" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 221.0
+offset_top = 143.0
+offset_right = 325.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("1_ehlno")
+
+[node name="Enemy_HP" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 895.0
+offset_top = 123.0
+offset_right = 1024.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("3_hrp41")
