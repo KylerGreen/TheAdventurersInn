@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://cr8uck4i1pugl"]
+[gd_scene load_steps=29 format=4 uid="uid://cr8uck4i1pugl"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_f58k1"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_86lrf"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_gv2vo"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_fudsc"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_0hqgr"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_70ltm"]
+[ext_resource type="Script" path="res://Rooms/player_2.gd" id="4_q7wea"]
+[ext_resource type="Texture2D" uid="uid://drawdtjqd8eh1" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/angel_run_anim_f1.png" id="5_tnc7a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_veqad"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 4)
@@ -56,7 +58,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ralil"]
-texture = ExtResource("1_f58k1")
+texture = ExtResource("1_fudsc")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -114,7 +116,7 @@ texture = ExtResource("1_f58k1")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgyqy"]
-texture = ExtResource("2_86lrf")
+texture = ExtResource("2_0hqgr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -162,7 +164,7 @@ texture = ExtResource("2_86lrf")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7uyrg"]
-texture = ExtResource("3_gv2vo")
+texture = ExtResource("3_70ltm")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -342,6 +344,9 @@ pattern_16 = SubResource("TileMapPattern_xhjtf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvts3"]
 size = Vector2(16, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb34i"]
+size = Vector2(11, 12)
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
@@ -381,3 +386,20 @@ tile_set = SubResource("TileSet_c0xg6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(363, 18)
 shape = SubResource("RectangleShape2D_fvts3")
+
+[node name="Player3" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_q7wea")
+
+[node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
+position = Vector2(2, 1)
+texture = ExtResource("5_tnc7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3"]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_lb34i")
+
+[node name="Camera2D" type="Camera2D" parent="Player3"]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="Area2D" to="Player3" method="_on_area_2d_body_entered"]

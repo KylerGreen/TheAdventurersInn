@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=4 uid="uid://djyj8f2onesqp"]
+[gd_scene load_steps=27 format=4 uid="uid://drgj4sfqkh02d"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_f8vrd"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_dyewk"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_w8bhv"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_7tyj8"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_ssofd"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_aw3oi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_veqad"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 4)
@@ -34,9 +34,6 @@ tile_data = PackedInt32Array(0, 1048579, 0)
 [sub_resource type="TileMapPattern" id="TileMapPattern_i4tw8"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_voxwi"]
-tile_data = PackedInt32Array(0, 2, 0)
-
 [sub_resource type="TileMapPattern" id="TileMapPattern_6l1oe"]
 tile_data = PackedInt32Array(0, 131072, 3)
 
@@ -62,7 +59,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ralil"]
-texture = ExtResource("1_f8vrd")
+texture = ExtResource("1_7tyj8")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -120,7 +117,7 @@ texture = ExtResource("1_f8vrd")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgyqy"]
-texture = ExtResource("2_dyewk")
+texture = ExtResource("2_ssofd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -168,7 +165,7 @@ texture = ExtResource("2_dyewk")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7uyrg"]
-texture = ExtResource("3_w8bhv")
+texture = ExtResource("3_aw3oi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -345,7 +342,6 @@ pattern_14 = SubResource("TileMapPattern_3o0be")
 pattern_15 = SubResource("TileMapPattern_nbpda")
 pattern_16 = SubResource("TileMapPattern_xhjtf")
 pattern_17 = SubResource("TileMapPattern_i4tw8")
-pattern_18 = SubResource("TileMapPattern_voxwi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvts3"]
 size = Vector2(16, 48)
@@ -381,7 +377,7 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAHAOj/AwAMAAMAAAAHAOn/AwAMAAQAAAAZAOj/AwAMAAMAAAAZAOn/AwAMAAQAAAAHAPn/AwAMAAMAAAAHAPr/AwAMAAQAAAAZAPn/AwAMAAMAAAAZAPr/AwAMAAQAAAAQAOn/AwAPAAQAAAAQAPr/AwAPAAQAAAAQAPv/AwASAAIAAAAQAOr/AwASAAIAAAA=")
+tile_map_data = PackedByteArray("AAAGAOf/AwAMAAMAAAAGAOj/AwAMAAQAAAAZAOf/AwAMAAMAAAAZAOj/AwAMAAAAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Area2D" type="Area2D" parent="."]
