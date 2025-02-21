@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=8 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
+[ext_resource type="PackedScene" uid="uid://bkr66o7r8gc2n" path="res://Combat/Beta/player.tscn" id="2_8b3ah"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy_hp.gd" id="3_hrp41"]
+[ext_resource type="Script" path="res://Combat/Beta/player.gd" id="3_ugd0x"]
+[ext_resource type="PackedScene" uid="uid://dgu5khf772ywg" path="res://Combat/Beta/skeleton.tscn" id="4_dlgxc"]
+[ext_resource type="Script" path="res://Combat/Beta/skeleton.gd" id="5_biuxo"]
 
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
 
-[node name="Player_HP" type="Label" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_8b3ah")]
+unique_name_in_owner = true
+script = ExtResource("3_ugd0x")
+
+[node name="Player_HP" type="Label" parent="Player"]
 unique_name_in_owner = true
 offset_left = 221.0
 offset_top = 143.0
@@ -17,7 +25,11 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_ehlno")
 
-[node name="Enemy_HP" type="Label" parent="."]
+[node name="Skeleton" parent="." instance=ExtResource("4_dlgxc")]
+unique_name_in_owner = true
+script = ExtResource("5_biuxo")
+
+[node name="Enemy_HP" type="Label" parent="Skeleton"]
 unique_name_in_owner = true
 offset_left = 895.0
 offset_top = 123.0
