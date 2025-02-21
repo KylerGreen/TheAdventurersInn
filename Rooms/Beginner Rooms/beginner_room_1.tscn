@@ -394,6 +394,7 @@ shape = SubResource("RectangleShape2D_fvts3")
 
 [node name="Player3" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-39, 81)
 script = ExtResource("4_y6emt")
 
 [node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
