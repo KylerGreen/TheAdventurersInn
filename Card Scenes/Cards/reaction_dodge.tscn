@@ -12,3 +12,6 @@ card_ability = "Avoid 1 Attack"
 action_reaction = "Reaction"
 
 [node name="Card Art" type="Sprite2D" parent="."]
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

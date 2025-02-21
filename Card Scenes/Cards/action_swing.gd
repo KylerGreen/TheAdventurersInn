@@ -17,8 +17,9 @@ func highlight():
 func unhighlight():
 	$Card.unhighlight()
 
-func _on_card_mouse_entered(card: Card):
-	mouse_entered.emit(self)
 
-func _on_card_mouse_exited(card: Card):
-	mouse_exited.emit(self)
+func _on_card_mouse_entered(card: Card) -> void:
+	mouse_entered.emit(card)
+
+func _on_card_mouse_exited(card: Card) -> void:
+	mouse_exited.emit(card)

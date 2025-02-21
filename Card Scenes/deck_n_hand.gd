@@ -24,6 +24,5 @@ func _on_button_pressed():
 
 
 func _on_button_2_pressed():
-	pass
-	#var reaction_card = reaction_card_scene.instantiate()
-	#spawn_point.add_child(reaction_card)
+	var reaction_card = reaction_card_scene.instantiate()
+	hand.add_card(reaction_card)

@@ -14,3 +14,6 @@ action_reaction = "Action"
 
 [node name="Card Art" type="Sprite2D" parent="."]
 position = Vector2(118, 104)
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

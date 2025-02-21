@@ -2,23 +2,31 @@ extends Label
 
 var HP = 100
 var Bolster = false
+var Dodge = false
+var Parry = false
+var Counter = false
 var Base = 0
 
 func _ready():
-	CombatSignals.Player_Attack.connect(DMG_Recieved)
-	CombatSignals.Player_Bolster.connect(Bolstered)
 	%Player_HP.text = str('HP: ', HP)
-
-func Bolstered():
-	Bolster = true
-
-func DMG_Recieved():
-	if Bolster == true:
-		HP -= (30 * 1.3)
-	else:
-		HP -= 30
-	if HP <= 0:
-		HP = 0
+	CombatSignals.Player_Bolster.connect(Bolstered)
+	CombatSignals.Player_Dodge.connect(Dodging)
+	CombatSignals.Player_Parry.connect(Parrying)
+	CombatSignals.Player_Counter.connect(Countering)
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+
+
+func Bolstered():
+	pass
+	
+func Dodging():
+	pass
+	
+func Parrying():
+	pass
+	
+func Countering():
+	pass
+	
