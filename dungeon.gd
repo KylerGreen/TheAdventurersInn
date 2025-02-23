@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1_r.tscn"), 
+const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), 
 preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn")]
 
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), ]
