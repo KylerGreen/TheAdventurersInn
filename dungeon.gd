@@ -1,9 +1,9 @@
 extends Node2D
 
-const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), 
+const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1_r.tscn"), 
 preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn")]
 
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), ]
 
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 
@@ -12,8 +12,8 @@ const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room
 var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
-var room_width = 280
-var room_margin = 50
+var room_width = 380
+var room_margin = 100
 
 func _ready():
 	player.global_position = Vector2(15,-15)
