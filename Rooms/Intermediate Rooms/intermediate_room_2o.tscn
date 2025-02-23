@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ihtfadpjia6b"]
+[gd_scene load_steps=27 format=4 uid="uid://dft4n364xsogu"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_aa21v"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_12a07"]
