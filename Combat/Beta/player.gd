@@ -51,8 +51,12 @@ func Damaged():
 		%Skeleton.HP -= (Damage * 0.5)
 		Counter = false
 	elif Parry == true:
-		HP -= (%Skeleton.Damage * 0.5)
-		Parry = false
+		if %Skeleton.Bolster == true:
+			HP -= %Skeleton.Damage
+			Parry = false
+		else:
+			HP -= (%Skeleton.Damage * 0.5)
+			Parry = false
 	elif %Skeleton.Bolster == true:
 		HP -= (%Skeleton.Damage * 1.5)
 		%Skeleton.Bolster = false
