@@ -72,6 +72,7 @@ func highlight(card: Card):
 	
 func unhighlight(card: Card):
 	self.card_background.set_modulate(Color(1, 1, 1, 1))
+	print("binch")
 	#card_textbox.set_modulate(Color(1, 1, 1, 1))
 	#card_cr.set_modulate(Color(1, 1, 1, 1))
 	pass
