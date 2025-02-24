@@ -14,7 +14,6 @@ extends Node2D
 # Holds the cards in an array
 var in_hand : Array = []
 var touched: Array = []
-var highlight_index: int = -1
 
 func add_card(card: Node2D):
 #	Adds a card physically; Sort via position
@@ -52,23 +51,17 @@ func update_card_transform(card: Node2D, angle_in_drag: float):
 # Rotation is relative to the origin point of the circle; 0 will always be straight up
 	card.set_rotation(deg_to_rad(angle_in_drag*0))
 
-func _handle_card_touched(card: Card):
+func _handle_card_touched(card):
 	touched.push_back(card)
-	var card_index = in_hand.find(card)
-	if highlight_index < card_index:
-		if highlight_index >= 0:
-			in_hand[highlight_index].unhighlight()
-		highlight_index = card_index
+		
 	print("touched : " + card.card_name)
 
-func _handle_card_untouched(card: Card):
-	touched.remove_at(touched.find(card))
-	var card_index = in_hand.find(card)
-	if highlight_index == card_index:
-		in_hand[highlight_index].unhighlight()
-		highlight_index = -1
-	print("untouched : " + card.card_name)
+	
 
+func _handle_card_untouched(card):
+	touched.remove_at(touched.find(card))
+
+	print("untouched : " + card.card_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -77,8 +70,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for card in in_hand:
-		card.unhighlight()
+	#for card in in_hand:
+		#card.unhighlight(card)
 
 	if !touched.is_empty():
 		var highest_touched_index: int = -1
@@ -87,9 +80,6 @@ func _process(delta):
 			
 		if highest_touched_index >= 0 && highest_touched_index < in_hand.size():
 			in_hand[highest_touched_index].highlight()
-
-	if highlight_index >= 0 && highlight_index < in_hand.size():
-		in_hand[highlight_index].highlight()
 
 	# tool logic
 	if (collision_shape.shape as CircleShape2D).radius != hand_radius:

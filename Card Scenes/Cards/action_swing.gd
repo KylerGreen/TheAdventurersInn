@@ -14,8 +14,8 @@ func on_Player_Action():
 func highlight():
 	$Card.highlight()
 
-func unhighlight():
-	$Card.unhighlight()
+func unhighlight(card: Card):
+	$Card.unhighlight(self)
 
 
 func _on_card_mouse_entered(card: Card) -> void:

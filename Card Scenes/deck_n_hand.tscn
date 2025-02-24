@@ -7,7 +7,7 @@
 script = ExtResource("1_nbc0s")
 
 [node name="Testing Camera" type="Camera2D" parent="."]
-position = Vector2(582, 328)
+position = Vector2(639, 357)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
