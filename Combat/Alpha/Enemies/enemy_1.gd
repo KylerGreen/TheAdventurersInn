@@ -94,6 +94,7 @@ func _on_player_attack():
 		%Enemy1_Animation.play("Death")
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
+		
 		%DamageOnEnemy.queue_free()
 
 func _on_display_dmg_2_timeout():

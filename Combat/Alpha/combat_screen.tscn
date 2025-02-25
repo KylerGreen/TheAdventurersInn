@@ -159,6 +159,7 @@ wait_time = 1.25
 [connection signal="attack" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_attack"]
 [connection signal="counter" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_counter"]
 [connection signal="defend" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_defend"]
+[connection signal="delete" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="." method="_on_player_hand_delete"]
 [connection signal="dodge" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_dodge"]
 [connection signal="heal" from="ColorRect/ColorRect2/ColorRect3/PlayerHand" to="Player" method="_on_player_hand_heal"]
 [connection signal="attack" from="Player" to="Enemy1" method="_on_player_attack"]

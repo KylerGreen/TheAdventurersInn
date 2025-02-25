@@ -102,8 +102,13 @@ offset_bottom = 152.074
 theme_override_font_sizes/font_size = 10
 text = "Reaction"
 
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Delete"
+
 [connection signal="pressed" from="HBoxContainer/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="HBoxContainer/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="HBoxContainer/Counter" to="." method="_on_counter_pressed"]
 [connection signal="pressed" from="HBoxContainer/Heal" to="." method="_on_heal_pressed"]
 [connection signal="pressed" from="HBoxContainer/Dodge" to="." method="_on_dodge_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

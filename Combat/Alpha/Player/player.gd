@@ -78,6 +78,7 @@ func _on_enemy_attack_timeout():
 		%Player_Animation.play("Death")
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
+		get_tree().paused = true
 		%DamageOnPlayer.queue_free()
 	%DisplayDmg.start()
 	%PlayerHand.visible = true

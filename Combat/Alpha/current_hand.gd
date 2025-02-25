@@ -5,7 +5,7 @@ signal defend
 signal heal
 signal counter
 signal dodge
-
+signal delete
 
 
 func _on_attack_pressed():
@@ -26,3 +26,7 @@ func _on_heal_pressed():
 
 func _on_dodge_pressed():
 	dodge.emit()
+
+
+func _on_button_pressed() -> void:
+	delete.emit()
