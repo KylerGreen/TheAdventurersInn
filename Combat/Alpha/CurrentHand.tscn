@@ -104,7 +104,7 @@ text = "Reaction"
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Delete"
+text = "Run"
 
 [connection signal="pressed" from="HBoxContainer/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="HBoxContainer/Defend" to="." method="_on_defend_pressed"]
