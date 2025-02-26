@@ -396,7 +396,6 @@ tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Switch2" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
