@@ -866,4 +866,3 @@ shape = SubResource("RectangleShape2D_lvdfq")
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
 unique_name_in_owner = true
-zoom = Vector2(4, 4)
