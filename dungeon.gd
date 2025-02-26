@@ -7,13 +7,15 @@ const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/inter
 
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 
+const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
+
 @onready var player = %Player3
 @onready var camera = $Camera2D
 var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
-var room_width = 380
-var room_margin = 100
+var room_width = 280
+var room_margin = 40
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -47,8 +49,11 @@ func _spawn_new_room(pos: Vector2):
 	elif active_rooms.size() < 10:
 		room_scene = INTERMEDIATE_ROOMS.pick_random()
 
-	else: 
+	elif active_rooms.size()< 19: 
 		room_scene = ADVANCED_ROOMS.pick_random()
+		
+	else: 
+		room_scene = game_over
 		
 	if room_scene == null:
 		print("Error: No room selected")
