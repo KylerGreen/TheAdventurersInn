@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://duc4gexk1ha3p"]
+
+[node name="GameOverScreen" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 446.0
+offset_top = 294.0
+offset_right = 880.0
+offset_bottom = 462.0
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
