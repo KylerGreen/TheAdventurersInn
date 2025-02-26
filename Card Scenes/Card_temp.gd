@@ -64,26 +64,29 @@ func _process(delta):
 	update_graphics()
 
 
-func highlight(card: Card):
-	self.card_background.set_modulate(Color(1, 0.5, 0.1, 1))
+func highlight():
+	$CardBackground.set_modulate(Color(1, 0.5, 0.1, 1))
+	print(self.name)
+	#self.card_background.set_modulate(Color(1, 0.5, 0.1, 1))
 	print("PRINTING")
 	#card_textbox.set_modulate(Color(1, 0.5, 0.1, 1))
 	#card_cr.set_modulate(Color(1, 0.5, 0.1, 1))
 	
-func unhighlight(card: Card):
+func unhighlight():
 	self.card_background.set_modulate(Color(1, 1, 1, 1))
-	print("binch")
+	#print("bingo")
 	#card_textbox.set_modulate(Color(1, 1, 1, 1))
 	#card_cr.set_modulate(Color(1, 1, 1, 1))
 	pass
 	
 func _on_area_2d_mouse_entered():
-	highlight(self)
+	print("ENTERED MOUSE")
+	highlight()
 	mouse_entered.emit(self)
 
 
 func _on_area_2d_mouse_exited():
-	unhighlight(self)
+	unhighlight()
 	mouse_exited.emit(self)
 
 

@@ -70,8 +70,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#for card in in_hand:
-		#card.unhighlight(card)
+	for card in in_hand:
+		card.unhighlight()
 
 	if !touched.is_empty():
 		var highest_touched_index: int = -1
@@ -87,7 +87,7 @@ func _process(delta):
 
 
 # Testing Card Functions
-	test_card.set_position(get_card_position(card_angle))
+	#test_card.set_position(get_card_position(card_angle))
 	
 	# Card remains upright regardless of where it is on the circle
 	#test_card.set_rotation(deg_to_rad(0))
