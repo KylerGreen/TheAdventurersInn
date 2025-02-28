@@ -17,12 +17,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		only_once = false
 	
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if "Player3" in body.name:
 		get_tree().paused = true
 		var combat = combat_screen.instantiate()
 		get_parent().add_child(combat)
 		combat.process_mode = Node.PROCESS_MODE_ALWAYS
 		get_parent().add_child(combat)
+		combat.position = Vector2(150, 150)
 		
 		
 		
