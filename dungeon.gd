@@ -14,6 +14,7 @@ var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
 var room_width = 280
+var room_height = 400
 var room_margin = 40
 var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 
@@ -28,7 +29,7 @@ func _process(_delta) -> void:
 		var last_room = active_rooms.back()
 		var next_room = last_room.position + Vector2(room_width + room_margin, 0)
 		
-		if player.global_position.x >= last_room.position.x + (room_width/2):
+		if player.global_position.x >= last_room.position.x + (room_width/2): 
 			print("Player moved far enough, spawning new room...")
 			
 			if Vector2i(next_room) not in occupied_positions:
