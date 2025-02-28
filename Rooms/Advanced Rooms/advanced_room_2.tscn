@@ -351,7 +351,7 @@ pattern_18 = SubResource("TileMapPattern_voxwi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvts3"]
 size = Vector2(16, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwfji"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghc2u"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -398,7 +398,7 @@ position = Vector2(163, 138)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_kwfji")
+shape = SubResource("RectangleShape2D_ghc2u")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 texture = ExtResource("4_y2soy")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cln5o4snj8geo"]
+
+[ext_resource type="Script" path="res://Rooms/Room Enemies/blue_enemy.gd" id="1_d37s1"]
+[ext_resource type="Texture2D" uid="uid://ds65n833t5wvh" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/ice_zombie_anim_f0.png" id="2_t87be"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_breby"]
+
+[node name="BlueEnemy" type="Node2D"]
+script = ExtResource("1_d37s1")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(163, 138)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_breby")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("2_t87be")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
