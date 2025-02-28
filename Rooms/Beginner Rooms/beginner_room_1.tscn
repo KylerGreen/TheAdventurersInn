@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dr6lv1sxyk816"]
+[gd_scene load_steps=33 format=4 uid="uid://dr6lv1sxyk816"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_2ep4x"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_oflc4"]
@@ -354,6 +354,14 @@ size = Vector2(16, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2v3t"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6037c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
@@ -436,6 +444,23 @@ shape = SubResource("RectangleShape2D_w2v3t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 texture = ExtResource("6_ieg8t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_left = -68.0
+offset_top = 170.0
+offset_right = 153.0
+offset_bottom = 238.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6037c")
 
 [connection signal="body_entered" from="Area2D" to="Player3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Player3" method="_on_area_2d_2_body_entered"]
