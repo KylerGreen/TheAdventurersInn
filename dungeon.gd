@@ -15,12 +15,14 @@ var occupied_positions := {}
 var max_rooms := 20
 var room_width = 280
 var room_margin = 40
+var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 
 func _ready():
 	player.global_position = Vector2(15,-15)
 	_spawn_new_room(Vector2(0,0))
 	print("Active rooms after init:", active_rooms.size())
-	
+	DungeonSignals.Encounter.connect(Encountered)
+
 func _process(_delta) -> void:
 	if active_rooms.size() > 0:
 		var last_room = active_rooms.back()
@@ -73,4 +75,14 @@ func _spawn_new_room(pos: Vector2):
 		var old_room = active_rooms.pop_front()
 		occupied_positions.erase(Vector2i(old_room.position))
 		old_room.queue_free()	
+		
+func Encountered():
+	var combat = combat_screen.instantiate()
+	combat.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().current_scene.add_child(combat)
+
+	combat.position = %Player3.position
+	get_tree().paused = true
+	%Camera2D.zoom = Vector2(1, 1)
+
 	
