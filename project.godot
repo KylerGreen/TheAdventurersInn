@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 
 CombatSignals="*res://Combat/Beta/combat_signals.gd"
 SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
-DungoenSignals="*res://Dungeon/DungeonSignals.gd"
+DungeonSignals="*res://Dungeon/DungeonSignals.gd"
 
 [display]
 
