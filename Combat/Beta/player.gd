@@ -4,6 +4,16 @@ extends CharacterBody2D
 var HP = 100
 var Heals = 15
 var Damage = 20
+var XP = 0
+
+#Player Inventory
+var Gold = 0
+var Sword = false
+var Shield = false
+var Armor = false
+var Tempered_Sword = false
+var Strong_Armor = false
+var Tower_Shield = false
 
 #Combat States
 var Bolster = false
@@ -25,6 +35,10 @@ func _ready():
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+	
+	####### Create a Level up function #######
+	if XP >= 100:
+		pass
 
 
 func Bolstered():
