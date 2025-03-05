@@ -25,10 +25,9 @@ func _process(_delta) -> void:
 	if active_rooms.size() > 0:
 		var last_room = active_rooms.back()
 		
-		var allowed_exits = last_room.allowed_exits if last_room.has_method("get") else []
+		var allowed_exits = []
+		allowed_exits = last_room.allowed_exits if last_room.has_method("get") else []
 		
-		if not allowed_exits is Array:
-			allowed_exits = []
 			
 		var next_positions = {} 
 		if "right" in allowed_exits:
@@ -48,6 +47,7 @@ func _process(_delta) -> void:
 func _spawn_new_room(pos: Vector2):
 	var pos_int = Vector2i(pos)
 	if pos_int in occupied_positions:
+		
 		print("Room at", pos, "already occupied")
 		return
 	var room_scene: PackedScene
