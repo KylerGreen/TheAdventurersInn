@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var allowed_exits: Array = ["right"]
 #var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 #
 #func _ready():
