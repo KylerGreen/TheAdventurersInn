@@ -1,7 +1,7 @@
 extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_4.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
@@ -11,7 +11,7 @@ var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
 var room_width = 280
-var room_height = 480
+var room_height = 280
 var room_margin = 40
 var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 
@@ -24,26 +24,17 @@ func _ready():
 func _process(_delta) -> void:
 	if active_rooms.size() > 0:
 		var last_room = active_rooms.back()
-		
-		var allowed_exits = []
-		allowed_exits = last_room.allowed_exits if last_room.has_method("get") else []
-		
-			
-		var next_positions = {} 
-		if "right" in allowed_exits:
-			next_positions["right"] = last_room.position + Vector2(room_width + room_margin, 0)
-		if "up" in allowed_exits:
-			next_positions["up"] = last_room.position + Vector2(0, -(room_height + room_margin))
-		if "down" in allowed_exits:
-			next_positions["down"] = last_room.position + Vector2(0, room_height + room_margin)
-		
-		for direction in next_positions.keys():
-			var next_pos = next_positions[direction]
+		var next_room = last_room.position + Vector2(room_width + room_margin, 0)
 
-			if Vector2i(next_pos) not in occupied_positions:
-				_spawn_new_room(next_pos)
-		
-		
+		if player.global_position.x >= last_room.position.x + (room_width/2):
+			print("Player moved far enough, spawning new room...")
+
+			if Vector2i(next_room) not in occupied_positions:
+				_spawn_new_room(next_room)
+
+		else: 
+			print("Room at", next_room, "already exists")
+			
 func _spawn_new_room(pos: Vector2):
 	var pos_int = Vector2i(pos)
 	if pos_int in occupied_positions:

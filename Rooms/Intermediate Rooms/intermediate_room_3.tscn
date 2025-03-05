@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=4 uid="uid://b2ki86fvi65ta"]
+[gd_scene load_steps=28 format=4 uid="uid://b2ki86fvi65ta"]
 
-[ext_resource type="Script" path="res://Rooms/Intermediate Rooms/intermediate_room_3.gd" id="1_6tulm"]
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_qem8i"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_isvxp"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_b4ja8"]
@@ -353,7 +352,6 @@ size = Vector2(16, 48)
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_6tulm")
 
 [node name="The Skull" type="TileMapLayer" parent="."]
 z_index = -1
