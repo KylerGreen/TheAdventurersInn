@@ -19,10 +19,10 @@ texture = ExtResource("8_ra4em")
 
 [node name="PlayerHandSpace" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.890196)
-offset_left = -943.0
+offset_left = -1150.0
 offset_top = 3.0
-offset_right = 1038.0
-offset_bottom = 560.0
+offset_right = 1157.0
+offset_bottom = 649.0
 color = Color(0.255659, 0.255659, 0.255659, 1)
 
 [node name="Ground" type="ColorRect" parent="BattleBackground"]
@@ -40,15 +40,16 @@ offset_right = -36.8826
 offset_bottom = 75.0
 color = Color(0.47788, 0.47788, 0.47788, 1)
 
-[node name="Label" type="Label" parent="BattleBackground/ActionSlot"]
+[node name="ActionLabel" type="Label" parent="BattleBackground/ActionSlot"]
 layout_mode = 0
-offset_left = 41.9393
-offset_top = 107.178
-offset_right = 164.939
-offset_bottom = 162.178
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 185.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Action"
+horizontal_alignment = 1
 
 [node name="ReactionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
@@ -58,12 +59,12 @@ offset_right = 238.117
 offset_bottom = 75.0
 color = Color(0.47788, 0.47788, 0.47788, 1)
 
-[node name="Label" type="Label" parent="BattleBackground/ReactionSlot"]
+[node name="ReactionLabel" type="Label" parent="BattleBackground/ReactionSlot"]
 layout_mode = 0
-offset_left = 20.9878
-offset_top = 107.563
-offset_right = 188.988
-offset_bottom = 162.563
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 185.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Reaction"
