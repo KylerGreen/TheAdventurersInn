@@ -9,7 +9,7 @@
 script = ExtResource("1_d37s1")
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(163, 138)
+position = Vector2(-2, 2)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 unique_name_in_owner = true

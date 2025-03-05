@@ -1,14 +1,11 @@
 [gd_scene load_steps=29 format=4 uid="uid://dr6lv1sxyk816"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_2ep4x"]
+[ext_resource type="Script" path="res://Rooms/Beginner Rooms/beginner_room_1.gd" id="1_kf8o2"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_oflc4"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_1da2d"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="6_76jqx"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_0j6vv"]
-
-[sub_resource type="GDScript" id="GDScript_2iogx"]
-script/source = "extends Node2D
-"
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fka8p"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 4)
@@ -351,7 +348,7 @@ pattern_17 = SubResource("TileMapPattern_an4r5")
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_2iogx")
+script = ExtResource("1_kf8o2")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_index = -1

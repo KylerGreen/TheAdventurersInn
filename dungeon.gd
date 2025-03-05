@@ -22,6 +22,7 @@ func _ready():
 	player.global_position = Vector2(15,-15)
 	_spawn_new_room(Vector2(0,0))
 	print("Active rooms after init:", active_rooms.size())
+	# Room Signals
 	DungeonSignals.Encounter.connect(Encountered)
 
 func _process(_delta) -> void:
@@ -81,9 +82,6 @@ func Encountered():
 	var combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
-
 	combat.position = %Player3.position
 	get_tree().paused = true
-	%Camera2D.zoom = Vector2(1, 1)
-
-	
+	%Camera2D.zoom = Vector2(2, 2)
