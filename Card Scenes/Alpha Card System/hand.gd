@@ -1,5 +1,6 @@
 @tool
-class_name Hand extends Node2D
+class_name Hand
+extends Node2D
 
 @export var hand_radius: int = 100
 @export var card_angle: float = -90
