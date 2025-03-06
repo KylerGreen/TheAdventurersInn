@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxgk44up8rslb"]
 
-[ext_resource type="Script" path="res://Card Scenes/Cards/action_disarm.gd" id="1_8d3pa"]
+[ext_resource type="Script" path="res://Card Scenes/ScriptsCards/action_disarm.gd" id="1_8d3pa"]
 [ext_resource type="PackedScene" uid="uid://c1ohq85ubkwjq" path="res://Card Scenes/Card_temp.tscn" id="1_86wpj"]
 
 [node name="ActionDisarm" type="Node2D"]
@@ -11,6 +11,3 @@ card_name = "Disarm"
 card_ability = "Enemy cannot play an Attack next turn."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
-[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://buh3412b0qtpp"]
 
-[ext_resource type="PackedScene" uid="uid://biim2lxri0akl" path="res://example/field/field.tscn" id="1_fkhir"]
-[ext_resource type="PackedScene" uid="uid://3trgkf0u68ry" path="res://example/card/card.tscn" id="2_5f2as"]
+[ext_resource type="PackedScene" uid="uid://biim2lxri0akl" path="res://Card Scenes/clickndrag/field/field.tscn" id="1_fkhir"]
+[ext_resource type="PackedScene" uid="uid://3trgkf0u68ry" path="res://Card Scenes/clickndrag/card/card.tscn" id="2_5f2as"]
 
 [node name="Game" type="Node"]
 

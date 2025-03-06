@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds3n15crtqygr"]
 
 [ext_resource type="PackedScene" uid="uid://c1ohq85ubkwjq" path="res://Card Scenes/Card_temp.tscn" id="1_3bjwy"]
-[ext_resource type="Script" path="res://Card Scenes/Cards/action_heal.gd" id="1_fc1q8"]
+[ext_resource type="Script" path="res://Card Scenes/ScriptsCards/action_heal.gd" id="1_fc1q8"]
 
 [node name="ActionHeal" type="Node2D"]
 script = ExtResource("1_fc1q8")

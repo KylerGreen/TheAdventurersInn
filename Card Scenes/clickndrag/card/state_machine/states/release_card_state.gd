@@ -14,6 +14,9 @@ func _enter():
 		card.home_field.card_reposition(card)
 	else:
 		var new_field: Field = field_areas[0].get_parent()
-		new_field.set_new_card(card)
+		if new_field:
+			new_field.set_new_card(card)
+		else:
+			print("Error: The Parent is INCORRECT")
 
 	transitioned.emit("idle")
