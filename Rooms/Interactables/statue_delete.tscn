@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://8a0d1xlndys7"]
+
+[ext_resource type="Script" path="res://Rooms/Interactables/statue_delete.gd" id="1_ccwnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s68y"]
+size = Vector2(16, 17)
+
+[node name="StatueDelete" type="Node2D"]
+script = ExtResource("1_ccwnb")
+
+[node name="SwitchA2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchA2D"]
+shape = SubResource("RectangleShape2D_7s68y")

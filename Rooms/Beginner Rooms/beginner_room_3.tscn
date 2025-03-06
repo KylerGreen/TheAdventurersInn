@@ -1,37 +1,10 @@
-[gd_scene load_steps=52 format=4 uid="uid://baqbpv1h5ch1u"]
+[gd_scene load_steps=50 format=4 uid="uid://bls8o8mk71nme"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_uohhw"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_vtjlg"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_u3cam"]
-[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="5_7o43w"]
-[ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="5_y6gdt"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_b7rdp"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_adtm8"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_62171"]
 
-[sub_resource type="GDScript" id="GDScript_4jdr2"]
-script/source = "extends Node2D
-
-var combat_screen = preload(\"res://Combat/Alpha/combat_screen.tscn\")
-
-func _ready():
-	DungeonSignals.Encounter.connect(Encountered)
-	#DungeonSignals.OpenSwitchDoor.connect(OpenSwitchDoor)
-
-func Encountered():
-	get_tree().paused = true
-	var combat = combat_screen.instantiate()
-	get_parent().add_child(combat)
-	combat.process_mode = Node.PROCESS_MODE_ALWAYS
-	get_parent().add_child(combat)
-	combat.position = Vector2(-150, 150)
-
-#func OpenSwitchDoor():
-	#var only_once : bool = true
-	#if only_once:
-		#%Doorway.queue_free()
-		#%SwitchA2D.queue_free()
-		#%Switch.queue_free()
-		#%Switch2.set_visible(true)
-		#only_once = false
-"
+[sub_resource type="GDScript" id="GDScript_ar81x"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_veqad"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 4)
@@ -91,7 +64,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ralil"]
-texture = ExtResource("1_uohhw")
+texture = ExtResource("1_b7rdp")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -149,7 +122,7 @@ texture = ExtResource("1_uohhw")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgyqy"]
-texture = ExtResource("2_vtjlg")
+texture = ExtResource("2_adtm8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -197,7 +170,7 @@ texture = ExtResource("2_vtjlg")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7uyrg"]
-texture = ExtResource("3_u3cam")
+texture = ExtResource("3_62171")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -430,8 +403,8 @@ tile_data = PackedInt32Array(0, 196608, 0)
 [sub_resource type="TileMapPattern" id="TileMapPattern_vkqja"]
 tile_data = PackedInt32Array(0, 131072, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1yme"]
-texture = ExtResource("1_uohhw")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjbpt"]
+texture = ExtResource("1_b7rdp")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -488,8 +461,8 @@ texture = ExtResource("1_uohhw")
 10:3/0 = 0
 11:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hd5kf"]
-texture = ExtResource("2_vtjlg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru1te"]
+texture = ExtResource("2_adtm8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -536,8 +509,8 @@ texture = ExtResource("2_vtjlg")
 4:6/0 = 0
 5:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4mwm"]
-texture = ExtResource("3_u3cam")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4qpo"]
+texture = ExtResource("3_62171")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -691,11 +664,11 @@ texture = ExtResource("3_u3cam")
 15:4/0/y_sort_origin = 12
 15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75, 11.875, -7.75, 17.25, -3.5, 20.875, 2.75, 20.75, 7.625, 17.625, 5.625, 11.625)
 
-[sub_resource type="TileSet" id="TileSet_t77id"]
+[sub_resource type="TileSet" id="TileSet_n7od4"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_d1yme")
-sources/2 = SubResource("TileSetAtlasSource_hd5kf")
-sources/3 = SubResource("TileSetAtlasSource_w4mwm")
+sources/0 = SubResource("TileSetAtlasSource_cjbpt")
+sources/2 = SubResource("TileSetAtlasSource_ru1te")
+sources/3 = SubResource("TileSetAtlasSource_w4qpo")
 pattern_0 = SubResource("TileMapPattern_fka8p")
 pattern_1 = SubResource("TileMapPattern_5ntmc")
 pattern_2 = SubResource("TileMapPattern_58yjw")
@@ -715,9 +688,18 @@ pattern_15 = SubResource("TileMapPattern_m6dk4")
 pattern_16 = SubResource("TileMapPattern_gqqcq")
 pattern_17 = SubResource("TileMapPattern_an4r5")
 
-[node name="AdvRoom" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_4jdr2")
+script = SubResource("GDScript_ar81x")
+
+[node name="The Skull" type="TileMapLayer" parent="."]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-125, 250)
+tile_map_data = PackedByteArray("AAAUAPb/AgABAAUAAAA=")
+tile_set = SubResource("TileSet_c0xg6")
+y_sort_origin = 1
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_index = -1
@@ -738,7 +720,6 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAFAPD/AwAMAAMAAAAFAPH/AwAMAAAAAAAPAPH/AwAMAAMAAAAPAPL/AwAMAAAAAAAFAPn/AwAMAAMAAAAFAPr/AwAMAAAAAAAQAPv/AwAMAAMAAAAQAPz/AwAMAAAAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Doorway" type="TileMapLayer" parent="."]
@@ -747,28 +728,4 @@ y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
-tile_set = SubResource("TileSet_t77id")
-
-[node name="Switch" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-y_sort_enabled = true
-use_parent_material = true
-position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAQAP3/AgACAAUAAAA=")
-tile_set = SubResource("TileSet_t77id")
-
-[node name="Switch2" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-visible = false
-y_sort_enabled = true
-use_parent_material = true
-position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
-tile_set = SubResource("TileSet_t77id")
-
-[node name="BlueEnemy" parent="." instance=ExtResource("5_7o43w")]
-position = Vector2(137, 137)
-rotation = 0.0175188
-
-[node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
-position = Vector2(110, 222)
+tile_set = SubResource("TileSet_n7od4")

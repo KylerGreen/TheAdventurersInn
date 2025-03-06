@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=9 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
@@ -7,9 +7,67 @@
 [ext_resource type="Script" path="res://Combat/Beta/player.gd" id="3_ugd0x"]
 [ext_resource type="PackedScene" uid="uid://dgu5khf772ywg" path="res://Combat/Beta/skeleton.tscn" id="4_dlgxc"]
 [ext_resource type="Script" path="res://Combat/Beta/skeleton.gd" id="5_biuxo"]
+[ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
+
+[node name="BattleBackground" type="Sprite2D" parent="."]
+position = Vector2(602, 394)
+scale = Vector2(0.762346, 0.762346)
+texture = ExtResource("8_ra4em")
+
+[node name="PlayerHandSpace" type="ColorRect" parent="BattleBackground"]
+self_modulate = Color(1, 1, 1, 0.890196)
+offset_left = -1150.0
+offset_top = 3.0
+offset_right = 1157.0
+offset_bottom = 649.0
+color = Color(0.255659, 0.255659, 0.255659, 1)
+
+[node name="Ground" type="ColorRect" parent="BattleBackground"]
+offset_left = -1154.0
+offset_top = -52.0648
+offset_right = 1155.0
+offset_bottom = 2.93521
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="ActionSlot" type="ColorRect" parent="BattleBackground"]
+self_modulate = Color(1, 1, 1, 0.839216)
+offset_left = -236.883
+offset_top = -200.0
+offset_right = -36.8826
+offset_bottom = 75.0
+color = Color(0.47788, 0.47788, 0.47788, 1)
+
+[node name="ActionLabel" type="Label" parent="BattleBackground/ActionSlot"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 185.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Action"
+horizontal_alignment = 1
+
+[node name="ReactionSlot" type="ColorRect" parent="BattleBackground"]
+self_modulate = Color(1, 1, 1, 0.839216)
+offset_left = 38.1174
+offset_top = -200.0
+offset_right = 238.117
+offset_bottom = 75.0
+color = Color(0.47788, 0.47788, 0.47788, 1)
+
+[node name="ReactionLabel" type="Label" parent="BattleBackground/ReactionSlot"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 185.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Reaction"
 
 [node name="Player" parent="." instance=ExtResource("2_8b3ah")]
 unique_name_in_owner = true
@@ -17,10 +75,10 @@ script = ExtResource("3_ugd0x")
 
 [node name="Player_HP" type="Label" parent="Player"]
 unique_name_in_owner = true
-offset_left = 221.0
-offset_top = 143.0
-offset_right = 325.0
-offset_bottom = 251.0
+offset_left = 219.0
+offset_top = 126.0
+offset_right = 323.0
+offset_bottom = 234.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_ehlno")
@@ -31,10 +89,10 @@ script = ExtResource("5_biuxo")
 
 [node name="Enemy_HP" type="Label" parent="Skeleton"]
 unique_name_in_owner = true
-offset_left = 895.0
-offset_top = 123.0
-offset_right = 1024.0
-offset_bottom = 258.0
+offset_left = 897.0
+offset_top = 131.0
+offset_right = 1026.0
+offset_bottom = 266.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("3_hrp41")

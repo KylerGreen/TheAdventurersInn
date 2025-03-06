@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gvgnnq7p12q7"]
+
+[ext_resource type="Script" path="res://Rooms/Interactables/door_switch.gd" id="1_78i14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fbrc"]
+size = Vector2(16, 17)
+
+[node name="DoorSwitch" type="Node2D"]
+script = ExtResource("1_78i14")
+
+[node name="SwitchA2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchA2D"]
+shape = SubResource("RectangleShape2D_4fbrc")
+
+[connection signal="body_entered" from="SwitchA2D" to="." method="_on_switch_a_2d_body_entered"]
