@@ -8,17 +8,13 @@ var XP = 0
 
 #Player Inventory
 var Gold = 0
-var Sword = false
-var Shield = false
-var Armor = false
-var Tempered_Sword = false
-var Strong_Armor = false
-var Tower_Shield = false
+var Sword = 0
+var Armor = 0
 
 #Combat States
-var Bolster = false
+var Bolster = 1
 var Dodge = false
-var Parry = false
+var Parry = 1
 var Counter = false
 var disarm = false
 
@@ -42,13 +38,13 @@ func _process(delta):
 
 
 func Bolstered():
-	Bolster = true
+	Bolster = 1.5
 	
 func Dodging():
 	Dodge = true
 	
 func Parrying():
-	Parry = true
+	Parry = 0.5
 	
 func Countering():
 	Counter = true
@@ -57,25 +53,19 @@ func Healing():
 	HP += Heals
 
 func Damaged():
+	var DMG_Recieved = %Skeleton.Damage * %Skeleton.Bolster * Parry
+	
 	if Dodge == true:
 		HP = HP
 		Dodge = false
 	elif Counter == true:
-		HP -= %Skeleton.Damage
-		%Skeleton.HP -= (Damage * 0.5)
+		HP -= DMG_Recieved
+		%Skeleton.HP -= ((Damage + Sword) * 0.5)
 		Counter = false
-	elif Parry == true:
-		if %Skeleton.Bolster == true:
-			HP -= %Skeleton.Damage
-			Parry = false
-		else:
-			HP -= (%Skeleton.Damage * 0.5)
-			Parry = false
-	elif %Skeleton.Bolster == true:
-		HP -= (%Skeleton.Damage * 1.5)
-		%Skeleton.Bolster = false
 	else:
-		HP -= %Skeleton.Damage
+		HP -= DMG_Recieved
+	%Skeleton.Bolster = 1
+	Parry = 1
 	
 func Disarmed():
 	%Skeleton.Disarm = true
