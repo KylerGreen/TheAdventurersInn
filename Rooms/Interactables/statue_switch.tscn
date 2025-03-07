@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b08ujtuvvvtqg"]
+
+[ext_resource type="Script" path="res://Rooms/Interactables/statue_switch.gd" id="1_qbvx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2r0c"]
+size = Vector2(20, 36)
+
+[node name="StatueSwitch" type="Node2D"]
+script = ExtResource("1_qbvx7")
+
+[node name="Switch2A2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Switch2A2D"]
+shape = SubResource("RectangleShape2D_c2r0c")
+
+[connection signal="body_entered" from="Switch2A2D" to="." method="_on_switch_2a_2d_body_entered"]

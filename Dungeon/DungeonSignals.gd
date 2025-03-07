@@ -1,4 +1,5 @@
 extends Node
 
 signal Encounter
-signal OpenSwitchDoor
+signal only_once
+signal only_once2
