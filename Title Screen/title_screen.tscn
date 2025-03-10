@@ -28,26 +28,56 @@ color = Color(0.394124, 0.583762, 0.638652, 1)
 [node name="Start" type="Button" parent="ColorRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 575.0
-offset_top = 466.0
-offset_right = 711.0
-offset_bottom = 518.0
+offset_left = 436.0
+offset_top = 463.0
+offset_right = 572.0
+offset_bottom = 515.0
 theme_override_font_sizes/font_size = 30
 text = "Start"
 script = ExtResource("1_2xwpo")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 77.0
-offset_right = 1282.0
-offset_bottom = 434.0
+offset_left = -146.0
+offset_top = 60.0
+offset_right = 1135.0
+offset_bottom = 417.0
 theme_override_font_sizes/font_size = 80
 text = "The 
 Adventurer's Inn
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 987.0
+offset_top = -3.0
+offset_right = 1289.0
+offset_bottom = 717.0
+color = Color(0.439216, 0.439216, 0.439216, 0.619608)
+
+[node name="Contributers" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 1.0
+offset_right = 1285.0
+offset_bottom = 717.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Lead Developer: 
+Kyler Greenhalgh
+
+Developers: 
+Kaitlin Heusner
+Alex Broom
+Patrick 
+
+Character Design:
+Chase
+
+Music by: 
+Benjamin Dahlen"
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
