@@ -13,6 +13,7 @@ func _on_switch_2a_2d_body_entered(body: Node2D) -> void:
 		%Switch2.set_visible(true)
 		only_once = false
 		DungeonSignals.only_once2.emit()
+		DungeonSignals.DisplayText.emit('You found the hidden switch!')
 
 func one_time():
 	only_once = false
