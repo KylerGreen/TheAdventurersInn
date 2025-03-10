@@ -6,9 +6,9 @@ var Heals = 10
 var Damage = 10
 
 #Combat States
-var Bolster = false
+var Bolster = 1
 var Dodge = false
-var Parry = false
+var Parry = 1
 var Counter = false
 var Disarm = false
 
@@ -28,13 +28,13 @@ func _process(delta):
 
 
 func Bolstered():
-	Bolster = true
+	Bolster = 1.5
 	
 func Dodging():
 	Dodge = true
 	
 func Parrying():
-	Parry = true
+	Parry = 0.5
 	
 func Countering():
 	Counter = true
@@ -43,7 +43,18 @@ func Healing():
 	HP += Heals
 	
 func Damaged():
-	HP -= %Player.Damage
+	var DMG_Recieved = (%Player.Damage + %Player.Sword) * %Player.Bolster * Parry
+	if Dodge == true:
+		HP = HP
+		Dodge = false
+	elif Counter == true:
+		HP -= DMG_Recieved
+		%Player.HP -= (Damage * 0.5)
+		Counter = false
+	else:
+		HP -= DMG_Recieved
+	%Player.Bolster = 1
+	Parry = 1
 	
 func Disarmed():
 	%Player.Disarm = true
