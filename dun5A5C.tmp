@@ -878,9 +878,10 @@ unique_name_in_owner = true
 zoom = Vector2(2, 2)
 
 [node name="ColorRect" type="ColorRect" parent="Player3/Camera2D"]
+visible = false
 z_index = -2
-offset_left = -1065.0
-offset_top = -602.0
-offset_right = 1246.0
-offset_bottom = 522.0
+offset_left = -336.0
+offset_top = -189.0
+offset_right = 332.0
+offset_bottom = 198.0
 color = Color(0.176419, 0.176419, 0.176419, 1)

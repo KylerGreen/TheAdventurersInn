@@ -3,6 +3,11 @@ extends CharacterBody2D
 # Variables
 var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 
+
+func _ready() -> void:
+	$Important_Text.visible = false
+	DungeonSignals.DisplayText.connect(Lever_Pushed)
+	
 # Player Movement
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -35,3 +40,10 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_parent().add_child(combat)
 	combat.position = Vector2(150, 150)
+
+# Display Text
+func Lever_Pushed(set_text : String):
+	$Important_Text.visible = true
+	$Important_Text.text = set_text
+	await get_tree().create_timer(3.0).timeout
+	$Important_Text.visible = false

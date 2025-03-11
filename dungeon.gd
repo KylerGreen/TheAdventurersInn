@@ -82,4 +82,5 @@ func Encountered():
 	get_tree().current_scene.add_child(combat)
 	combat.position = %Player3.position
 	get_tree().paused = true
-	%Camera2D.zoom = Vector2(2, 2)
+	%Camera2D.zoom = Vector2(1.2, 1.2)
+	DungeonSignals.DisplayText.emit('You won the battle! You received 50 gold!')
