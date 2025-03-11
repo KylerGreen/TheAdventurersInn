@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1ohq85ubkwjq"]
 
-[ext_resource type="Script" path="res://Card Scenes/Card_temp.gd" id="1_lar1v"]
+[ext_resource type="Script" path="res://Card Scenes/AlphaCardScripts/Card_temp.gd" id="1_lar1v"]
 [ext_resource type="Texture2D" uid="uid://c73un0dlaljfu" path="res://Assets/CardAssets/earthen_card_backing.png" id="2_mrj3y"]
 [ext_resource type="Texture2D" uid="uid://b5g4t8i7v4b1s" path="res://Assets/CardAssets/basic_textbox.png" id="3_t8rbp"]
 [ext_resource type="Texture2D" uid="uid://uxuq3wa3ogy1" path="res://Assets/CardAssets/costTracker.png" id="4_lkdsv"]

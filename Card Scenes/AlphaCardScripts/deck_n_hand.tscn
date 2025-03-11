@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj3l7eh6at782"]
 
-[ext_resource type="Script" path="res://Card Scenes/deck_n_hand.gd" id="1_nbc0s"]
-[ext_resource type="PackedScene" uid="uid://ch0tqt2ado5xn" path="res://Card Scenes/hand.tscn" id="2_fe65i"]
+[ext_resource type="Script" path="res://Card Scenes/AlphaCardScripts/deck_n_hand.gd" id="1_nbc0s"]
+[ext_resource type="PackedScene" uid="uid://ch0tqt2ado5xn" path="res://Card Scenes/AlphaCardScripts/hand.tscn" id="2_fe65i"]
 
 [node name="DeckNHand" type="Node2D"]
 script = ExtResource("1_nbc0s")
