@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_oflc4"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_1da2d"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="6_76jqx"]
-[ext_resource type="AudioStream" uid="uid://ds0gtvtbxvsf7" path="res://Audio/clank1-91862.mp3" id="6_c76ym"]
 [ext_resource type="PackedScene" uid="uid://b08ujtuvvvtqg" path="res://Rooms/Interactables/statue_switch.tscn" id="6_np3i1"]
+[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/lever_chains14-41056.mp3" id="6_p0mo7"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_0j6vv"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
@@ -419,7 +419,7 @@ position = Vector2(142, 210)
 [node name="Switch_Sound" type="AudioStreamPlayer2D" parent="DoorSwitch"]
 unique_name_in_owner = true
 position = Vector2(-267, 40)
-stream = ExtResource("6_c76ym")
+stream = ExtResource("6_p0mo7")
 volume_db = 15.0
 
 [node name="StatueSwitch" parent="." instance=ExtResource("6_np3i1")]
