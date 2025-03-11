@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://dgu5khf772ywg"]
 
 [node name="Skeleton" type="CharacterBody2D"]
+
+[node name="Skeleton Animation" type="AnimatedSprite2D" parent="."]
