@@ -34,6 +34,7 @@ func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
 	if HP <= 0:
 		HP = 0
+	Gold = DungeonSignals.gold
 	
 	####### Create a Level up function #######
 	if XP >= 100:
