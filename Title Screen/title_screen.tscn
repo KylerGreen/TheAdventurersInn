@@ -30,10 +30,10 @@ color = Color(0.394124, 0.583762, 0.638652, 1)
 [node name="Start" type="Button" parent="ColorRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 407.0
-offset_top = 415.0
-offset_right = 612.0
-offset_bottom = 491.0
+offset_left = 349.0
+offset_top = 499.0
+offset_right = 554.0
+offset_bottom = 575.0
 theme_override_fonts/font = ExtResource("2_6wp4e")
 theme_override_font_sizes/font_size = 30
 text = "Start"
@@ -41,10 +41,10 @@ script = ExtResource("1_2xwpo")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = -124.0
-offset_top = 33.0
-offset_right = 1135.0
-offset_bottom = 427.0
+offset_left = 3.0
+offset_top = 107.0
+offset_right = 921.0
+offset_bottom = 501.0
 theme_override_fonts/font = ExtResource("4_o5pw5")
 theme_override_font_sizes/font_size = 100
 text = "The 
@@ -55,7 +55,7 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = 987.0
+offset_left = 919.0
 offset_top = -3.0
 offset_right = 1289.0
 offset_bottom = 717.0
@@ -63,7 +63,7 @@ color = Color(0.439216, 0.439216, 0.439216, 0.619608)
 
 [node name="Contributers" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 997.0
+offset_left = 943.0
 offset_top = 1.0
 offset_right = 1285.0
 offset_bottom = 717.0
@@ -74,6 +74,7 @@ text = "
 
 Lead Developer: 
 Kyler Greenhalgh
+(The Innkeeper)
 
 
 Developers: 
@@ -87,7 +88,8 @@ Chase Hulet
 
 
 Music by: 
-Benjamin Dahlen"
+Benjamin Dahlen
+(The Musician)"
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

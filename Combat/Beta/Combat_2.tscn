@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=11 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Combat/Beta/skeleton.gd" id="5_biuxo"]
 [ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
+[ext_resource type="AudioStream" uid="uid://bwjhhsi8wv7bj" path="res://Combat/Beta/Music/Battle Theme.mp3" id="10_ib3g5"]
 
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
@@ -110,3 +111,8 @@ offset_bottom = 193.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("3_hrp41")
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_ib3g5")
+parameters/looping = true
