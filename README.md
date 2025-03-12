@@ -13,36 +13,36 @@
   - [Installation](#installation)
   - [Getting Started](#getting-started)
   - [Classes](#classes)
-    - [CardManager](#cardmanager)
-      - [Properties](#properties)
-      - [Methods](#methods)
-    - [Card](#card)
-      - [Properties](#properties-1)
-      - [Methods](#methods-1)
-    - [CardFactory](#cardfactory)
-      - [Properties](#properties-2)
-      - [Methods](#methods-2)
-    - [CardContainer](#cardcontainer)
-      - [Properties](#properties-3)
-      - [Methods](#methods-3)
-    - [Pile](#pile)
-      - [Properties](#properties-4)
-      - [Methods](#methods-4)
-    - [Hand](#hand)
-      - [Properties](#properties-5)
-      - [Methods](#methods-5)
+	- [CardManager](#cardmanager)
+	  - [Properties](#properties)
+	  - [Methods](#methods)
+	- [Card](#card)
+	  - [Properties](#properties-1)
+	  - [Methods](#methods-1)
+	- [CardFactory](#cardfactory)
+	  - [Properties](#properties-2)
+	  - [Methods](#methods-2)
+	- [CardContainer](#cardcontainer)
+	  - [Properties](#properties-3)
+	  - [Methods](#methods-3)
+	- [Pile](#pile)
+	  - [Properties](#properties-4)
+	  - [Methods](#methods-4)
+	- [Hand](#hand)
+	  - [Properties](#properties-5)
+	  - [Methods](#methods-5)
   - [Creating Card Info JSON Files](#creating-card-info-json-files)
-    - [Example](#example)
+	- [Example](#example)
   - [Sample Projects](#sample-projects)
-    - [Example1](#example1)
-    - [Freecell](#freecell)
+	- [Example1](#example1)
+	- [Freecell](#freecell)
   - [Contributing](#contributing)
   - [License / Credits](#license--credits)
-    - [Kenney.nl Card Assets](#kenneynl-card-assets)
-    - [ChatGPT-Generated Spot Images](#chatgpt-generated-spot-images)
+	- [Kenney.nl Card Assets](#kenneynl-card-assets)
+	- [ChatGPT-Generated Spot Images](#chatgpt-generated-spot-images)
   - [Thanks To](#thanks-to)
   - [Changelog](#changelog)
-    - [1.0.0 (2025-01-03)](#100-2025-01-03)
+	- [1.0.0 (2025-01-03)](#100-2025-01-03)
 
 
 ## Features
@@ -74,10 +74,10 @@
    * Create JSON files that describe each card’s metadata (e.g., name, rank, suit, custom properties), and place them into the `card_info_dir` folder. [See example](#creating-card-info-json-files)
 4. **Set Up the CardManager**
    * In the **Inspector** for your `CardManager` node, configure:
-     * `card_size`: The default width/height for each card.
-     * `card_asset_dir`: The folder containing your card images.
-     * `card_info_dir`: The folder containing your JSON metadata.
-     * `back_image`: The texture to use for the card’s backside.
+	 * `card_size`: The default width/height for each card.
+	 * `card_asset_dir`: The folder containing your card images.
+	 * `card_info_dir`: The folder containing your JSON metadata.
+	 * `back_image`: The texture to use for the card’s backside.
 5. **Assign a CardFactory**
    * Under the `CardManager`, choose the `CardFactory` class to use.
    * You can use the default `CardFactory` or **create a custom factory** (by extending `CardFactory`) and set it here.
@@ -272,10 +272,10 @@ A **CardContainer** implementation for a **player’s hand** of cards.
 
 ```json
 {
-    "name": "club_2",
-    "front_image": "cardClubs2.png",
-    "suit": "club",
-    "value": "2"
+	"name": "club_2",
+	"front_image": "cardClubs2.png",
+	"suit": "club",
+	"value": "2"
 }
 ```
 
