@@ -21,6 +21,7 @@ func _ready():
 	print("Active rooms after init:", active_rooms.size())
 	# Room Signals
 	DungeonSignals.Encounter.connect(Encountered)
+	DungeonSignals.combat_done.connect(combat_finished)
 
 func _process(_delta) -> void:
 	if active_rooms.size() > 0:
@@ -84,3 +85,6 @@ func Encountered():
 	get_tree().paused = true
 	%Camera2D.zoom = Vector2(1.2, 1.2)
 	DungeonSignals.DisplayText.emit('You won the battle! You received 50 gold!')
+
+func combat_finished():
+	%Camera2D.zoom = Vector2(2, 2)
