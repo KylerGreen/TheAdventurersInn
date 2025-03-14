@@ -1,0 +1,7 @@
+{
+	"name": "Bolster",
+	"front_image": "cardClubs2.png",
+	"type": "Reaction",
+	"cr": "1",
+	"ability": "Next attack deals 50% more damage"
+}
