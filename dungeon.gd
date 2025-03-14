@@ -7,6 +7,7 @@ const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
 @onready var player = %Player3
 @onready var camera = $Camera2D
+@onready var skeleton = %Skeleton_Sound
 var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
@@ -77,6 +78,8 @@ func _spawn_new_room(pos: Vector2):
 		old_room.queue_free()	
 		
 func Encountered():
+	skeleton.process_mode = Node.PROCESS_MODE_ALWAYS
+	skeleton.play()
 	var combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
