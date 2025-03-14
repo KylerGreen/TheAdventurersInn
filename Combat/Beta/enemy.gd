@@ -45,6 +45,8 @@ func _ready():
 	
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
+	if HP <= 0:
+		HP = 0
 
 
 func Bolstered():

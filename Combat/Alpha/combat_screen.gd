@@ -8,3 +8,4 @@ func _ready():
 func _on_player_hand_delete() -> void:
 	queue_free()
 	get_tree().paused = false
+	DungeonSignals.combat_done.emit()
