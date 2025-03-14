@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 # Variables
 var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
-
+@onready var footsteps = %Footstep
+@onready var skeleton = %Skeleton_Sound
 
 func _ready() -> void:
 	$Important_Text.visible = false
@@ -12,6 +13,14 @@ func _ready() -> void:
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * 200
+	
+	if direction.length() > 0:
+		if not footsteps.playing:
+			footsteps.play()
+	
+	else:
+		footsteps.stop()
+		
 	move_and_slide()
 
 # OpenStatueSwitch
@@ -34,6 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 # Encounter
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	skeleton.play()
 	get_tree().paused = true
 	var combat = combat_screen.instantiate()
 	get_parent().add_child(combat)
