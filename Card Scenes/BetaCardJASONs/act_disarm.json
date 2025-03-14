@@ -1,7 +1,7 @@
 {
-	"name": "Swing",
+	"name": "Disarm",
 	"front_image": "cardClubs2.png",
 	"type": "Action",
 	"cr": "1",
-	"ability": "Attack for 30 damage"
+	"ability": "Stop opponents action for 1 turn"
 }
