@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://duc4gexk1ha3p"]
+[gd_scene load_steps=2 format=3 uid="uid://duc4gexk1ha3p"]
+
+[ext_resource type="Script" path="res://Game Over Screen/game_over_screen.gd" id="1_wlv7w"]
 
 [node name="GameOverScreen" type="Node2D"]
+script = ExtResource("1_wlv7w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -8,16 +11,39 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
 offset_right = 38.0
-offset_bottom = 38.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 446.0
-offset_top = 294.0
-offset_right = 880.0
-offset_bottom = 462.0
+offset_left = 259.0
+offset_top = 208.0
+offset_right = 1032.0
+offset_bottom = 431.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-text = "Game Over"
+text = "You failed to escape 
+the Dungeon"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="CanvasLayer"]
+offset_left = 795.0
+offset_top = 493.0
+offset_right = 1047.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="Title" type="Button" parent="CanvasLayer"]
+offset_left = 264.0
+offset_top = 496.0
+offset_right = 516.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 40
+text = "Title Screen"
+
+[connection signal="pressed" from="CanvasLayer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Title" to="." method="_on_title_pressed"]

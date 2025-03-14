@@ -28,9 +28,13 @@ func _ready():
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
+	%"BattleMusic".play()
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+	if HP <= 0:
+		HP = 0
+	Gold = DungeonSignals.gold
 	
 	####### Create a Level up function #######
 	if XP >= 100:
@@ -53,19 +57,22 @@ func Healing():
 	HP += Heals
 
 func Damaged():
-	var DMG_Recieved = %Skeleton.Damage * %Skeleton.Bolster * Parry
+	var DMG_Recieved = %Enemy.Damage * %Enemy.Bolster * Parry
+	$DamageCounter.text = str('-',DMG_Recieved)
+	await get_tree().create_timer(1.0).timeout
+	$DamageCounter.text = str('')
 	
 	if Dodge == true:
 		HP = HP
 		Dodge = false
 	elif Counter == true:
 		HP -= DMG_Recieved
-		%Skeleton.HP -= ((Damage + Sword) * 0.5)
+		%Enemy.HP -= ((Damage + Sword) * 0.5)
 		Counter = false
 	else:
 		HP -= DMG_Recieved
-	%Skeleton.Bolster = 1
+	%Enemy.Bolster = 1
 	Parry = 1
 	
 func Disarmed():
-	%Skeleton.Disarm = true
+	%Enemy.Disarm = true
