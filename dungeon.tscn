@@ -874,6 +874,7 @@ offset_bottom = 90.0
 text = "<>"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
 unique_name_in_owner = true
@@ -886,6 +887,7 @@ offset_top = -602.0
 offset_right = 1246.0
 offset_bottom = 522.0
 color = Color(0.176419, 0.176419, 0.176419, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Footstep" type="AudioStreamPlayer2D" parent="Player3"]
 unique_name_in_owner = true
@@ -894,5 +896,6 @@ volume_db = 15.0
 
 [node name="Skeleton_Sound" type="AudioStreamPlayer2D" parent="Player3"]
 unique_name_in_owner = true
+position = Vector2(-76, 4)
 stream = ExtResource("8_ju26m")
 volume_db = 10.0
