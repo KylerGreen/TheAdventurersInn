@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxdkjuynrp4m"]
+
+[ext_resource type="Script" path="res://Combat/Card Scenes/AlphaCardScripts/ScriptsCards/reaction_bolster.gd" id="1_3li5b"]
+[ext_resource type="PackedScene" path="res://Card Scenes/AlphaCardScripts/Card_temp.tscn" id="1_asmhw"]
+
+[node name="ReactionBolster" type="Node2D"]
+script = ExtResource("1_3li5b")
+
+[node name="Card" parent="." instance=ExtResource("1_asmhw")]
+card_name = "Bolster"
+card_ability = "Add +30% to your Attack Next Turn"
+action_reaction = "Reaction"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
