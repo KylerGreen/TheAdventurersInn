@@ -24,6 +24,10 @@
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(816, 492)
+zoom = Vector2(0.75, 0.75)
+
 [node name="BattleBackground" type="Sprite2D" parent="."]
 position = Vector2(602, 394)
 scale = Vector2(0.762346, 0.762346)
@@ -127,9 +131,9 @@ unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
 parameters/looping = true
 
-[node name="CardhandlerTest" parent="." instance=ExtResource("11_0v6es")]
+[node name="Cardhandler" parent="." instance=ExtResource("11_0v6es")]
 
-[node name="CardManager2" parent="CardhandlerTest" instance=ExtResource("11_fx4mt")]
+[node name="CardManager2" parent="Cardhandler" instance=ExtResource("11_fx4mt")]
 z_index = 12
 offset_left = -180.0
 offset_top = -120.0
@@ -140,7 +144,7 @@ card_asset_dir = "res://Combat/Beta/test_card/assets/images/cards/"
 card_info_dir = "res://Combat/Beta/test_card/card_info/"
 back_image = ExtResource("12_6q76n")
 
-[node name="Hand" parent="CardhandlerTest/CardManager2" instance=ExtResource("13_qv8k7")]
+[node name="Hand" parent="Cardhandler/CardManager2" instance=ExtResource("13_qv8k7")]
 offset_left = 688.0
 offset_top = 800.0
 offset_right = 688.0
@@ -149,7 +153,7 @@ max_hand_size = 5
 hand_rotation_curve = SubResource("Curve_n2hbe")
 sensor_texture = ExtResource("14_1ps40")
 
-[node name="Label" type="Label" parent="CardhandlerTest/CardManager2/Hand"]
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Hand"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = -86.0
@@ -157,7 +161,7 @@ offset_right = 92.0
 offset_bottom = -63.0
 text = "Hand"
 
-[node name="Action" parent="CardhandlerTest/CardManager2" instance=ExtResource("15_32u5m")]
+[node name="Action" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
 offset_left = 566.0
 offset_top = 344.0
 offset_right = 566.0
@@ -166,26 +170,26 @@ stack_display_gap = 1
 max_stack_display = 1
 sensor_texture = ExtResource("16_cxhtq")
 
-[node name="Label" type="Label" parent="CardhandlerTest/CardManager2/Action"]
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Action"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Act"
 
-[node name="Reaction" parent="CardhandlerTest/CardManager2" instance=ExtResource("15_32u5m")]
+[node name="Reaction" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
 offset_left = 844.0
 offset_top = 340.0
 offset_right = 844.0
 offset_bottom = 340.0
 sensor_texture = ExtResource("17_b5tnq")
 
-[node name="Label" type="Label" parent="CardhandlerTest/CardManager2/Reaction"]
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Reaction"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "React"
 
-[node name="Deck" parent="CardhandlerTest/CardManager2" instance=ExtResource("15_32u5m")]
+[node name="Deck" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
 offset_left = 1278.0
 offset_top = 764.0
 offset_right = 1278.0
@@ -193,7 +197,7 @@ offset_bottom = 764.0
 stack_display_gap = 6
 card_face_up = false
 
-[node name="Label" type="Label" parent="CardhandlerTest/CardManager2/Deck"]
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Deck"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -201,19 +205,15 @@ offset_right = 42.0
 offset_bottom = 25.0
 text = "Deck"
 
-[node name="Discard" parent="CardhandlerTest/CardManager2" instance=ExtResource("15_32u5m")]
+[node name="Discard" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
 offset_left = 1270.0
 offset_top = 366.0
 offset_right = 1270.0
 offset_bottom = 366.0
 stack_display_gap = 6
 
-[node name="Label" type="Label" parent="CardhandlerTest/CardManager2/Discard"]
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Discard"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Discard"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(816, 492)
-zoom = Vector2(0.75, 0.75)
