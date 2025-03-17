@@ -81,6 +81,7 @@ card_info_dir = "res://example1/card_info"
 back_image = ExtResource("3_gqkj7")
 
 [node name="Pile1" parent="CardManager" instance=ExtResource("2_xkfcc")]
+visible = false
 offset_left = 1000.0
 offset_top = 100.0
 offset_right = 1000.0

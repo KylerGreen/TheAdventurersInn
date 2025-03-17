@@ -20,8 +20,8 @@ zoom = Vector2(0.76, 0.76)
 
 [node name="CardManager" parent="." instance=ExtResource("2_ajner")]
 card_size = Vector2(100, 160)
-card_asset_dir = "res://example1/assets/images/cards/"
-card_info_dir = "res://example1/card_info/"
+card_asset_dir = "res://Combat/Beta/test_card/assets/images/cards/"
+card_info_dir = "res://Combat/Beta/test_card/card_info/"
 back_image = ExtResource("3_1d6ds")
 
 [node name="Hand" parent="CardManager" instance=ExtResource("4_q46oj")]

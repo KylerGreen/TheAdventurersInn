@@ -8,10 +8,16 @@ extends Node
 @onready var deck = $CardManager/Deck
 @onready var discard = $CardManager/Discard
 
+# Use to read player "decklist.json" filled with file names, sans .json
+var deck_list = "res://Combat/Beta/player_decklist.json"
+var json_as_text = FileAccess.get_file_as_string(deck_list)
+var deck_as_dict = JSON.parse_string(json_as_text)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_reset_deck()
-	
+
 
 func _reset_deck():
 	var list = _get_randomized_card_list()
@@ -21,8 +27,8 @@ func _reset_deck():
 
 
 func _get_randomized_card_list() -> Array:
-	var suits = ["club", "spade", "diamond", "heart"]
-	var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+	var suits = ["act", "react"]
+	var values = ["disarm", "heal", "swing", "bolster", "counter", "dodge", "parry"]
 	
 	var card_list = []
 	for suit in suits:
