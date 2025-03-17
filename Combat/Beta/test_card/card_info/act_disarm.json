@@ -1,0 +1,7 @@
+{
+	"name": "Disarm",
+	"front_image": "cardClubs2.png",
+	"type": "Action",
+	"cr": "1",
+	"ability": "Stop opponents action for 1 turn"
+}
