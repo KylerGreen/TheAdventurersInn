@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ba6iw1128vnkq"]
+
+[node name="Game Win" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 38.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.259294, 0.259294, 0.259294, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 240.0
+offset_top = 192.0
+offset_right = 1013.0
+offset_bottom = 415.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "You escaped the
+Inevitable"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Button" parent="CanvasLayer"]
+offset_left = 483.0
+offset_top = 530.0
+offset_right = 735.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 40
+text = "Title Screen"
+metadata/_edit_use_anchors_ = true

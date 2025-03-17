@@ -768,13 +768,14 @@ tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_t77id")
 
 [node name="BlueEnemy" parent="." instance=ExtResource("5_7o43w")]
-position = Vector2(137, 137)
+position = Vector2(-62, 153)
 rotation = 0.0175188
 
 [node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
-position = Vector2(110, 222)
+position = Vector2(144, 211)
 
 [node name="Switch_Sound" type="AudioStreamPlayer2D" parent="DoorSwitch"]
 unique_name_in_owner = true
+position = Vector2(31, -12)
 stream = ExtResource("6_akdvv")
 volume_db = 15.0
