@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 #Player Stats
 var HP = 100
+var MaxHP = 100
 var Heals = 15
 var Damage = 20
 var XP = 0
+var Level = 1
 
 #Player Inventory
 var Gold = 0
@@ -36,9 +38,29 @@ func _process(delta):
 		HP = 0
 	Gold = DungeonSignals.gold
 	
-	####### Create a Level up function #######
 	if XP >= 100:
-		pass
+		if Level == 1:
+			MaxHP = 120
+			HP = MaxHP
+			Level += 1
+			DungeonSignals.DisplayText.emit('You Leveled Up!')
+	elif XP >= 300:
+		if Level == 2:
+			HP = MaxHP
+			Damage = 30
+			Level += 1
+			DungeonSignals.DisplayText.emit('You Leveled Up!')
+	elif XP >= 700:
+		if Level == 3:
+			MaxHP = 160
+			HP = MaxHP
+			Level += 1
+			DungeonSignals.DisplayText.emit('You Leveled Up!')
+	
+	if %Enemy.HP <= 0:
+		%Enemy.HP == 0
+		DungeonSignals.gold += %Enemy.gold
+		XP += %Enemy.XP
 
 
 func Bolstered():

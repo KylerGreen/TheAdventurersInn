@@ -1,8 +1,11 @@
 extends Node2D
 
+#Enemy Base Stats
 var HP = 0
 var Damage = 0
 var Heals = 0
+var XP = 0
+var gold = 0
 
 #Combat States
 var Bolster = 1
@@ -17,21 +20,29 @@ func _ready():
 		current_enemy = 'Skeleton'
 		var Skeleton = randi_range(0, 3)
 		if Skeleton == 0:
-			HP = 130
+			HP = 120
 			Damage = 15
 			Heals = 10
+			XP = 50
+			gold = 10
 		elif Skeleton == 1:
-			HP = 70
+			HP = 60
 			Damage = 20
 			Heals = 10
+			XP = 10
+			gold = 5
 		elif Skeleton == 2:
 			HP = 90
 			Damage = 10
 			Heals = 15
+			XP = 30
+			gold = 5
 		elif Skeleton == 3:
-			HP = 100
-			Damage = 10
+			HP = 80
+			Damage = 15
 			Heals = 10
+			XP = 20
+			gold = 5
 			
 	%Enemy_HP.text = str('HP: ', HP)
 	CombatSignals.Enemy_Bolster.connect(Bolstered)
