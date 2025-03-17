@@ -96,6 +96,7 @@ Benjamin Dahlen
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 z_index = -1
+layout_mode = 0
 offset_left = -4.0
 offset_top = 5.0
 offset_right = 1278.0
