@@ -96,6 +96,7 @@ Benjamin Dahlen
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 z_index = -1
+layout_mode = 0
 offset_left = -4.0
 offset_top = 5.0
 offset_right = 1278.0
@@ -136,12 +137,12 @@ offset_right = 1289.0
 offset_bottom = 717.0
 color = Color(0.439216, 0.439216, 0.439216, 0.619608)
 
-[node name="Contributers" type="Label" parent="ColorRect/ColorRect2"]
+[node name="Contributers" type="Label" parent="ColorRect/ColorRect2/ColorRect"]
 layout_mode = 0
-offset_left = 943.0
-offset_top = 1.0
-offset_right = 1285.0
-offset_bottom = 717.0
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 366.0
+offset_bottom = 720.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6wp4e")
 theme_override_font_sizes/font_size = 30

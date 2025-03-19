@@ -12,6 +12,7 @@ signal Player_Disarm
 signal Player_Dodge
 signal Player_Parry
 signal Player_Counter
+signal player_action_phase
 
 
 #Enemy Signals
@@ -22,6 +23,7 @@ signal Enemy_Disarm
 signal Enemy_Dodge
 signal Enemy_Parry
 signal Enemy_Counter
+signal enemy_action_phase
 
 
 #Other Signals

@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://c74s1e8l8pf0i"]
+
+[ext_resource type="Script" path="res://Combat/Beta/test_card/cardhandler_test.gd" id="1_a57a7"]
+[ext_resource type="PackedScene" uid="uid://c7u8hryloq7hy" path="res://addons/card-framework/card_manager.tscn" id="2_ajner"]
+[ext_resource type="Texture2D" uid="uid://b1jy1scbarbg5" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_red4.png" id="3_1d6ds"]
+[ext_resource type="PackedScene" uid="uid://bkpjlq7ggckg6" path="res://addons/card-framework/hand.tscn" id="4_q46oj"]
+[ext_resource type="Texture2D" uid="uid://51bevdcn6a57" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_red1.png" id="5_edrcf"]
+[ext_resource type="PackedScene" uid="uid://dk6rb7lhv1ef6" path="res://addons/card-framework/pile.tscn" id="5_o6w8m"]
+[ext_resource type="Texture2D" uid="uid://cv6ecvmkml3ok" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_green1.png" id="6_bhdsn"]
+[ext_resource type="Texture2D" uid="uid://djoauv24lbkhc" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_blue1.png" id="7_yiybt"]
+
+[sub_resource type="Curve" id="Curve_sgf2h"]
+
+[node name="CardhandlerTest" type="Node"]
+script = ExtResource("1_a57a7")
+
+[node name="CardManager" parent="." instance=ExtResource("2_ajner")]
+anchors_preset = -1
+anchor_left = -0.146
+anchor_top = -0.209
+anchor_right = -0.146
+anchor_bottom = -0.209
+offset_left = -91.12
+offset_top = -10.52
+offset_right = 182.88
+offset_bottom = 146.48
+card_size = Vector2(100, 160)
+card_asset_dir = "res://Combat/Beta/test_card/assets/images/cards/"
+card_info_dir = "res://Combat/Beta/test_card/card_info/"
+back_image = ExtResource("3_1d6ds")
+
+[node name="Hand" parent="CardManager" instance=ExtResource("4_q46oj")]
+offset_left = 814.0
+offset_top = 587.0
+offset_right = 910.0
+offset_bottom = 719.0
+max_hand_size = 5
+hand_rotation_curve = SubResource("Curve_sgf2h")
+sensor_texture = ExtResource("5_edrcf")
+
+[node name="Label" type="Label" parent="CardManager/Hand"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 75.0
+offset_bottom = 77.0
+text = "Hand"
+
+[node name="Action" parent="CardManager" instance=ExtResource("5_o6w8m")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.485
+anchor_top = 2.293
+anchor_right = 2.485
+anchor_bottom = 2.293
+offset_left = 0.109985
+offset_top = -0.0010376
+offset_right = 112.11
+offset_bottom = 98.999
+stack_display_gap = 1
+max_stack_display = 1
+sensor_texture = ExtResource("6_bhdsn")
+
+[node name="Label" type="Label" parent="CardManager/Action"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 1.0
+offset_right = 120.0
+offset_bottom = 60.0
+text = "Act"
+
+[node name="Reaction" parent="CardManager" instance=ExtResource("5_o6w8m")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.172
+anchor_top = 2.153
+anchor_right = 3.172
+anchor_bottom = 2.153
+offset_left = -0.128052
+offset_top = -0.0210266
+offset_right = 54.8719
+offset_bottom = 146.979
+sensor_texture = ExtResource("7_yiybt")
+
+[node name="Label" type="Label" parent="CardManager/Reaction"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 27.0
+offset_right = 93.0
+offset_bottom = 186.0
+text = "React"
+
+[node name="Deck" parent="CardManager" instance=ExtResource("5_o6w8m")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.026
+anchor_top = 3.541
+anchor_right = 4.026
+anchor_bottom = 3.541
+offset_left = -0.124023
+offset_top = 0.0629883
+offset_right = 64.876
+offset_bottom = 114.063
+stack_display_gap = 6
+card_face_up = false
+
+[node name="Label" type="Label" parent="CardManager/Deck"]
+layout_mode = 1
+offset_top = -2.0
+offset_right = 119.0
+offset_bottom = 64.0
+text = "Deck"
+
+[node name="Discard" parent="CardManager" instance=ExtResource("5_o6w8m")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.347
+anchor_top = 2.325
+anchor_right = 4.347
+anchor_bottom = 2.325
+offset_left = -0.0780029
+offset_top = -0.0249939
+offset_right = 104.922
+offset_bottom = 91.975
+stack_display_gap = 6
+
+[node name="Label" type="Label" parent="CardManager/Discard"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -1.0
+offset_right = 75.0
+offset_bottom = 105.0
+text = "Discard"
