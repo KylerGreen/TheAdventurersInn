@@ -739,7 +739,7 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAFAPD/AwAMAAMAAAAFAPH/AwAMAAAAAAAPAPH/AwAMAAMAAAAPAPL/AwAMAAAAAAAFAPn/AwAMAAMAAAAFAPr/AwAMAAAAAAAQAPv/AwAMAAMAAAAQAPz/AwAMAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFAPn/AwAMAAMAAAAFAPr/AwAMAAAAAAAQAPr/AwAMAAAAAAAQAPn/AwAMAAMAAAAFAPL/AwAMAAAAAAAFAPH/AwAMAAMAAAAQAPL/AwAMAAAAAAAQAPH/AwAMAAMAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Doorway" type="TileMapLayer" parent="."]
@@ -772,7 +772,7 @@ position = Vector2(-62, 153)
 rotation = 0.0175188
 
 [node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
-position = Vector2(144, 211)
+position = Vector2(141, 210)
 
 [node name="Switch_Sound" type="AudioStreamPlayer2D" parent="DoorSwitch"]
 unique_name_in_owner = true
