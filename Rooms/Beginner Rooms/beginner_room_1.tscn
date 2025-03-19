@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_1da2d"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="6_76jqx"]
 [ext_resource type="PackedScene" uid="uid://b08ujtuvvvtqg" path="res://Rooms/Interactables/statue_switch.tscn" id="6_np3i1"]
-[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/lever_chains14-41056.mp3" id="6_p0mo7"]
+[ext_resource type="AudioStream" path="res://Audio/lever_chains14-41056.mp3" id="6_p0mo7"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_0j6vv"]
-[ext_resource type="AudioStream" uid="uid://ciqh0otib2i8i" path="res://Audio/punch-a-rock-161647 (mp3cut.net).mp3" id="8_peoi8"]
+[ext_resource type="AudioStream" path="res://Audio/punch-a-rock-161647 (mp3cut.net).mp3" id="8_peoi8"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D

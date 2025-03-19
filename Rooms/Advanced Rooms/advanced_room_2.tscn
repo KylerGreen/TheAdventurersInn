@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_u3cam"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="5_7o43w"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="5_y6gdt"]
-[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/lever_chains14-41056.mp3" id="6_akdvv"]
+[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Battle Sounds/lever_chains14-41056.mp3" id="6_akdvv"]
 
 [sub_resource type="GDScript" id="GDScript_4jdr2"]
 script/source = "extends Node2D
