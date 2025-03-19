@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-@onready var arrow = $Arrow
-@onready var shield = $Shield
-
 signal attack
 
 var health = 100
@@ -26,7 +23,7 @@ func AttackAnimation():
 	%Player_Animation.play("Attack")
 	%Arm_Animation.play("Attack")
 	%Player_Attack.start()
-	arrow.play()
+
 
 func _on_timer_timeout():
 	%Player_Attack.stop()
@@ -54,7 +51,6 @@ func _on_enemy_attack_timeout():
 		IsDefending = false
 		%DamageOnPlayer.visible = true
 		%DamageOnPlayer.text = str('-', DmgRecieved)
-		shield.play()
 		
 	elif IsDodging == true:
 		var DodgeChance = rng.randi_range(0,100)

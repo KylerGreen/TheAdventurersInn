@@ -1,9 +1,9 @@
 [gd_scene load_steps=89 format=4 uid="uid://ce58v2ks8ky0a"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_apsqq"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_lwvn6"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_7q1k6"]
-[ext_resource type="PackedScene" uid="uid://b08ujtuvvvtqg" path="res://Rooms/Interactables/statue_switch.tscn" id="4_m1aby"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_081jp"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_jdv2w"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_omrf6"]
+[ext_resource type="PackedScene" uid="uid://b08ujtuvvvtqg" path="res://Rooms/Interactables/statue_switch.tscn" id="4_6f5wx"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -70,7 +70,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2ija"]
-texture = ExtResource("1_apsqq")
+texture = ExtResource("1_081jp")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -128,7 +128,7 @@ texture = ExtResource("1_apsqq")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tigjj"]
-texture = ExtResource("2_lwvn6")
+texture = ExtResource("2_jdv2w")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -176,7 +176,7 @@ texture = ExtResource("2_lwvn6")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4x1aa"]
-texture = ExtResource("3_7q1k6")
+texture = ExtResource("3_omrf6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -457,7 +457,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fn82"]
-texture = ExtResource("1_apsqq")
+texture = ExtResource("1_081jp")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -525,7 +525,7 @@ texture = ExtResource("1_apsqq")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtu48"]
-texture = ExtResource("2_lwvn6")
+texture = ExtResource("2_jdv2w")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -573,7 +573,7 @@ texture = ExtResource("2_lwvn6")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tfxlf"]
-texture = ExtResource("3_7q1k6")
+texture = ExtResource("3_omrf6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -827,7 +827,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5q1bo"]
-texture = ExtResource("1_apsqq")
+texture = ExtResource("1_081jp")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -885,7 +885,7 @@ texture = ExtResource("1_apsqq")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge8ng"]
-texture = ExtResource("2_lwvn6")
+texture = ExtResource("2_jdv2w")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -933,7 +933,7 @@ texture = ExtResource("2_lwvn6")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc0mi"]
-texture = ExtResource("3_7q1k6")
+texture = ExtResource("3_omrf6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1157,5 +1157,5 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_ulnas")
 
-[node name="StatueSwitch" parent="." instance=ExtResource("4_m1aby")]
+[node name="StatueSwitch" parent="." instance=ExtResource("4_6f5wx")]
 position = Vector2(171, -30)

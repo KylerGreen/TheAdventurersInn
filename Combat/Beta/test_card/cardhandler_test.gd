@@ -9,9 +9,9 @@ extends Node
 @onready var discard = $CardManager/Discard
 
 # Use to read player "decklist.json" filled with file names, sans .json
-#var deck_list = "res://Combat/Beta/player_decklist.json"
-#var json_as_text = FileAccess.get_file_as_string(deck_list)
-#var deck_as_dict = JSON.parse_string(json_as_text)
+var deck_list = "res://Combat/Beta/player_decklist.json"
+var json_as_text = FileAccess.get_file_as_string(deck_list)
+var deck_as_dict = JSON.parse_string(json_as_text)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,12 +27,13 @@ func _reset_deck():
 
 
 func _get_randomized_card_list() -> Array:
-	#var values = ["act_disarm", "act_heal", "act_swing", "react_bolster", "react_counter", "react_dodge", "react_parry"]
-	var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
+	#var suits = ["act", "react"]
+	var values = ["act_disarm", "act_heal", "act_swing", "react_bolster", "react_counter", "react_dodge", "react_parry"]
 	
 	var card_list = []
 
 	for value in values:
+		#card_list.append("%s_%s" % [suit, value])
 		card_list.append(value)
 	
 	card_list.shuffle()

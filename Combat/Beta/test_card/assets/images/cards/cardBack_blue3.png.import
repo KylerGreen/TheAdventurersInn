@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5mmjplculms6"
-path="res://.godot/imported/cardBack_blue3.png-f8fa8f91847003a41ea4934f0b109d85.ctex"
+path="res://.godot/imported/cardBack_blue3.png-a7454a68a35bd411038c78d4ecaf620c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Combat/Beta/CardHandler/assets/images/cards/cardBack_blue3.png"
-dest_files=["res://.godot/imported/cardBack_blue3.png-f8fa8f91847003a41ea4934f0b109d85.ctex"]
+source_file="res://Combat/Beta/test_card/assets/images/cards/cardBack_blue3.png"
+dest_files=["res://.godot/imported/cardBack_blue3.png-a7454a68a35bd411038c78d4ecaf620c.ctex"]
 
 [params]
 

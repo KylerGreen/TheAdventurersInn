@@ -85,6 +85,7 @@ func _spawn_new_room(pos: Vector2):
 		old_room.queue_free()	
 		
 func _on_timer_timeout():
+	print("Timer triggered")
 	ambiance()
 	
 func ambiance():	

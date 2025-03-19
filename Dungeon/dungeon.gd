@@ -1,6 +1,7 @@
 extends Node2D
 
-const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
+const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), 
+preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn")]
 
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), ]
 
@@ -15,7 +16,6 @@ var occupied_positions := {}
 var max_rooms := 20
 var room_width = 280
 var room_margin = 40
-var repeat_message = true
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -33,8 +33,7 @@ func _process(_delta) -> void:
 		if Vector2i(next_room) not in occupied_positions:
 			_spawn_new_room(next_room)
 
-		if Vector2i(next_room) in occupied_positions and repeat_message == false:
-			repeat_message = true
+		else: 
 			print("Room at", next_room, "already exists")
 
 func _spawn_new_room(pos: Vector2):

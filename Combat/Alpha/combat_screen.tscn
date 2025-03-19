@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnn1ckl1lp2of"]
+[gd_scene load_steps=9 format=3 uid="uid://bnn1ckl1lp2of"]
 
 [ext_resource type="PackedScene" uid="uid://c4h3lrphnxcfo" path="res://Combat/Alpha/Player/player.tscn" id="1_eujwl"]
 [ext_resource type="Script" path="res://Combat/Alpha/combat_screen.gd" id="1_h4aju"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="2_gmi44"]
 [ext_resource type="AudioStream" uid="uid://b6gffh1te7in7" path="res://Combat/Alpha/battle-sword-139313.mp3" id="2_jx6p5"]
 [ext_resource type="PackedScene" uid="uid://dqkhcwr2tr01r" path="res://Combat/Alpha/CurrentHand.tscn" id="2_s8k0x"]
-[ext_resource type="AudioStream" uid="uid://cygb0ot6u7ubq" path="res://Audio/Battle Sounds/string-tightens-and-whips-103271 (mp3cut.net).mp3" id="6_kianb"]
-[ext_resource type="AudioStream" uid="uid://d3w1c7iwopjmw" path="res://Audio/Battle Sounds/iron-hits-80946 (2).mp3" id="7_kps42"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdtl3"]
 corner_radius_top_left = 5
@@ -100,16 +98,6 @@ unique_name_in_owner = true
 
 [node name="EnemyTurn" type="Timer" parent="Player"]
 unique_name_in_owner = true
-
-[node name="Arrow" type="AudioStreamPlayer2D" parent="Player"]
-unique_name_in_owner = true
-stream = ExtResource("6_kianb")
-volume_db = 10.0
-
-[node name="Shield" type="AudioStreamPlayer2D" parent="Player"]
-unique_name_in_owner = true
-stream = ExtResource("7_kps42")
-volume_db = 10.0
 
 [node name="Enemy1" parent="." instance=ExtResource("2_5i270")]
 unique_name_in_owner = true

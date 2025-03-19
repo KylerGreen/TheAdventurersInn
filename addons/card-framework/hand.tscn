@@ -5,8 +5,8 @@
 [sub_resource type="Curve" id="Curve_lsli3"]
 min_value = -15.0
 max_value = 15.0
-_data = [Vector2(0, -14.6703), 0.0, 29.6703, 0, 1, Vector2(1, 15), 29.6703, 0.0, 1, 0]
-point_count = 2
+_data = [Vector2(0, 1.15385), 0.0, 7.10289, 0, 1, Vector2(0.092827, 1.81319), 0.0, 0.0, 0, 0, Vector2(0.485232, 4.12088), 0.0, 0.0, 0, 0, Vector2(0.957806, 15), 0.0, 0.0, 0, 0, Vector2(1, 15), 0.0, 0.0, 1, 0]
+point_count = 5
 
 [sub_resource type="Curve" id="Curve_8dbo5"]
 max_value = 50.0
