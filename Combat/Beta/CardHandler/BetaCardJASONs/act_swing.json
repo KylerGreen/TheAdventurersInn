@@ -1,6 +1,6 @@
 {
 	"name": "Swing",
-	"front_image": "cardClubs4.png",
+	"front_image": "general_card_scaled.png",
 	"type": "Action",
 	"cr": "1",
 	"ability": "Basic Attack"
