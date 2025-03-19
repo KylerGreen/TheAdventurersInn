@@ -13,6 +13,7 @@ signal Player_Dodge
 signal Player_Parry
 signal Player_Counter
 signal player_action_phase
+signal Use_Cards
 
 
 #Enemy Signals

@@ -59,6 +59,7 @@ offset_right = 112.11
 offset_bottom = 98.999
 stack_display_gap = 1
 max_stack_display = 1
+emits_signals = true
 sensor_texture = ExtResource("6_bhdsn")
 
 [node name="Label" type="Label" parent="CardManager/Action"]
@@ -80,6 +81,7 @@ offset_left = -0.128052
 offset_top = -0.0210266
 offset_right = 54.8719
 offset_bottom = 146.979
+emits_signals = true
 sensor_texture = ExtResource("7_yiybt")
 
 [node name="Label" type="Label" parent="CardManager/Reaction"]

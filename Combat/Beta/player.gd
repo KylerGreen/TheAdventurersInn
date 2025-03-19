@@ -27,6 +27,7 @@ func _ready():
 	CombatSignals.Player_Parry.connect(Parrying)
 	CombatSignals.Player_Counter.connect(Countering)
 	CombatSignals.Player_Heal.connect(Healing)
+	CombatSignals.Action_Placed.connect(Action)
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
@@ -98,3 +99,25 @@ func Damaged():
 	
 func Disarmed():
 	%Enemy.Disarm = true
+	
+func Action(card, container):
+	card = card.card_info
+	if card["name"] == "Parry":
+		CombatSignals.Player_Parry.emit()
+	elif card["name"] == "Dodge":
+		CombatSignals.Player_Dodge.emit()
+	elif card["name"] == "Counter":
+		CombatSignals.Player_Counter.emit()
+	elif card["name"] == "Bolster":
+		CombatSignals.Player_Bolster.emit()
+	elif card["name"] == "Disarm":
+		CombatSignals.Enemy_Disarm.emit()
+	elif card["name"] == "Heal":
+		CombatSignals.Player_Heal.emit()
+	elif card["name"] == "Swing":
+		CombatSignals.Player_Swing.emit()
+	
+
+
+func _on_use_cards_pressed() -> void:
+	CombatSignals.Use_Cards.emit()
