@@ -27,13 +27,12 @@ func _reset_deck():
 
 
 func _get_randomized_card_list() -> Array:
-	#var suits = ["act", "react"]
-	var values = ["act_disarm", "act_heal", "act_swing", "react_bolster", "react_counter", "react_dodge", "react_parry"]
+	#var values = ["act_disarm", "act_heal", "act_swing", "react_bolster", "react_counter", "react_dodge", "react_parry"]
+	var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
 	
 	var card_list = []
 
 	for value in values:
-		#card_list.append("%s_%s" % [suit, value])
 		card_list.append(value)
 	
 	card_list.shuffle()

@@ -1,6 +1,6 @@
 {
 	"name": "Parry",
-	"front_image": "cardClubs8.png",
+	"front_image": "general_card_scaled.png",
 	"type": "Reaction",
 	"cr": "1",
 	"ability": "Reduce Inc. damage by 1/2"
