@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0f14ccuvsebd"
+path="res://.godot/imported/echo-dungeon-70538.mp3-2dec8ddc57ab477fadcac7f0bc174cdf.mp3str"
+
+[deps]
+
+source_file="res://Audio/Room Sounds/echo-dungeon-70538.mp3"
+dest_files=["res://.godot/imported/echo-dungeon-70538.mp3-2dec8ddc57ab477fadcac7f0bc174cdf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
