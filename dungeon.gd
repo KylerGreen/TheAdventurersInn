@@ -1,14 +1,16 @@
 extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"),] 
-#preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
 @onready var player = %Player3
 @onready var camera = $Camera2D
 @onready var skeleton = %Skeleton_Sound
+@onready var ambiance_sounds = [%Dungeon_Ambiance, %Dungeon_Echo]
+@onready var timer_1 = $Timer
+
 var active_rooms := []
 var occupied_positions := {} 
 var max_rooms := 20
@@ -24,7 +26,10 @@ func _ready():
 	# Room Signals
 	DungeonSignals.Encounter.connect(Encountered)
 	DungeonSignals.combat_done.connect(combat_finished)
-
+	
+	var wait_time_1 = randi() % 241 + 60
+	timer_1.start(wait_time_1)
+	
 func _process(_delta) -> void:
 	if active_rooms.size() > 0:
 		var last_room = active_rooms.back()
@@ -79,6 +84,19 @@ func _spawn_new_room(pos: Vector2):
 		occupied_positions.erase(Vector2i(old_room.position))
 		old_room.queue_free()	
 		
+func _on_timer_timeout():
+	print("Timer triggered")
+	ambiance()
+	
+func ambiance():	
+	var sound = ambiance_sounds.pick_random()
+	
+	if !sound.playing:
+		sound.play()
+		
+	var wait_time_1 = randi() % 241 + 60
+	timer_1.start(wait_time_1)
+	
 func Encountered():
 	skeleton.process_mode = Node.PROCESS_MODE_ALWAYS
 	skeleton.play()
