@@ -9,9 +9,9 @@ extends Node
 @onready var discard = $CardManager/Discard
 
 # Use to read player "decklist.json" filled with file names, sans .json
-var deck_list = "res://Combat/Beta/player_decklist.json"
-var json_as_text = FileAccess.get_file_as_string(deck_list)
-var deck_as_dict = JSON.parse_string(json_as_text)
+#var deck_list = "res://Combat/Beta/player_decklist.json"
+#var json_as_text = FileAccess.get_file_as_string(deck_list)
+#var deck_as_dict = JSON.parse_string(json_as_text)
 
 
 # Called when the node enters the scene tree for the first time.
