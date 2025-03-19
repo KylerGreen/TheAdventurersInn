@@ -907,15 +907,12 @@ unique_name_in_owner = true
 stream = ExtResource("9_qwxwx")
 volume_db = -10.0
 
-[node name="Timer_1" type="Timer" parent="Dungeon_Ambiance"]
-unique_name_in_owner = true
-autostart = true
-
 [node name="Dungeon_Echo" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_o7d0e")
 volume_db = -10.0
 
-[node name="Timer_2" type="Timer" parent="Dungeon_Echo"]
+[node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

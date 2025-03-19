@@ -1,7 +1,0 @@
-{
-	"name": "Heal",
-	"front_image": "cardClubs2.png",
-	"type": "Action",
-	"cr": "2",
-	"ability": "Recover 15 health"
-}

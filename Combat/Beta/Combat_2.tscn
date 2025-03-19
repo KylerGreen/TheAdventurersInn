@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=20 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
@@ -10,9 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
 [ext_resource type="AudioStream" uid="uid://bwjhhsi8wv7bj" path="res://Combat/Beta/Music/Battle Theme.mp3" id="10_ib3g5"]
+[ext_resource type="PackedScene" uid="uid://c74s1e8l8pf0i" path="res://Combat/Beta/test_card/cardhandlerTEST.tscn" id="11_0v6es"]
+[ext_resource type="PackedScene" uid="uid://c7u8hryloq7hy" path="res://addons/card-framework/card_manager.tscn" id="11_fx4mt"]
+[ext_resource type="Texture2D" uid="uid://b1jy1scbarbg5" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_red4.png" id="12_6q76n"]
+[ext_resource type="PackedScene" uid="uid://bkpjlq7ggckg6" path="res://addons/card-framework/hand.tscn" id="13_qv8k7"]
+[ext_resource type="Texture2D" uid="uid://51bevdcn6a57" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_red1.png" id="14_1ps40"]
+[ext_resource type="PackedScene" uid="uid://dk6rb7lhv1ef6" path="res://addons/card-framework/pile.tscn" id="15_32u5m"]
+[ext_resource type="Texture2D" uid="uid://cv6ecvmkml3ok" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_green1.png" id="16_cxhtq"]
+[ext_resource type="Texture2D" uid="uid://djoauv24lbkhc" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_blue1.png" id="17_b5tnq"]
+
+[sub_resource type="Curve" id="Curve_n2hbe"]
 
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(816, 492)
+zoom = Vector2(0.75, 0.75)
 
 [node name="BattleBackground" type="Sprite2D" parent="."]
 position = Vector2(602, 394)
@@ -116,3 +130,90 @@ script = ExtResource("3_hrp41")
 unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
 parameters/looping = true
+
+[node name="Cardhandler" parent="." instance=ExtResource("11_0v6es")]
+
+[node name="CardManager2" parent="Cardhandler" instance=ExtResource("11_fx4mt")]
+z_index = 12
+offset_left = -180.0
+offset_top = -120.0
+offset_right = -180.0
+offset_bottom = -120.0
+card_size = Vector2(100, 160)
+card_asset_dir = "res://Combat/Beta/test_card/assets/images/cards/"
+card_info_dir = "res://Combat/Beta/test_card/card_info/"
+back_image = ExtResource("12_6q76n")
+
+[node name="Hand" parent="Cardhandler/CardManager2" instance=ExtResource("13_qv8k7")]
+offset_left = 688.0
+offset_top = 800.0
+offset_right = 688.0
+offset_bottom = 800.0
+max_hand_size = 5
+hand_rotation_curve = SubResource("Curve_n2hbe")
+sensor_texture = ExtResource("14_1ps40")
+
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Hand"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -86.0
+offset_right = 92.0
+offset_bottom = -63.0
+text = "Hand"
+
+[node name="Action" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
+offset_left = 566.0
+offset_top = 344.0
+offset_right = 566.0
+offset_bottom = 344.0
+stack_display_gap = 1
+max_stack_display = 1
+sensor_texture = ExtResource("16_cxhtq")
+
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Action"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Act"
+
+[node name="Reaction" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
+offset_left = 844.0
+offset_top = 340.0
+offset_right = 844.0
+offset_bottom = 340.0
+sensor_texture = ExtResource("17_b5tnq")
+
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Reaction"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "React"
+
+[node name="Deck" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
+offset_left = 1278.0
+offset_top = 764.0
+offset_right = 1278.0
+offset_bottom = 764.0
+stack_display_gap = 6
+card_face_up = false
+
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Deck"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 25.0
+text = "Deck"
+
+[node name="Discard" parent="Cardhandler/CardManager2" instance=ExtResource("15_32u5m")]
+offset_left = 1270.0
+offset_top = 366.0
+offset_right = 1270.0
+offset_bottom = 366.0
+stack_display_gap = 6
+
+[node name="Label" type="Label" parent="Cardhandler/CardManager2/Discard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Discard"

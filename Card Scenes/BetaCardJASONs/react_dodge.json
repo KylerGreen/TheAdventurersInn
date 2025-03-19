@@ -1,7 +1,0 @@
-{
-	"name": "Dodge",
-	"front_image": "cardClubs2.png",
-	"type": "Reaction",
-	"cr": "2",
-	"ability": "Avoid an instance of damage"
-}

@@ -1,0 +1,7 @@
+{
+	"name": "Counter",
+	"front_image": "cardClubs6.png",
+	"type": "Reaction",
+	"cr": "2",
+	"ability": "When attacked, attack for 15 damage"
+}
