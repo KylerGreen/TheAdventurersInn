@@ -101,23 +101,37 @@ func Disarmed():
 	%Enemy.Disarm = true
 	
 func Action(card, container):
-	card = card.card_info
-	if card["name"] == "Parry":
-		CombatSignals.Player_Parry.emit()
-	elif card["name"] == "Dodge":
-		CombatSignals.Player_Dodge.emit()
-	elif card["name"] == "Counter":
-		CombatSignals.Player_Counter.emit()
-	elif card["name"] == "Bolster":
-		CombatSignals.Player_Bolster.emit()
-	elif card["name"] == "Disarm":
-		CombatSignals.Enemy_Disarm.emit()
-	elif card["name"] == "Heal":
-		CombatSignals.Player_Heal.emit()
-	elif card["name"] == "Swing":
-		CombatSignals.Player_Swing.emit()
+	var has_action = false
+	var has_reaction = false
+	var action_card
+	var reaction_card
 	
-
-
-func _on_use_cards_pressed() -> void:
-	CombatSignals.Use_Cards.emit()
+	if container == "Action":
+		has_action = true
+		action_card = card.card_info
+	elif container == "Reaction":
+		has_reaction = true
+		reaction_card = card.card_info
+		
+	if has_action == true and has_reaction == true:
+		if card["name"] == "Parry":
+			CombatSignals.Player_Parry.emit()
+			print("You Parried!")
+		elif card["name"] == "Dodge":
+			CombatSignals.Player_Dodge.emit()
+			print("You Dodged!")
+		elif card["name"] == "Counter":
+			CombatSignals.Player_Counter.emit()
+			print("You Countered!")
+		elif card["name"] == "Bolster":
+			CombatSignals.Player_Bolster.emit()
+			print("You Bolstered!")
+		elif card["name"] == "Disarm":
+			CombatSignals.Enemy_Disarm.emit()
+			print("You Disarmed!")
+		elif card["name"] == "Heal":
+			CombatSignals.Player_Heal.emit()
+			print("You Healed!")
+		elif card["name"] == "Swing":
+			CombatSignals.Player_Swing.emit()
+			print("You Swung!")

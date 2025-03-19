@@ -99,13 +99,6 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_ehlno")
 
-[node name="Use_Cards" type="Button" parent="."]
-offset_left = 994.0
-offset_top = 353.0
-offset_right = 1172.0
-offset_bottom = 411.0
-text = "Use Cards"
-
 [node name="Skeleton" parent="." instance=ExtResource("4_dlgxc")]
 unique_name_in_owner = true
 script = ExtResource("5_biuxo")
@@ -130,5 +123,4 @@ stream = ExtResource("10_ib3g5")
 parameters/looping = true
 
 [node name="Cardhandler" parent="." instance=ExtResource("11_0v6es")]
-
-[connection signal="pressed" from="Use_Cards" to="Player" method="_on_use_cards_pressed"]
+script = null
