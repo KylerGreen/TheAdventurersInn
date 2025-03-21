@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://c74s1e8l8pf0i"]
+[gd_scene load_steps=9 format=3 uid="uid://c74s1e8l8pf0i"]
 
-[ext_resource type="Script" path="res://Combat/Beta/test_card/cardhandler_test.gd" id="1_a57a7"]
 [ext_resource type="PackedScene" uid="uid://c7u8hryloq7hy" path="res://addons/card-framework/card_manager.tscn" id="2_ajner"]
 [ext_resource type="Texture2D" uid="uid://b1jy1scbarbg5" path="res://Combat/Beta/test_card/assets/images/cards/cardBack_red4.png" id="3_1d6ds"]
 [ext_resource type="PackedScene" uid="uid://bkpjlq7ggckg6" path="res://addons/card-framework/hand.tscn" id="4_q46oj"]
@@ -12,7 +11,6 @@
 [sub_resource type="Curve" id="Curve_sgf2h"]
 
 [node name="CardhandlerTest" type="Node"]
-script = ExtResource("1_a57a7")
 
 [node name="CardManager" parent="." instance=ExtResource("2_ajner")]
 anchors_preset = -1
