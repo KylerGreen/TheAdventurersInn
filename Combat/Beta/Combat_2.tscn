@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
 [ext_resource type="AudioStream" uid="uid://bwjhhsi8wv7bj" path="res://Combat/Beta/Music/Battle Theme.mp3" id="10_ib3g5"]
-[ext_resource type="PackedScene" uid="uid://c74s1e8l8pf0i" path="res://Combat/Beta/test_card/cardhandlerTEST.tscn" id="11_0v6es"]
+[ext_resource type="PackedScene" uid="uid://c74s1e8l8pf0i" path="res://Combat/Beta/CardHandler/card_handler.tscn" id="11_boks1"]
 
 [node name="Combat2" type="Node2D"]
 script = ExtResource("1_j1xjl")
@@ -122,4 +122,4 @@ unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
 parameters/looping = true
 
-[node name="Cardhandler" parent="." instance=ExtResource("11_0v6es")]
+[node name="CardHandler" parent="." instance=ExtResource("11_boks1")]
