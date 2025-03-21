@@ -78,7 +78,7 @@ text = "
 "
 
 [node name="CardManager" parent="." instance=ExtResource("3_hqm66")]
-z_index = 4096
+z_index = 2000
 card_asset_dir = "res://Combat/Beta/CardHandler/assets/images/cards/"
 card_info_dir = "res://Combat/Beta/CardHandler/BetaCardJASONs/"
 back_image = ExtResource("4_l3f6d")
