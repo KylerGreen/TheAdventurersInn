@@ -11,7 +11,6 @@
 script = ExtResource("1_sf6aj")
 
 [node name="BackgroundAlignment" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(602, 394)
 scale = Vector2(0.762346, 0.762346)
 texture = ExtResource("2_am83b")
