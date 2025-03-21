@@ -14,6 +14,7 @@ signal Player_Parry
 signal Player_Counter
 signal card_placed
 signal player_action_phase
+signal card_used
 
 
 #Enemy Signals
