@@ -20,6 +20,12 @@ var Parry = 1
 var Counter = false
 var disarm = false
 
+#Other Variables
+var has_action = false
+var has_reaction = false
+var action_card
+var reaction_card
+
 func _ready():
 	%Player_HP.text = str('HP: ', HP)
 	CombatSignals.Player_Bolster.connect(Bolstered)
@@ -27,7 +33,7 @@ func _ready():
 	CombatSignals.Player_Parry.connect(Parrying)
 	CombatSignals.Player_Counter.connect(Countering)
 	CombatSignals.Player_Heal.connect(Healing)
-	CombatSignals.Action_Placed.connect(Action)
+	CombatSignals.card_placed.connect(player_turn)
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
@@ -100,11 +106,7 @@ func Damaged():
 func Disarmed():
 	%Enemy.Disarm = true
 	
-func Action(card, container):
-	var has_action = false
-	var has_reaction = false
-	var action_card
-	var reaction_card
+func player_turn(card, container):
 	
 	if container == "Action":
 		has_action = true

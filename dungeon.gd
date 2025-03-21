@@ -17,7 +17,7 @@ var max_rooms := 20
 var room_width = 280
 var room_height = 280
 var room_margin = 40
-var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
+var combat_screen = preload("res://Combat/Beta/Combat_2.tscn")
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -104,7 +104,7 @@ func Encountered():
 	get_tree().current_scene.add_child(combat)
 	combat.position = %Player3.position
 	get_tree().paused = true
-	%Camera2D.zoom = Vector2(1.2, 1.2)
+	%Camera2D.zoom = Vector2(.75, .75)
 	DungeonSignals.DisplayText.emit('You won the battle! You received 50 gold!')
 
 func combat_finished():
