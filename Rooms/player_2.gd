@@ -103,6 +103,6 @@ func Floor1_Message(set_text : String):
 	
 	$Important_Text.custom_minimum_size.x = original_min_size
 	label.add_theme_stylebox_override("normal", original_stylebox)
-	label.add_theme_font_size_override("font_size", original_font_size * 1/3)
+	label.add_theme_font_size_override("font_size", 6)
 	label.visible = false
 	

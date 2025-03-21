@@ -1,7 +1,7 @@
 extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
@@ -40,9 +40,6 @@ func _process(_delta) -> void:
 
 			if Vector2i(next_room) not in occupied_positions:
 				_spawn_new_room(next_room)
-
-		else: 
-			print("Room at", next_room, "already exists")
 			
 func _spawn_new_room(pos: Vector2):
 	var pos_int = Vector2i(pos)
@@ -106,7 +103,6 @@ func Encountered():
 	combat.position = %Player3.position
 	get_tree().paused = true
 	%Camera2D.zoom = Vector2(1.2, 1.2)
-	DungeonSignals.DisplayText.emit('You won the battle! You received 50 gold!')
 
 func combat_finished():
 	%Camera2D.zoom = Vector2(2, 2)
