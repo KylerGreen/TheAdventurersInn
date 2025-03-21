@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfna4o7w1w0kv"
+path="res://.godot/imported/lever_chains14-41056.mp3-623764b6e6e2ecce0e602cc28b04018e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Battle Sounds/lever_chains14-41056.mp3"
+dest_files=["res://.godot/imported/lever_chains14-41056.mp3-623764b6e6e2ecce0e602cc28b04018e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
