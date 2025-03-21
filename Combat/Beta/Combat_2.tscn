@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c74s1e8l8pf0i" path="res://Combat/Beta/CardHandler/card_handler.tscn" id="11_boks1"]
 
 [node name="Combat2" type="Node2D"]
+z_index = 4096
+position = Vector2(1, -1)
 script = ExtResource("1_j1xjl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -31,6 +33,7 @@ offset_top = 3.0
 offset_right = 1157.0
 offset_bottom = 649.0
 color = Color(0.255659, 0.255659, 0.255659, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Ground" type="ColorRect" parent="BattleBackground"]
 offset_left = -1154.0
@@ -38,6 +41,7 @@ offset_top = -52.0648
 offset_right = 1155.0
 offset_bottom = 2.93521
 color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ActionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
@@ -46,6 +50,7 @@ offset_top = -200.0
 offset_right = -36.8826
 offset_bottom = 75.0
 color = Color(0.47788, 0.47788, 0.47788, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ActionLabel" type="Label" parent="BattleBackground/ActionSlot"]
 layout_mode = 0
@@ -57,6 +62,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Action"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ReactionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
@@ -65,6 +71,7 @@ offset_top = -200.0
 offset_right = 238.117
 offset_bottom = 75.0
 color = Color(0.47788, 0.47788, 0.47788, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ReactionLabel" type="Label" parent="BattleBackground/ReactionSlot"]
 layout_mode = 0
@@ -75,6 +82,7 @@ offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Reaction"
+metadata/_edit_use_anchors_ = true
 
 [node name="DamageCounter" type="Label" parent="BattleBackground"]
 offset_left = -29.0
@@ -84,6 +92,7 @@ offset_bottom = -308.0
 theme_override_font_sizes/font_size = 50
 text = "
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_8b3ah")]
 unique_name_in_owner = true
@@ -98,6 +107,7 @@ offset_bottom = 189.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_ehlno")
+metadata/_edit_use_anchors_ = true
 
 [node name="Skeleton" parent="." instance=ExtResource("4_dlgxc")]
 unique_name_in_owner = true
@@ -116,6 +126,7 @@ offset_bottom = 193.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("3_hrp41")
+metadata/_edit_use_anchors_ = true
 
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

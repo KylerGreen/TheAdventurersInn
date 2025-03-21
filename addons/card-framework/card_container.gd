@@ -160,7 +160,7 @@ func _assign_card_to_container(card: Card) -> void:
 	if not _held_cards.has(card):
 		_held_cards.append(card)
 	if emits_signals == true:
-		CombatSignals.Action_Placed.emit(card, self)
+		CombatSignals.card_placed.emit(card, self)
 	update_card_ui()
 
 
