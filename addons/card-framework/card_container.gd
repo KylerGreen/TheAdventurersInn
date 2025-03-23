@@ -27,7 +27,7 @@ var _held_cards := []
 var _holding_cards := []
 var cards_node: Control
 var card_manager: CardManager
-#var current_card
+#var current_card = Card
 
 
 func _init():
@@ -118,6 +118,7 @@ func move_cards(cards: Array, with_history: bool = true) -> bool:
 		return false
 	if with_history:
 		card_manager._add_history(self, cards)
+	#if card.card_info["name"] == "Action" and self.unique_id == 1:
 	_move_cards(cards)
 	return true
 
