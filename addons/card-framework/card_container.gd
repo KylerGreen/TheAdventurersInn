@@ -18,6 +18,10 @@ static var next_id = 0
 ## Determines whether the sensor is visible or not.
 @export var sensor_visibility := true
 
+## Allows you the option to limit the number of cards in a pile.
+@export var is_size_lim := false
+## The max number of cards a pile can hold when is_size_lim is true.
+@export var max_card: int = 100
 
 var unique_id: int
 var drop_zone_scene = preload("drop_zone.tscn")
@@ -181,7 +185,12 @@ func _move_cards(cards: Array) -> void:
 
 
 func _card_can_be_added(_cards: Array) -> bool:
-	return true
+	#Modified to allow for a pile to contain a limited number of cards.
+	if is_size_lim == true:
+		var card_size = _cards.size()
+		return _held_cards.size() + card_size <= max_card
+	else:
+		return true
 
 
 func update_card_ui():

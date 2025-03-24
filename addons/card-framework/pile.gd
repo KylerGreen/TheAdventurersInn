@@ -29,6 +29,7 @@ const PILE_Z_INDEX := 3000
 @export var align_drop_zone_with_top_card := true
 
 
+
 func get_top_cards(n: int) -> Array:
 	var arr_size = _held_cards.size()
 	if n > arr_size:
