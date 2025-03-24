@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=14 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
@@ -11,6 +11,12 @@
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
 [ext_resource type="AudioStream" uid="uid://bwjhhsi8wv7bj" path="res://Combat/Beta/Music/Battle Theme.mp3" id="10_ib3g5"]
 [ext_resource type="PackedScene" uid="uid://c74s1e8l8pf0i" path="res://Combat/Beta/CardHandler/card_handler.tscn" id="11_3d1ge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yilpf"]
+bg_color = Color(0.746773, 0.0481419, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lq6j"]
+bg_color = Color(0.745098, 0.0470588, 0, 1)
 
 [node name="Combat2" type="Node2D"]
 z_index = 1000
@@ -98,12 +104,21 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 script = ExtResource("3_ugd0x")
 
-[node name="Player_HP" type="Label" parent="Player"]
+[node name="Player_health" type="ProgressBar" parent="Player"]
+offset_left = 47.0
+offset_top = 82.0
+offset_right = 346.0
+offset_bottom = 128.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_yilpf")
+show_percentage = false
+
+[node name="Player_HP" type="Label" parent="Player/Player_health"]
 unique_name_in_owner = true
-offset_left = 178.0
-offset_top = 126.0
-offset_right = 374.0
-offset_bottom = 189.0
+layout_mode = 0
+offset_left = 95.0
+offset_top = -4.0
+offset_right = 291.0
+offset_bottom = 59.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_ehlno")
@@ -117,8 +132,22 @@ script = ExtResource("5_biuxo")
 unique_name_in_owner = true
 script = ExtResource("9_8ca1b")
 
-[node name="Enemy_HP" type="Label" parent="Enemy"]
+[node name="Enemy_health" type="ProgressBar" parent="Enemy"]
+offset_left = 877.0
+offset_top = 79.0
+offset_right = 1172.0
+offset_bottom = 123.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_0lq6j")
+show_percentage = false
+
+[node name="Enemy_HP" type="Label" parent="Enemy/Enemy_health"]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.13072
+anchor_top = -3.04545
+anchor_right = -3.13072
+anchor_bottom = -3.04545
 offset_left = 996.0
 offset_top = 131.0
 offset_right = 1230.0
