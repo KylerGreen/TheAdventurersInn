@@ -41,6 +41,7 @@ func _ready():
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+	$Player_health.value = HP
 	if HP <= 0:
 		HP = 0
 	Gold = DungeonSignals.gold

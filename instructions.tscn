@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://or0pilxodkj7"]
+
+[node name="Instructions" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1282.0
+offset_bottom = 715.0
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1278.0
+offset_bottom = 714.0
+theme_override_font_sizes/font_size = 40
+text = "Instructions:
+
+\"Arrow Keys\" - Move your character
+
+As you explore the dungeon, you'll come across enemies that 
+oppose your progress. In these instances you will use your deck
+of cards to fight them off. You will place both an action in 
+the action slot and a reaction in the reaction slot on your turn."
