@@ -118,7 +118,6 @@ func move_cards(cards: Array, with_history: bool = true) -> bool:
 		return false
 	if with_history:
 		card_manager._add_history(self, cards)
-	#if card.card_info["name"] == "Action" and self.unique_id == 1:
 	_move_cards(cards)
 	return true
 
@@ -219,6 +218,8 @@ func _remove_object(target: Node):
 		parent.remove_child(target)
 	target.queue_free()
 	
+	
+#func move_action_card(_card, cards):
 #func _use_cards(current_card):
 	#if emits_signals == true:
 		#CombatSignals.Action_Placed.emit(current_card, self)
