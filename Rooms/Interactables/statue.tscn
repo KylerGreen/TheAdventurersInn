@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://chqxslnj74bqp"]
+
+[ext_resource type="Script" path="res://Rooms/Interactables/statue.gd" id="1_3wumd"]
+[ext_resource type="AudioStream" uid="uid://ciqh0otib2i8i" path="res://Audio/punch-a-rock-161647 (mp3cut.net).mp3" id="2_akgak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey5wk"]
+size = Vector2(19, 42)
+
+[node name="Statue" type="Node2D"]
+script = ExtResource("1_3wumd")
+
+[node name="Switch3A2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Switch3A2D"]
+position = Vector2(-0.5, 11)
+shape = SubResource("RectangleShape2D_ey5wk")
+
+[node name="Statue_Sound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_akgak")
+volume_db = 10.0
+
+[connection signal="body_entered" from="Switch3A2D" to="." method="_on_switch_3a_2d_body_entered"]

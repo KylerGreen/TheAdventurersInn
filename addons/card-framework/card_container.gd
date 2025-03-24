@@ -4,7 +4,8 @@ extends Control
 
 static var next_id = 0
 
-
+@export var emits_signals = false
+@export var limit = 5
 @export_group("drop_zone")
 ## Enables or disables the drop zone functionality.
 @export var enable_drop_zone := true
@@ -23,6 +24,7 @@ static var next_id = 0
 ## The max number of cards a pile can hold when is_size_lim is true.
 @export var max_card: int = 100
 
+
 var unique_id: int
 var drop_zone_scene = preload("drop_zone.tscn")
 var drop_zone = null
@@ -30,6 +32,7 @@ var _held_cards := []
 var _holding_cards := []
 var cards_node: Control
 var card_manager: CardManager
+#var current_card = Card
 
 
 func _init():
@@ -38,6 +41,7 @@ func _init():
 
 
 func _ready() -> void:
+	#CombatSignals.Use_Cards.connect(_use_cards)
 	# Check if 'Cards' node already exists
 	if has_node("Cards"):
 		cards_node = $Cards
@@ -160,6 +164,8 @@ func _assign_card_to_container(card: Card) -> void:
 		card.card_container = self
 	if not _held_cards.has(card):
 		_held_cards.append(card)
+	if emits_signals == true:
+		CombatSignals.card_placed.emit(card, self)
 	update_card_ui()
 
 
@@ -221,3 +227,11 @@ func _remove_object(target: Node):
 	if parent != null:
 		parent.remove_child(target)
 	target.queue_free()
+	
+	
+#func move_action_card(_card, cards):
+	#if _card.card_info["name"] == "Action":
+		#_move_cards(cards)
+#func _use_cards(current_card):
+	#if emits_signals == true:
+		#CombatSignals.Action_Placed.emit(current_card, self)

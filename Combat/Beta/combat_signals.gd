@@ -12,7 +12,9 @@ signal Player_Disarm
 signal Player_Dodge
 signal Player_Parry
 signal Player_Counter
+signal card_placed
 signal player_action_phase
+signal card_used
 
 
 #Enemy Signals
@@ -24,8 +26,3 @@ signal Enemy_Dodge
 signal Enemy_Parry
 signal Enemy_Counter
 signal enemy_action_phase
-
-
-#Other Signals
-signal Action_Placed
-signal Reaction_Placed

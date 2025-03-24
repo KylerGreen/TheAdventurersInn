@@ -377,6 +377,6 @@ tile_set = SubResource("TileSet_c0xg6")
 position = Vector2(53, 31)
 rotation = 0.0175188
 
-[node name="BlueEnemy" parent="BlueEnemy" instance=ExtResource("4_w43k6")]
-position = Vector2(-4.37128, 150.1)
-rotation = 0.0175188
+[node name="BlueEnemy2" parent="." instance=ExtResource("4_w43k6")]
+position = Vector2(46, 181)
+rotation = 0.0350376

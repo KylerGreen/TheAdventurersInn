@@ -6,7 +6,7 @@ extends CardContainer
 
 @export_group("hand_meta_info")
 ## maximum number of cards that can be held.
-@export var max_hand_size := 10
+@export var max_hand_size := 5
 ## maximum spread of the hand.
 @export var max_hand_spread := 700
 ## whether the card is face up.

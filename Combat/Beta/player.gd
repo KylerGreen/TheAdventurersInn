@@ -20,6 +20,12 @@ var Parry = 1
 var Counter = false
 var disarm = false
 
+#Other Variables
+var has_action = false
+var has_reaction = false
+var action_card
+var reaction_card
+
 func _ready():
 	%Player_HP.text = str('HP: ', HP)
 	CombatSignals.Player_Bolster.connect(Bolstered)
@@ -27,6 +33,7 @@ func _ready():
 	CombatSignals.Player_Parry.connect(Parrying)
 	CombatSignals.Player_Counter.connect(Countering)
 	CombatSignals.Player_Heal.connect(Healing)
+	CombatSignals.card_placed.connect(player_turn)
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
@@ -98,3 +105,38 @@ func Damaged():
 	
 func Disarmed():
 	%Enemy.Disarm = true
+	
+func player_turn(card, container):
+	if container.unique_id == 1:
+		has_action = true
+		action_card = card.card_info
+	elif container.unique_id == 2:
+		has_reaction = true
+		reaction_card = card.card_info
+		
+	if has_action == true and has_reaction == true:
+		if reaction_card["name"] == "Parry":
+			CombatSignals.Player_Parry.emit()
+			print("You Parried!")
+		elif reaction_card["name"] == "Dodge":
+			CombatSignals.Player_Dodge.emit()
+			print("You Dodged!")
+		elif reaction_card["name"] == "Counter":
+			CombatSignals.Player_Counter.emit()
+			print("You Countered!")
+		elif reaction_card["name"] == "Bolster":
+			CombatSignals.Player_Bolster.emit()
+			print("You Bolstered!")
+		elif action_card["name"] == "Disarm":
+			CombatSignals.Enemy_Disarm.emit()
+			print("You Disarmed!")
+		elif action_card["name"] == "Heal":
+			CombatSignals.Player_Heal.emit()
+			print("You Healed!")
+		elif action_card["name"] == "Swing":
+			CombatSignals.Player_Swing.emit()
+			print("You Swung!")
+			
+		#CombatSignals.card_used.emit()
+		has_action = false
+		has_reaction = false

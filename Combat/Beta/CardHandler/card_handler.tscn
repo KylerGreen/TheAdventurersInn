@@ -11,7 +11,6 @@
 script = ExtResource("1_sf6aj")
 
 [node name="BackgroundAlignment" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(602, 394)
 scale = Vector2(0.762346, 0.762346)
 texture = ExtResource("2_am83b")
@@ -78,6 +77,7 @@ text = "
 "
 
 [node name="CardManager" parent="." instance=ExtResource("3_hqm66")]
+z_index = 1000
 card_asset_dir = "res://Combat/Beta/CardHandler/assets/images/cards/"
 card_info_dir = "res://Combat/Beta/CardHandler/BetaCardJASONs/"
 back_image = ExtResource("4_l3f6d")
