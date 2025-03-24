@@ -138,6 +138,6 @@ func player_turn(card, container):
 			CombatSignals.Player_Swing.emit()
 			print("You Swung!")
 			
-		#CombatSignals.card_used.emit()
+		CombatSignals.card_used.emit()
 		has_action = false
 		has_reaction = false
