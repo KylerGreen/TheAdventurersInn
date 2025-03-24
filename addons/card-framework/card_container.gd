@@ -220,6 +220,8 @@ func _remove_object(target: Node):
 	
 	
 #func move_action_card(_card, cards):
+	#if _card.card_info["name"] == "Action":
+		#_move_cards(cards)
 #func _use_cards(current_card):
 	#if emits_signals == true:
 		#CombatSignals.Action_Placed.emit(current_card, self)
