@@ -17,6 +17,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_reset_deck()
+	#_draw_to_five()
 
 
 func _reset_deck():
@@ -44,3 +45,12 @@ func _get_randomized_card_list() -> Array:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _draw_to_five():
+	var current_draw_number = 5
+	while current_draw_number > 0:
+		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+		if result:
+			break
+		current_draw_number -= 1
