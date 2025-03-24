@@ -134,6 +134,7 @@ offset_left = 36.0
 offset_top = 473.0
 offset_right = 36.0
 offset_bottom = 473.0
+max_hand_size = 20
 
 [node name="Label" type="Label" parent="CardManager/Discard"]
 layout_mode = 0
@@ -146,6 +147,7 @@ offset_left = 1063.0
 offset_top = 471.0
 offset_right = 1063.0
 offset_bottom = 471.0
+max_hand_size = 20
 
 [node name="Label" type="Label" parent="CardManager/Deck"]
 layout_mode = 0

@@ -5,6 +5,7 @@ extends Control
 static var next_id = 0
 
 @export var emits_signals = false
+@export var limit = 5
 @export_group("drop_zone")
 ## Enables or disables the drop zone functionality.
 @export var enable_drop_zone := true
