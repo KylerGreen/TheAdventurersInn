@@ -116,7 +116,8 @@ func player_turn(card, container):
 	elif container.unique_id == 2:
 		has_reaction = true
 		reaction_card = card.card_info
-		
+			
+	if has_action == true and has_reaction == true:
 		if action_card["name"] == "Disarm":
 			CombatSignals.Enemy_Disarm.emit()
 		elif action_card["name"] == "Heal":
@@ -124,7 +125,6 @@ func player_turn(card, container):
 		elif action_card["name"] == "Swing":
 			CombatSignals.Player_Swing.emit()
 			
-	if has_action == true and has_reaction == true:
 		if reaction_card["name"] == "Parry":
 			CombatSignals.Player_Parry.emit()
 		elif reaction_card["name"] == "Dodge":
