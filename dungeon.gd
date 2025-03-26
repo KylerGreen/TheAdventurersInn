@@ -2,7 +2,7 @@ extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
-const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
+const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_444.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_555.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_666.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_777.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_888.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
 @onready var player = %Player3

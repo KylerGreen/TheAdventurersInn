@@ -1,9 +1,9 @@
-[gd_scene load_steps=43 format=4 uid="uid://cbvnvvb5ddydl"]
+[gd_scene load_steps=43 format=4 uid="uid://do73r0ifa06e7"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_resx6"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_r8ihn"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_mxh8n"]
-[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_i5yi5"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_ssuvs"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_f5o8n"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_tx888"]
+[ext_resource type="PackedScene" uid="uid://be4226mf3v1ki" path="res://Rooms/Room Enemies/pathing_blue_enemy.tscn" id="4_wj1qn"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -109,7 +109,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8fj0"]
-texture = ExtResource("1_resx6")
+texture = ExtResource("1_ssuvs")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -177,7 +177,7 @@ texture = ExtResource("1_resx6")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4brf2"]
-texture = ExtResource("2_r8ihn")
+texture = ExtResource("2_f5o8n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -225,7 +225,7 @@ texture = ExtResource("2_r8ihn")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmodw"]
-texture = ExtResource("3_mxh8n")
+texture = ExtResource("3_tx888")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -438,7 +438,6 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAADAPj/AAAJAAIAAAACAPj/AAAJAAIAAAACAPn/AAAJAAIAAAACAPr/AAAJAAIAAAADAPr/AAAJAAIAAAABAPn/AAAJAAIAAAABAPj/AAAJAAIAAAABAPT/AAAJAAIAAAABAPP/AAAJAAIAAAACAPP/AAAJAAIAAAADAPP/AAAJAAIAAAADAPL/AAAJAAIAAAATAPT/AAAJAAIAAAATAPj/AAAJAAIAAAASAPj/AAAJAAIAAAASAPT/AAAJAAIAAAAHAP3/AAAJAAIAAAAHAPz/AAAJAAIAAAAIAPv/AAAJAAIAAAAIAPr/AAAJAAIAAAAJAPr/AAAJAAIAAAAJAPn/AAAJAAIAAAAJAPT/AAAJAAIAAAAJAPP/AAAJAAIAAAAIAPP/AAAJAAIAAAAIAPL/AAAJAAIAAAAIAPH/AAAJAAIAAAAHAPH/AAAJAAIAAAAPAPP/AAAJAAIAAAAQAPP/AAAJAAIAAAAQAPT/AAAJAAIAAAAOAPn/AAAJAAIAAAAOAPr/AAAJAAIAAAAPAPv/AAAJAAIAAAAJAPX/AAAJAAIAAAAKAPX/AAAJAAIAAAAKAPb/AAAJAAIAAAAOAPL/AAAJAAIAAAAPAPL/AAAJAAIAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Walls" type="TileMapLayer" parent="."]
@@ -454,41 +453,5 @@ use_parent_material = true
 position = Vector2(-125, 250)
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(-32, 158)
-
-[node name="BlueEnemy2" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(-26, 30)
-
-[node name="BlueEnemy3" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(73, 110)
-
-[node name="BlueEnemy4" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(-1, 88)
-
-[node name="BlueEnemy5" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(90, 5)
-
-[node name="BlueEnemy6" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(122, 210)
-
-[node name="BlueEnemy7" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(37, 205)
-
-[node name="BlueEnemy8" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(-72, 214)
-
-[node name="BlueEnemy9" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(-70, -16)
-
-[node name="BlueEnemy10" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(33, -2)
-
-[node name="BlueEnemy12" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(118, 113)
-
-[node name="BlueEnemy13" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(167, 21)
-
-[node name="BlueEnemy14" parent="." instance=ExtResource("4_i5yi5")]
-position = Vector2(81, 59)
+[node name="PathingBlueEnemy" parent="." instance=ExtResource("4_wj1qn")]
+position = Vector2(-2, 6)

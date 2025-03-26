@@ -1523,4 +1523,4 @@ tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_o88hm")
 
 [node name="Statue" parent="." instance=ExtResource("4_ttbwv")]
-position = Vector2(171, -31)
+position = Vector2(172, -41)
