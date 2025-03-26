@@ -80,9 +80,9 @@ func Healing():
 	
 func Damaged():
 	var DMG_Recieved = (%Player.Damage + %Player.Sword) * %Player.Bolster * Parry
-	$DamageCounter.text = str('-',DMG_Recieved)
+	%DamageCounter.text = str('-',DMG_Recieved)
 	await get_tree().create_timer(1.0).timeout
-	$DamageCounter.text = str('')
+	%DamageCounter.text = str('')
 	if Dodge == true:
 		HP = HP
 		Dodge = false

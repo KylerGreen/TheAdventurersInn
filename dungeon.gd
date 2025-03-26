@@ -17,7 +17,7 @@ var max_rooms := 20
 var room_width = 280
 var room_height = 280
 var room_margin = 40
-var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
+var combat_screen = preload("res://Combat/Beta/Combat_2.tscn")
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -100,9 +100,12 @@ func Encountered():
 	var combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
-	combat.position = %Player3.position
+	combat.position.x = %Player3.position.x - 550
+	combat.position.y = %Player3.position.y - 400
+	%Camera2D.zoom = Vector2(0.4, 0.4)
 	get_tree().paused = true
-	%Camera2D.zoom = Vector2(1.2, 1.2)
+
 
 func combat_finished():
+	get_tree().paused = false
 	%Camera2D.zoom = Vector2(2, 2)

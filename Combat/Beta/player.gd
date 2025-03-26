@@ -88,9 +88,9 @@ func Healing():
 
 func Damaged():
 	var DMG_Recieved = %Enemy.Damage * %Enemy.Bolster * Parry
-	$DamageCounter.text = str('-',DMG_Recieved)
+	%DamageCounter.text = str('-',DMG_Recieved)
 	await get_tree().create_timer(1.0).timeout
-	$DamageCounter.text = str('')
+	%DamageCounter.text = str('')
 	
 	if Dodge == true:
 		HP = HP
@@ -128,7 +128,8 @@ func player_turn(card, container):
 		elif reaction_card["name"] == "Bolster":
 			CombatSignals.Player_Bolster.emit()
 			print("You Bolstered!")
-		elif action_card["name"] == "Disarm":
+			
+		if action_card["name"] == "Disarm":
 			CombatSignals.Enemy_Disarm.emit()
 			print("You Disarmed!")
 		elif action_card["name"] == "Heal":
