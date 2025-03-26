@@ -206,3 +206,14 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Deck"
+
+[node name="Discard TEST" type="Button" parent="CardManager"]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 298.0
+offset_right = 1058.0
+offset_bottom = 352.0
+text = "Use Action & Reaction 
+Then Discard"
+
+[connection signal="pressed" from="CardManager/Discard TEST" to="." method="_on_discard_test_pressed"]

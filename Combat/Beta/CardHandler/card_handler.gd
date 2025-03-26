@@ -17,7 +17,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_reset_deck()
-	#_draw_to_five()
+	_draw_to_five()
 
 
 func _reset_deck():
@@ -54,3 +54,13 @@ func _draw_to_five():
 		if result:
 			break
 		current_draw_number -= 1
+
+func _end_of_turn():
+	# Send signals from the cards to the card_signal Manager
+	
+	# Discard Cards from Action and reaction zone
+	var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
+	discard.move_cards(cards)
+
+func _on_discard_test_pressed() -> void:
+	_end_of_turn()
