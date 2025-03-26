@@ -62,6 +62,12 @@ func _end_of_turn():
 	# Discard Cards from Action and reaction zone
 	var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
 	discard.move_cards(cards)
+	var current_draw_number = 2
+	while current_draw_number > 0:
+		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+		if result:
+			break
+		current_draw_number -= 1
 	
 
 func _on_discard_test_pressed() -> void:

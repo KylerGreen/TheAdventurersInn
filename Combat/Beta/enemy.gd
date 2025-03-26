@@ -55,6 +55,7 @@ func _ready():
 	
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
+	CombatSignals.card_used.connect(enemy_turn)
 	
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
@@ -97,3 +98,16 @@ func Damaged():
 	
 func Disarmed():
 	%Player.Disarm = true
+
+func enemy_turn():
+	var Enemy_Action = randi_range(0, 10)
+	if Enemy_Action > 0 and Enemy_Action <= 2:
+		pass
+	elif Enemy_Action > 2 and Enemy_Action <= 4:
+		pass
+	elif Enemy_Action > 4 and Enemy_Action <= 6:
+		pass
+	elif Enemy_Action > 6 and Enemy_Action <= 8:
+		pass
+	elif Enemy_Action > 8 and Enemy_Action <= 10:
+		pass
