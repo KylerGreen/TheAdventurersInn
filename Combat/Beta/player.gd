@@ -4,7 +4,7 @@ extends CharacterBody2D
 var HP = 100
 var MaxHP = 100
 var Heals = 15
-var Damage = 20
+var Damage = 30
 var XP = 0
 var Level = 1
 
@@ -56,7 +56,6 @@ func _process(delta):
 	elif XP >= 300:
 		if Level == 2:
 			HP = MaxHP
-			Damage = 30
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 700:
