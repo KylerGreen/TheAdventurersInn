@@ -16,7 +16,6 @@ signal card_placed
 signal player_action_phase
 signal card_used
 
-
 #Enemy Signals
 signal Enemy_Swing
 signal Enemy_Bolster

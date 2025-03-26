@@ -44,6 +44,7 @@ func _process(delta):
 	$Player_health.value = HP
 	if HP <= 0:
 		HP = 0
+		DungeonSignals.combat_done.emit()
 	Gold = DungeonSignals.gold
 	
 	if XP >= 100:
@@ -69,6 +70,8 @@ func _process(delta):
 		%Enemy.HP == 0
 		DungeonSignals.gold += %Enemy.gold
 		XP += %Enemy.XP
+		DungeonSignals.combat_done.emit()
+		
 
 
 func Bolstered():
