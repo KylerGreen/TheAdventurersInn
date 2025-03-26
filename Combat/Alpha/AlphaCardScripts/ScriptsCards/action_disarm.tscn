@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxgk44up8rslb"]
 
-[ext_resource type="Script" path="res://Combat/Card Scenes/AlphaCardScripts/ScriptsCards/action_disarm.gd" id="1_8d3pa"]
+[ext_resource type="Script" path="res://Combat/Alpha/AlphaCardScripts/ScriptsCards/action_disarm.gd" id="1_8d3pa"]
 [ext_resource type="PackedScene" path="res://Card Scenes/AlphaCardScripts/Card_temp.tscn" id="1_86wpj"]
 
 [node name="ActionDisarm" type="Node2D"]

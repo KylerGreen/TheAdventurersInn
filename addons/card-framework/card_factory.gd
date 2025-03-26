@@ -123,6 +123,9 @@ func _create_card_node(card_name: String, front_image: Texture2D, target: CardCo
 	card.card_name = card_name
 	card.set_faces(front_image, back_image)
 
+	# Adds a label to the card image
+	
+
 	return card
 
 
