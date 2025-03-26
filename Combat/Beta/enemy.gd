@@ -21,25 +21,25 @@ func _ready():
 		var Skeleton = randi_range(0, 3)
 		if Skeleton == 0:
 			HP = 120
-			Damage = 15
+			Damage = 20
 			Heals = 10
 			XP = 50
 			gold = 10
 		elif Skeleton == 1:
 			HP = 60
-			Damage = 20
+			Damage = 25
 			Heals = 10
 			XP = 10
 			gold = 5
 		elif Skeleton == 2:
 			HP = 90
-			Damage = 10
+			Damage = 20
 			Heals = 15
 			XP = 30
 			gold = 5
 		elif Skeleton == 3:
 			HP = 80
-			Damage = 15
+			Damage = 20
 			Heals = 10
 			XP = 20
 			gold = 5
@@ -55,6 +55,7 @@ func _ready():
 	
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
+	CombatSignals.card_used.connect(enemy_turn)
 	
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
@@ -97,3 +98,22 @@ func Damaged():
 	
 func Disarmed():
 	%Player.Disarm = true
+
+func enemy_turn():
+	var Enemy_Action = randi_range(0, 10)
+	if Enemy_Action > 0 and Enemy_Action <= 2:
+		CombatSignals.Enemy_Swing.emit()
+		CombatSignals.Enemy_Counter.emit()
+	elif Enemy_Action > 2 and Enemy_Action <= 4:
+		CombatSignals.Enemy_Swing.emit()
+		CombatSignals.Enemy_Bolster.emit()
+	elif Enemy_Action > 4 and Enemy_Action <= 6:
+		CombatSignals.Enemy_Heal.emit()
+		CombatSignals.Enemy_Parry.emit()
+	elif Enemy_Action > 6 and Enemy_Action <= 8:
+		CombatSignals.Enemy_Disarm.emit()
+		CombatSignals.Enemy_Dodge.emit()
+	elif Enemy_Action > 8 and Enemy_Action <= 10:
+		CombatSignals.Enemy_Swing.emit()
+		CombatSignals.Enemy_Parry.emit()
+	%Player.Bolster = 1

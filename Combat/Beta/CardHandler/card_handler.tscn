@@ -191,7 +191,7 @@ stack_display_gap = null
 max_stack_display = null
 card_face_up = null
 layout = null
-allow_card_movement = null
+allow_card_movement = false
 restrict_to_top_card = null
 align_drop_zone_with_top_card = null
 enable_drop_zone = null
@@ -208,6 +208,7 @@ offset_bottom = 23.0
 text = "Deck"
 
 [node name="Discard TEST" type="Button" parent="CardManager"]
+visible = false
 layout_mode = 0
 offset_left = 865.0
 offset_top = 298.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bicahnbwrx3ef"]
 
 [ext_resource type="PackedScene" path="res://Card Scenes/AlphaCardScripts/Card_temp.tscn" id="1_88jne"]
-[ext_resource type="Script" path="res://Combat/Card Scenes/AlphaCardScripts/ScriptsCards/reaction_counter.gd" id="1_rjn38"]
+[ext_resource type="Script" path="res://Combat/Alpha/AlphaCardScripts/ScriptsCards/reaction_counter.gd" id="1_rjn38"]
 
 [node name="ReactionCounter" type="Node2D"]
 script = ExtResource("1_rjn38")

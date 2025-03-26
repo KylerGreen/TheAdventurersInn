@@ -4,7 +4,7 @@ extends CharacterBody2D
 var HP = 100
 var MaxHP = 100
 var Heals = 15
-var Damage = 20
+var Damage = 30
 var XP = 0
 var Level = 1
 
@@ -44,6 +44,7 @@ func _process(delta):
 	$Player_health.value = HP
 	if HP <= 0:
 		HP = 0
+		DungeonSignals.combat_done.emit()
 	Gold = DungeonSignals.gold
 	
 	if XP >= 100:
@@ -55,7 +56,6 @@ func _process(delta):
 	elif XP >= 300:
 		if Level == 2:
 			HP = MaxHP
-			Damage = 30
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 700:
@@ -69,6 +69,8 @@ func _process(delta):
 		%Enemy.HP == 0
 		DungeonSignals.gold += %Enemy.gold
 		XP += %Enemy.XP
+		DungeonSignals.combat_done.emit()
+		
 
 
 func Bolstered():
@@ -114,30 +116,23 @@ func player_turn(card, container):
 	elif container.unique_id == 2:
 		has_reaction = true
 		reaction_card = card.card_info
-		
-	if has_action == true and has_reaction == true:
-		if reaction_card["name"] == "Parry":
-			CombatSignals.Player_Parry.emit()
-			print("You Parried!")
-		elif reaction_card["name"] == "Dodge":
-			CombatSignals.Player_Dodge.emit()
-			print("You Dodged!")
-		elif reaction_card["name"] == "Counter":
-			CombatSignals.Player_Counter.emit()
-			print("You Countered!")
-		elif reaction_card["name"] == "Bolster":
-			CombatSignals.Player_Bolster.emit()
-			print("You Bolstered!")
 			
+	if has_action == true and has_reaction == true:
 		if action_card["name"] == "Disarm":
 			CombatSignals.Enemy_Disarm.emit()
-			print("You Disarmed!")
 		elif action_card["name"] == "Heal":
 			CombatSignals.Player_Heal.emit()
-			print("You Healed!")
 		elif action_card["name"] == "Swing":
 			CombatSignals.Player_Swing.emit()
-			print("You Swung!")
+			
+		if reaction_card["name"] == "Parry":
+			CombatSignals.Player_Parry.emit()
+		elif reaction_card["name"] == "Dodge":
+			CombatSignals.Player_Dodge.emit()
+		elif reaction_card["name"] == "Counter":
+			CombatSignals.Player_Counter.emit()
+		elif reaction_card["name"] == "Bolster":
+			CombatSignals.Player_Bolster.emit()
 			
 		CombatSignals.card_used.emit()
 		has_action = false

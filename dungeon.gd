@@ -108,4 +108,4 @@ func Encountered():
 
 func combat_finished():
 	get_tree().paused = false
-	%Camera2D.zoom = Vector2(2, 2)
+	%Camera2D.zoom = Vector2(1.7, 1.7)
