@@ -14,16 +14,24 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yilpf"]
 bg_color = Color(0.746773, 0.0481419, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lq6j"]
 bg_color = Color(0.745098, 0.0470588, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Combat2" type="Node2D"]
 z_index = 1000
 position = Vector2(1, -1)
 script = ExtResource("1_j1xjl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Combat_Camera" type="Camera2D" parent="."]
 position = Vector2(601, 354)
 zoom = Vector2(0.8, 0.8)
 
@@ -91,6 +99,7 @@ text = "Reaction"
 metadata/_edit_use_anchors_ = true
 
 [node name="DamageCounter" type="Label" parent="BattleBackground"]
+unique_name_in_owner = true
 offset_left = -29.0
 offset_top = -377.0
 offset_right = 79.0
@@ -110,6 +119,7 @@ offset_top = 82.0
 offset_right = 346.0
 offset_bottom = 128.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_yilpf")
+rounded = true
 show_percentage = false
 
 [node name="Player_HP" type="Label" parent="Player/Player_health"]
@@ -138,6 +148,7 @@ offset_top = 79.0
 offset_right = 1172.0
 offset_bottom = 123.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_0lq6j")
+rounded = true
 show_percentage = false
 
 [node name="Enemy_HP" type="Label" parent="Enemy/Enemy_health"]
@@ -160,6 +171,7 @@ metadata/_edit_use_anchors_ = true
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
+volume_db = -15.0
 parameters/looping = true
 
 [node name="CardHandler" parent="." instance=ExtResource("11_3d1ge")]

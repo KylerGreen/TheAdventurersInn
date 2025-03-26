@@ -878,7 +878,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
 unique_name_in_owner = true
-zoom = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
 
 [node name="ColorRect" type="ColorRect" parent="Player3/Camera2D"]
 z_index = -2
@@ -898,9 +898,14 @@ unique_name_in_owner = true
 position = Vector2(-76, 4)
 volume_db = 10.0
 
-[node name="Dungeon_Ambiance" type="AudioStreamPlayer2D" parent="."]
+[node name="Dungeon_Ambiance" type="AudioStreamPlayer2D" parent="Player3"]
 unique_name_in_owner = true
+stream = ExtResource("7_4xnvm")
 volume_db = -10.0
+autoplay = true
+max_polyphony = 3
+panning_strength = 1.51
+parameters/looping = true
 
 [node name="Dungeon_Echo" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
@@ -908,10 +913,5 @@ volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-
-[node name="BG_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_4xnvm")
-autoplay = true
-parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
