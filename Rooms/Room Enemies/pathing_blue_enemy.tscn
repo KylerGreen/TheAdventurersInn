@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://be4226mf3v1ki"]
+
+[ext_resource type="Script" path="res://Rooms/Room Enemies/path_follow_2d.gd" id="4_gba1m"]
+[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_j1joh"]
+
+[sub_resource type="Curve2D" id="Curve2D_2b6lt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -89.2416, -65.7098, 0, 0, 0, 0, -90.6251, 232.614, 0, 0, 0, 0, 203.842, 233.167, 0, 0, 0, 0, 203.753, -62.5637, 0, 0, 0, 0, -89.2416, -65.7098)
+}
+point_count = 5
+
+[node name="PathingBlueEnemy" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-1.61326, 16.7583)
+rotation = -0.0144892
+scale = Vector2(0.821884, 0.916474)
+curve = SubResource("Curve2D_2b6lt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(15.891, 232.814)
+rotation = 1.54456
+progress = 404.844
+rotates = false
+script = ExtResource("4_gba1m")
+
+[node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_j1joh")]
+position = Vector2(-12.6467, -0.358406)
+rotation = -1.56915
