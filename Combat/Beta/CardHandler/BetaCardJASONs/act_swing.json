@@ -1,6 +1,6 @@
 {
 	"name": "Swing",
-	"front_image": "general_card_scaled.png",
+	"front_image": "swing_asset.png",
 	"type": "Action",
 	"cr": "1",
 	"ability": "Basic Attack: 30 DMG"
