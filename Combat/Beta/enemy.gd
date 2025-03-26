@@ -45,6 +45,8 @@ func _ready():
 			gold = 5
 			
 	%Enemy_HP.text = str('HP: ', HP)
+	$Enemy_health.max_value = HP
+	$Enemy_health.value = HP
 	CombatSignals.Enemy_Bolster.connect(Bolstered)
 	CombatSignals.Enemy_Dodge.connect(Dodging)
 	CombatSignals.Enemy_Parry.connect(Parrying)
@@ -56,6 +58,7 @@ func _ready():
 	
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
+	$Enemy_health.value = HP
 	if HP <= 0:
 		HP = 0
 

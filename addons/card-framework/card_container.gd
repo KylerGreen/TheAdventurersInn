@@ -5,6 +5,7 @@ extends Control
 static var next_id = 0
 
 @export var emits_signals = false
+@export var limit = 5
 @export_group("drop_zone")
 ## Enables or disables the drop zone functionality.
 @export var enable_drop_zone := true
@@ -18,6 +19,10 @@ static var next_id = 0
 ## Determines whether the sensor is visible or not.
 @export var sensor_visibility := true
 
+## Allows you the option to limit the number of cards in a pile.
+@export var is_size_lim := false
+## The max number of cards a pile can hold when is_size_lim is true.
+@export var max_card: int = 100
 
 
 var unique_id: int
@@ -27,7 +32,7 @@ var _held_cards := []
 var _holding_cards := []
 var cards_node: Control
 var card_manager: CardManager
-#var current_card
+#var current_card = Card
 
 
 func _init():
@@ -186,7 +191,12 @@ func _move_cards(cards: Array) -> void:
 
 
 func _card_can_be_added(_cards: Array) -> bool:
-	return true
+	#Modified to allow for a pile to contain a limited number of cards.
+	if is_size_lim == true:
+		var card_size = _cards.size()
+		return _held_cards.size() + card_size <= max_card
+	else:
+		return true
 
 
 func update_card_ui():
@@ -218,6 +228,10 @@ func _remove_object(target: Node):
 		parent.remove_child(target)
 	target.queue_free()
 	
+	
+#func move_action_card(_card, cards):
+	#if _card.card_info["name"] == "Action":
+		#_move_cards(cards)
 #func _use_cards(current_card):
 	#if emits_signals == true:
 		#CombatSignals.Action_Placed.emit(current_card, self)

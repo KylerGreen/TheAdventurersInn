@@ -41,6 +41,7 @@ func _ready():
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
+	$Player_health.value = HP
 	if HP <= 0:
 		HP = 0
 	Gold = DungeonSignals.gold
@@ -137,6 +138,6 @@ func player_turn(card, container):
 			CombatSignals.Player_Swing.emit()
 			print("You Swung!")
 			
-		#CombatSignals.card_used.emit()
+		CombatSignals.card_used.emit()
 		has_action = false
 		has_reaction = false
