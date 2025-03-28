@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cln5o4snj8geo"]
 
 [ext_resource type="Script" path="res://Rooms/Room Enemies/blue_enemy.gd" id="1_d37s1"]
-[ext_resource type="Texture2D" uid="uid://ds65n833t5wvh" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/ice_zombie_anim_f0.png" id="2_t87be"]
+[ext_resource type="Texture2D" uid="uid://b4clfg0c6jffl" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_idle_anim_f0.png" id="2_phh4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_breby"]
+size = Vector2(18, 25)
 
 [node name="BlueEnemy" type="Node2D"]
 script = ExtResource("1_d37s1")
@@ -13,9 +14,11 @@ position = Vector2(-2, 2)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 unique_name_in_owner = true
+position = Vector2(10, 5.5)
 shape = SubResource("RectangleShape2D_breby")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-texture = ExtResource("2_t87be")
+position = Vector2(9, 3)
+texture = ExtResource("2_phh4u")
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
