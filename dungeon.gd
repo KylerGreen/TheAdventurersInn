@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_3.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_4.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_1010.tscn")]
+const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_3.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_4.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_1010.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_5.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_444.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_555.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_666.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_777.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_888.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
@@ -107,7 +107,6 @@ func Encountered():
 	%Camera2D.zoom = Vector2(0.75, 0.75)
 	%Camera2D.position.x = 300
 	get_tree().paused = true
-
 
 func combat_finished():
 	get_tree().paused = false
