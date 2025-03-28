@@ -56,6 +56,36 @@ func _draw_to_five():
 			break
 		current_draw_number -= 1
 
+#NOTE: IN PROGRESS
+# Takes a Action/Reaction Card and it's Action/Reaction Pile
+# If Both holds_x is true, and card type == x, card stays in the pile
+# else, the card is ejected back to the hand
+func _card_type_check(card, container):
+	var holds_action = false
+	var holds_reaction = false
+	# container.unique_id == 1 is the Action Pile
+	if container.unique_id == 1:
+		holds_reaction = false
+		holds_action = true
+	# conntainer.unique_id == 2 is the Reaction Pile
+	elif container.unique_id == 2:
+		holds_reaction = true
+		holds_action = false
+
+	var data = card.info
+	
+	# For Adding a card to the Action Pile
+	if data["type"] == "action" and  holds_action == true:
+		pass
+	elif data["type"] == "action" and  holds_action == false:
+		hand.move_cards(react_zone.get_top_cards(1))
+	# For Adding a card to the Reaction Pile
+	elif data["type"] == "reaction" and  holds_reaction == true:
+		pass
+	elif data["type"] == "reaction" and  holds_reaction == false:
+		hand.move_cards(react_zone.get_top_cards(1))
+	
+
 func _end_of_turn():
 	# Send signals from the cards to the card_signal Manager
 	
@@ -72,3 +102,19 @@ func _end_of_turn():
 
 func _on_discard_test_pressed() -> void:
 	_end_of_turn()
+
+
+#Cards added to a Pile are added as Grandchildren to the Pile, which means that the signal doesn't detect them.
+#func _on_reaction_child_entered_tree(node: Node) -> void:
+	#
+#
+	##if react_zone == null:
+		##pass
+	##else:
+		##var recent_card = react_zone.get_top_cards(1)
+	#
+	#print(react_zone)
+	##print(react_zone.get_top_cards(card.card_info))
+	##var card = node.get_child()
+	##_card_type_check(node, card)
+	#pass

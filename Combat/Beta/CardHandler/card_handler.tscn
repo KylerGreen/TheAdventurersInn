@@ -108,20 +108,8 @@ offset_left = 423.0
 offset_top = 240.0
 offset_right = 423.0
 offset_bottom = 240.0
-stack_display_gap = null
-max_stack_display = null
-card_face_up = null
-layout = null
 allow_card_movement = false
-restrict_to_top_card = null
-align_drop_zone_with_top_card = null
 emits_signals = true
-enable_drop_zone = null
-sensor_size = null
-sensor_position = null
-sensor_visibility = null
-is_size_lim = null
-max_card = null
 
 [node name="Label" type="Label" parent="CardManager/Action"]
 layout_mode = 0
@@ -134,20 +122,8 @@ offset_left = 632.0
 offset_top = 238.0
 offset_right = 632.0
 offset_bottom = 238.0
-stack_display_gap = null
-max_stack_display = null
-card_face_up = null
-layout = null
 allow_card_movement = false
-restrict_to_top_card = null
-align_drop_zone_with_top_card = null
 emits_signals = true
-enable_drop_zone = null
-sensor_size = null
-sensor_position = null
-sensor_visibility = null
-is_size_lim = null
-max_card = null
 
 [node name="Label" type="Label" parent="CardManager/Reaction"]
 layout_mode = 0
@@ -161,19 +137,9 @@ offset_top = 473.0
 offset_right = 36.0
 offset_bottom = 473.0
 max_hand_size = 20
-stack_display_gap = null
-max_stack_display = null
-card_face_up = null
-layout = null
 allow_card_movement = false
 restrict_to_top_card = false
 align_drop_zone_with_top_card = false
-enable_drop_zone = null
-sensor_size = null
-sensor_position = null
-sensor_visibility = null
-is_size_lim = null
-max_card = null
 
 [node name="Label" type="Label" parent="CardManager/Discard"]
 layout_mode = 0
@@ -187,19 +153,7 @@ offset_top = 471.0
 offset_right = 1063.0
 offset_bottom = 471.0
 max_hand_size = 20
-stack_display_gap = null
-max_stack_display = null
-card_face_up = null
-layout = null
 allow_card_movement = false
-restrict_to_top_card = null
-align_drop_zone_with_top_card = null
-enable_drop_zone = null
-sensor_size = null
-sensor_position = null
-sensor_visibility = null
-is_size_lim = null
-max_card = null
 
 [node name="Label" type="Label" parent="CardManager/Deck"]
 layout_mode = 0
@@ -208,7 +162,6 @@ offset_bottom = 23.0
 text = "Deck"
 
 [node name="Discard TEST" type="Button" parent="CardManager"]
-visible = false
 layout_mode = 0
 offset_left = 865.0
 offset_top = 298.0
@@ -217,4 +170,5 @@ offset_bottom = 352.0
 text = "Use Action & Reaction 
 Then Discard"
 
+[connection signal="child_entered_tree" from="CardManager/Reaction" to="." method="_on_reaction_child_entered_tree"]
 [connection signal="pressed" from="CardManager/Discard TEST" to="." method="_on_discard_test_pressed"]
