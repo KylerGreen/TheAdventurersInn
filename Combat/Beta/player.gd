@@ -77,34 +77,55 @@ func _process(delta):
 
 func Bolstered():
 	Bolster = 1.5
+	%Player_damaged.text = str('You bolster your next attack!')
+	await get_tree().create_timer(1.0).timeout
+	%Player_damaged.text = str('')
 	
 func Dodging():
 	Dodge = true
+	%Player_damaged.text = str('You prepare to Dodge!')
+	await get_tree().create_timer(1.0).timeout
+	%Player_damaged.text = str('')
 	
 func Parrying():
 	Parry = 0.5
+	%Player_damaged.text = str('You prepare to Parry!')
+	await get_tree().create_timer(1.0).timeout
+	%Player_damaged.text = str('')
 	
 func Countering():
 	Counter = true
+	%Player_damaged.text = str('You prepare to Counter!')
+	await get_tree().create_timer(1.0).timeout
+	%Player_damaged.text = str('')
 	
 func Healing():
 	HP += Heals
+	%Player_damaged.text = str('+', Heals)
+	await get_tree().create_timer(1.0).timeout
+	%Player_damaged.text = str('')
 
 func Damaged():
 	var DMG_Recieved = %Enemy.Damage * %Enemy.Bolster * Parry
-	%DamageCounter.text = str('-',DMG_Recieved)
-	await get_tree().create_timer(1.0).timeout
-	%DamageCounter.text = str('')
 	
 	if Dodge == true:
 		HP = HP
 		Dodge = false
+		%Player_damaged.text = str('You Dodged the Attack!')
+		await get_tree().create_timer(1.0).timeout
+		%Player_damaged.text = str('')
 	elif Counter == true:
 		HP -= DMG_Recieved
 		%Enemy.HP -= ((Damage + Sword) * 0.5)
+		%DamageCounter.text = str('-',((Damage + Sword) * 0.5))
+		await get_tree().create_timer(1.0).timeout
+		%DamageCounter.text = str('')
 		Counter = false
 	else:
 		HP -= DMG_Recieved
+		%Player_damaged.text = str('-',DMG_Recieved)
+		await get_tree().create_timer(1.0).timeout
+		%Player_damaged.text = str('')
 	%Enemy.Bolster = 1
 	Parry = 1
 	
@@ -112,6 +133,8 @@ func Disarmed():
 	%Enemy.Disarm = true
 	
 func player_turn(card, container):
+	Dodge = false
+	
 	if container.unique_id == 1:
 		has_action = true
 		action_card = card.card_info
@@ -120,13 +143,6 @@ func player_turn(card, container):
 		reaction_card = card.card_info
 			
 	if has_action == true and has_reaction == true:
-		if action_card["name"] == "Disarm":
-			CombatSignals.Enemy_Disarm.emit()
-		elif action_card["name"] == "Heal":
-			CombatSignals.Player_Heal.emit()
-		elif action_card["name"] == "Swing":
-			CombatSignals.Player_Swing.emit()
-			
 		if reaction_card["name"] == "Parry":
 			CombatSignals.Player_Parry.emit()
 		elif reaction_card["name"] == "Dodge":
@@ -135,6 +151,14 @@ func player_turn(card, container):
 			CombatSignals.Player_Counter.emit()
 		elif reaction_card["name"] == "Bolster":
 			CombatSignals.Player_Bolster.emit()
+			
+		if action_card["name"] == "Disarm":
+			CombatSignals.Enemy_Disarm.emit()
+		elif action_card["name"] == "Heal":
+			CombatSignals.Player_Heal.emit()
+		elif action_card["name"] == "Swing":
+			CombatSignals.Player_Swing.emit()
+		
 			
 		CombatSignals.card_used.emit()
 		has_action = false

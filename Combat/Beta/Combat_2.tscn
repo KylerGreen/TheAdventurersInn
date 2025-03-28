@@ -99,16 +99,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DamageCounter" type="Label" parent="BattleBackground"]
 unique_name_in_owner = true
-offset_left = -29.0
-offset_top = -377.0
-offset_right = 79.0
-offset_bottom = -308.0
+offset_left = 503.708
+offset_top = -491.903
+offset_right = 611.708
+offset_bottom = -422.903
 theme_override_font_sizes/font_size = 50
 text = "
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="CardHandler" parent="BattleBackground" instance=ExtResource("11_3d1ge")]
+
+[node name="Player_damaged" type="Label" parent="BattleBackground"]
+unique_name_in_owner = true
+offset_left = -544.372
+offset_top = -494.526
+offset_right = -436.372
+offset_bottom = -425.526
+theme_override_font_sizes/font_size = 50
+text = "
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_8b3ah")]
 unique_name_in_owner = true
