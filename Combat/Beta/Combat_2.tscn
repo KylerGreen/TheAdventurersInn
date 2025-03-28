@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=13 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Combat/Beta/enemy_hp.gd" id="3_hrp41"]
 [ext_resource type="Script" path="res://Combat/Beta/player.gd" id="3_ugd0x"]
 [ext_resource type="PackedScene" uid="uid://dgu5khf772ywg" path="res://Combat/Beta/skeleton.tscn" id="4_dlgxc"]
-[ext_resource type="Script" path="res://Combat/Beta/skeleton.gd" id="5_biuxo"]
 [ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
 [ext_resource type="AudioStream" uid="uid://bwjhhsi8wv7bj" path="res://Combat/Beta/Music/Battle Theme.mp3" id="10_ib3g5"]
@@ -100,10 +99,23 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DamageCounter" type="Label" parent="BattleBackground"]
 unique_name_in_owner = true
-offset_left = -29.0
-offset_top = -377.0
-offset_right = 79.0
-offset_bottom = -308.0
+offset_left = 503.708
+offset_top = -491.903
+offset_right = 611.708
+offset_bottom = -422.903
+theme_override_font_sizes/font_size = 50
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="CardHandler" parent="BattleBackground" instance=ExtResource("11_3d1ge")]
+
+[node name="Player_damaged" type="Label" parent="BattleBackground"]
+unique_name_in_owner = true
+offset_left = -544.372
+offset_top = -494.526
+offset_right = -436.372
+offset_bottom = -425.526
 theme_override_font_sizes/font_size = 50
 text = "
 "
@@ -136,7 +148,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Skeleton" parent="." instance=ExtResource("4_dlgxc")]
 unique_name_in_owner = true
-script = ExtResource("5_biuxo")
+position = Vector2(1002, 274)
 
 [node name="Enemy" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -173,5 +185,3 @@ unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
 volume_db = -15.0
 parameters/looping = true
-
-[node name="CardHandler" parent="." instance=ExtResource("11_3d1ge")]

@@ -22,6 +22,7 @@ offset_top = 3.0
 offset_right = 1157.0
 offset_bottom = 649.0
 color = Color(0.255659, 0.255659, 0.255659, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Ground" type="ColorRect" parent="BackgroundAlignment"]
 offset_left = -1154.0
@@ -97,12 +98,6 @@ grow_horizontal = 2
 grow_vertical = 2
 sensor_size = Vector2(300, 200)
 
-[node name="Label" type="Label" parent="CardManager/Hand"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Hand"
-
 [node name="Action" parent="CardManager" instance=ExtResource("6_l06e2")]
 offset_left = 423.0
 offset_top = 240.0
@@ -111,12 +106,6 @@ offset_bottom = 240.0
 allow_card_movement = false
 emits_signals = true
 
-[node name="Label" type="Label" parent="CardManager/Action"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Action"
-
 [node name="Reaction" parent="CardManager" instance=ExtResource("6_l06e2")]
 offset_left = 632.0
 offset_top = 238.0
@@ -124,12 +113,6 @@ offset_right = 632.0
 offset_bottom = 238.0
 allow_card_movement = false
 emits_signals = true
-
-[node name="Label" type="Label" parent="CardManager/Reaction"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Reaction"
 
 [node name="Discard" parent="CardManager" instance=ExtResource("6_l06e2")]
 offset_left = 36.0
@@ -141,12 +124,6 @@ allow_card_movement = false
 restrict_to_top_card = false
 align_drop_zone_with_top_card = false
 
-[node name="Label" type="Label" parent="CardManager/Discard"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Discard"
-
 [node name="Deck" parent="CardManager" instance=ExtResource("6_l06e2")]
 offset_left = 1063.0
 offset_top = 471.0
@@ -154,12 +131,6 @@ offset_right = 1063.0
 offset_bottom = 471.0
 max_hand_size = 20
 allow_card_movement = false
-
-[node name="Label" type="Label" parent="CardManager/Deck"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Deck"
 
 [node name="Discard TEST" type="Button" parent="CardManager"]
 layout_mode = 0

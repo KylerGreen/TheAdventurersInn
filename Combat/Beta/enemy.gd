@@ -98,26 +98,32 @@ func Damaged():
 	if Dodge == true:
 		HP = HP
 		Dodge = false
+		%Player.Bolster = 1
 	elif Counter == true:
 		HP -= DMG_Recieved
 		%Player.HP -= (Damage * 0.5)
 		Counter = false
+		%Player.Bolster = 1
 	else:
 		HP -= DMG_Recieved
-	%Player.Bolster = 1
+		%Player.Bolster = 1
 	Parry = 1
 	
 func Disarmed():
 	%Player.Disarm = true
 
 func enemy_turn():
+	Dodge = false
+	Counter = false
+	
+	await get_tree().create_timer(1.0).timeout
 	var Enemy_Action = randi_range(0, 10)
 	if Enemy_Action > 0 and Enemy_Action <= 2:
 		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Counter.emit()
 	elif Enemy_Action > 2 and Enemy_Action <= 4:
-		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Bolster.emit()
+		CombatSignals.Enemy_Swing.emit()
 	elif Enemy_Action > 4 and Enemy_Action <= 6:
 		CombatSignals.Enemy_Heal.emit()
 		CombatSignals.Enemy_Parry.emit()
@@ -127,4 +133,3 @@ func enemy_turn():
 	elif Enemy_Action > 8 and Enemy_Action <= 10:
 		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Parry.emit()
-	%Player.Bolster = 1

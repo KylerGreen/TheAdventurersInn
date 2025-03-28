@@ -30,7 +30,7 @@ func _reset_deck():
 
 func _get_randomized_card_list() -> Array:
 	# Test inputs for Decklist
-	var values = ["act_disarm", "act_disarm", "act_heal", "act_heal", "act_heal", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "react_bolster", "react_bolster", "react_bolster", "react_counter", "react_counter", "react_dodge", "react_dodge", "react_parry", "react_parry"]
+	var values = ["act_disarm", "act_disarm", "act_heal", "act_heal", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "react_bolster", "react_bolster", "react_bolster", "react_counter", "react_counter", "react_dodge", "react_parry", "react_parry", "react_parry"]
 	#var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
 	
 	var card_list = []
