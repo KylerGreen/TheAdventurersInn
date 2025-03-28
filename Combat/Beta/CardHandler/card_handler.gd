@@ -16,7 +16,9 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	CombatSignals.card_used.connect(_end_of_turn)
 	_reset_deck()
+	_draw_to_five()
 
 
 func _reset_deck():
@@ -27,8 +29,9 @@ func _reset_deck():
 
 
 func _get_randomized_card_list() -> Array:
-	#var values = ["act_disarm", "act_heal", "act_swing", "react_bolster", "react_counter", "react_dodge", "react_parry"]
-	var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
+	# Test inputs for Decklist
+	var values = ["act_disarm", "act_disarm", "act_heal", "act_heal", "act_heal", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "react_bolster", "react_bolster", "react_bolster", "react_counter", "react_counter", "react_dodge", "react_dodge", "react_parry", "react_parry"]
+	#var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
 	
 	var card_list = []
 
@@ -43,3 +46,29 @@ func _get_randomized_card_list() -> Array:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _draw_to_five():
+	var current_draw_number = 5
+	while current_draw_number > 0:
+		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+		if result:
+			break
+		current_draw_number -= 1
+
+func _end_of_turn():
+	# Send signals from the cards to the card_signal Manager
+	
+	# Discard Cards from Action and reaction zone
+	var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
+	discard.move_cards(cards)
+	var current_draw_number = 2
+	while current_draw_number > 0:
+		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+		if result:
+			break
+		current_draw_number -= 1
+	
+
+func _on_discard_test_pressed() -> void:
+	_end_of_turn()

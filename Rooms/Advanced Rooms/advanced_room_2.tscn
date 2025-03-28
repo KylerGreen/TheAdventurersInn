@@ -739,7 +739,7 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAFAPn/AwAMAAMAAAAFAPr/AwAMAAAAAAAQAPr/AwAMAAAAAAAQAPn/AwAMAAMAAAAFAPL/AwAMAAAAAAAFAPH/AwAMAAMAAAAQAPL/AwAMAAAAAAAQAPH/AwAMAAMAAAA=")
+tile_map_data = PackedByteArray("AAAFAPn/AwAMAAMAAAAFAPr/AwAMAAAAAAAQAPr/AwAMAAAAAAAQAPn/AwAMAAMAAAAFAPL/AwAMAAAAAAAFAPH/AwAMAAMAAAAQAPL/AwAMAAAAAAAQAPH/AwAMAAMAAAAEAPD/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Doorway" type="TileMapLayer" parent="."]
@@ -768,7 +768,7 @@ tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_t77id")
 
 [node name="BlueEnemy" parent="." instance=ExtResource("5_7o43w")]
-position = Vector2(-62, 153)
+position = Vector2(49, 99)
 rotation = 0.0175188
 
 [node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]

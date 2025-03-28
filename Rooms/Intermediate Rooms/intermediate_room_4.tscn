@@ -104,7 +104,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 [sub_resource type="TileMapPattern" id="TileMapPattern_vkqja"]
 tile_data = PackedInt32Array(0, 131072, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kee2w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wscbo"]
 texture = ExtResource("1_jube0")
 0:0/0 = 0
 1:0/0 = 0
@@ -172,7 +172,7 @@ texture = ExtResource("1_jube0")
 10:3/0 = 0
 11:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwipr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scgas"]
 texture = ExtResource("2_8jesc")
 0:0/0 = 0
 1:0/0 = 0
@@ -220,7 +220,7 @@ texture = ExtResource("2_8jesc")
 4:6/0 = 0
 5:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xivbo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7pja"]
 texture = ExtResource("3_6tyft")
 0:0/0 = 0
 1:0/0 = 0
@@ -381,9 +381,9 @@ texture = ExtResource("3_6tyft")
 
 [sub_resource type="TileSet" id="TileSet_c0xg6"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_kee2w")
-sources/2 = SubResource("TileSetAtlasSource_iwipr")
-sources/3 = SubResource("TileSetAtlasSource_xivbo")
+sources/0 = SubResource("TileSetAtlasSource_wscbo")
+sources/2 = SubResource("TileSetAtlasSource_scgas")
+sources/3 = SubResource("TileSetAtlasSource_u7pja")
 pattern_0 = SubResource("TileMapPattern_fka8p")
 pattern_1 = SubResource("TileMapPattern_5ntmc")
 pattern_2 = SubResource("TileMapPattern_58yjw")

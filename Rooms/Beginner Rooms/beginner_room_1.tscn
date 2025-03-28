@@ -1,76 +1,74 @@
-[gd_scene load_steps=33 format=4 uid="uid://dr6lv1sxyk816"]
+[gd_scene load_steps=31 format=4 uid="uid://dr6lv1sxyk816"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_2ep4x"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_oflc4"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_1da2d"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="6_76jqx"]
 [ext_resource type="PackedScene" uid="uid://b08ujtuvvvtqg" path="res://Rooms/Interactables/statue_switch.tscn" id="6_np3i1"]
-[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Room Sounds/lever_chains14-41056.mp3" id="6_p0mo7"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_0j6vv"]
-[ext_resource type="AudioStream" uid="uid://ciqh0otib2i8i" path="res://Audio/Room Sounds/punch-a-rock-161647 (mp3cut.net).mp3" id="8_peoi8"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
 "
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_j1eju"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_fka8p"]
 tile_data = PackedInt32Array(0, 786435, 3, 65536, 786435, 4)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_jhdpj"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_5ntmc"]
 tile_data = PackedInt32Array(0, 983043, 4)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_87jvd"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_le2f7"]
 tile_data = PackedInt32Array(0, 0, 3)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_cxlsc"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_0754p"]
 tile_data = PackedInt32Array(0, 983043, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_tdudo"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_p2m2p"]
 tile_data = PackedInt32Array(0, 1048579, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_g705v"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_am0x7"]
 tile_data = PackedInt32Array(0, 1114115, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_bt28n"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_vdebv"]
 tile_data = PackedInt32Array(0, 1179651, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_fgjsc"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_m6dk4"]
 tile_data = PackedInt32Array(0, 983043, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_cjiqc"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_gqqcq"]
 tile_data = PackedInt32Array(0, 1048579, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_tws2f"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_an4r5"]
 tile_data = PackedInt32Array(0, 2, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_rlobp"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_2vqeg"]
 tile_data = PackedInt32Array(0, 851971, 3, 65536, 851971, 4)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_apsku"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_58yjw"]
 tile_data = PackedInt32Array(0, 131072, 3)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_60x6l"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_66mki"]
 tile_data = PackedInt32Array(0, 65536, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_fi0rv"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_mdfat"]
 tile_data = PackedInt32Array(0, 65539, 1)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_j7om0"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_qkyg0"]
 tile_data = PackedInt32Array(0, 65536, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_gbfyl"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_7js54"]
 tile_data = PackedInt32Array(0, 196608, 2)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_jmprw"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_onj7n"]
 tile_data = PackedInt32Array(0, 196611, 1)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_4vw2f"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_e7gu1"]
 tile_data = PackedInt32Array(0, 196608, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_ax1ih"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_vkqja"]
 tile_data = PackedInt32Array(0, 131072, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rnra"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p1ai"]
 texture = ExtResource("1_2ep4x")
 0:0/0 = 0
 1:0/0 = 0
@@ -128,7 +126,7 @@ texture = ExtResource("1_2ep4x")
 10:3/0 = 0
 11:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3yama"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fattc"]
 texture = ExtResource("2_oflc4")
 0:0/0 = 0
 1:0/0 = 0
@@ -176,7 +174,7 @@ texture = ExtResource("2_oflc4")
 4:6/0 = 0
 5:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pj8oi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipyfw"]
 texture = ExtResource("3_1da2d")
 0:0/0 = 0
 1:0/0 = 0
@@ -337,28 +335,28 @@ texture = ExtResource("3_1da2d")
 
 [sub_resource type="TileSet" id="TileSet_c0xg6"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_6rnra")
-sources/2 = SubResource("TileSetAtlasSource_3yama")
-sources/3 = SubResource("TileSetAtlasSource_pj8oi")
-pattern_0 = SubResource("TileMapPattern_j1eju")
-pattern_1 = SubResource("TileMapPattern_jhdpj")
-pattern_2 = SubResource("TileMapPattern_apsku")
-pattern_3 = SubResource("TileMapPattern_60x6l")
-pattern_4 = SubResource("TileMapPattern_fi0rv")
-pattern_5 = SubResource("TileMapPattern_j7om0")
-pattern_6 = SubResource("TileMapPattern_gbfyl")
-pattern_7 = SubResource("TileMapPattern_jmprw")
-pattern_8 = SubResource("TileMapPattern_4vw2f")
-pattern_9 = SubResource("TileMapPattern_ax1ih")
-pattern_10 = SubResource("TileMapPattern_87jvd")
-pattern_11 = SubResource("TileMapPattern_cxlsc")
-pattern_12 = SubResource("TileMapPattern_tdudo")
-pattern_13 = SubResource("TileMapPattern_g705v")
-pattern_14 = SubResource("TileMapPattern_bt28n")
-pattern_15 = SubResource("TileMapPattern_fgjsc")
-pattern_16 = SubResource("TileMapPattern_cjiqc")
-pattern_17 = SubResource("TileMapPattern_tws2f")
-pattern_18 = SubResource("TileMapPattern_rlobp")
+sources/0 = SubResource("TileSetAtlasSource_1p1ai")
+sources/2 = SubResource("TileSetAtlasSource_fattc")
+sources/3 = SubResource("TileSetAtlasSource_ipyfw")
+pattern_0 = SubResource("TileMapPattern_fka8p")
+pattern_1 = SubResource("TileMapPattern_5ntmc")
+pattern_2 = SubResource("TileMapPattern_58yjw")
+pattern_3 = SubResource("TileMapPattern_66mki")
+pattern_4 = SubResource("TileMapPattern_mdfat")
+pattern_5 = SubResource("TileMapPattern_qkyg0")
+pattern_6 = SubResource("TileMapPattern_7js54")
+pattern_7 = SubResource("TileMapPattern_onj7n")
+pattern_8 = SubResource("TileMapPattern_e7gu1")
+pattern_9 = SubResource("TileMapPattern_vkqja")
+pattern_10 = SubResource("TileMapPattern_le2f7")
+pattern_11 = SubResource("TileMapPattern_0754p")
+pattern_12 = SubResource("TileMapPattern_p2m2p")
+pattern_13 = SubResource("TileMapPattern_am0x7")
+pattern_14 = SubResource("TileMapPattern_vdebv")
+pattern_15 = SubResource("TileMapPattern_m6dk4")
+pattern_16 = SubResource("TileMapPattern_gqqcq")
+pattern_17 = SubResource("TileMapPattern_an4r5")
+pattern_18 = SubResource("TileMapPattern_2vqeg")
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
@@ -419,7 +417,6 @@ position = Vector2(142, 210)
 [node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
 unique_name_in_owner = true
 position = Vector2(-267, 40)
-stream = ExtResource("6_p0mo7")
 volume_db = 15.0
 
 [node name="StatueSwitch" parent="." instance=ExtResource("6_np3i1")]
@@ -427,5 +424,4 @@ position = Vector2(43, 81)
 
 [node name="Statue_Sound2" type="AudioStreamPlayer2D" parent="StatueSwitch"]
 unique_name_in_owner = true
-stream = ExtResource("8_peoi8")
 volume_db = 10.0

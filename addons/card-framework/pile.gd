@@ -12,7 +12,7 @@ enum PileDirection {
 
 const PILE_Z_INDEX := 3000
 
-
+@export var max_hand_size := 1
 ## The distance between each card in the pile.
 @export var stack_display_gap := 8
 ## The maximum number of cards to display in the pile.
@@ -29,6 +29,7 @@ const PILE_Z_INDEX := 3000
 @export var align_drop_zone_with_top_card := true
 
 
+
 func get_top_cards(n: int) -> Array:
 	var arr_size = _held_cards.size()
 	if n > arr_size:
@@ -41,6 +42,9 @@ func get_top_cards(n: int) -> Array:
 	
 	return result
 
+func _card_can_be_added(_cards: Array) -> bool:
+	var card_size = _cards.size()
+	return _held_cards.size() + card_size <= max_hand_size
 
 func _update_target_z_index():
 	for i in range(_held_cards.size()):

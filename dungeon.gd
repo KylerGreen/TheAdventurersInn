@@ -2,7 +2,7 @@ extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_3.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_4.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
-const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
+const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_444.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_555.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_666.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_777.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_888.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
 
 @onready var player = %Player3
@@ -17,7 +17,7 @@ var max_rooms := 20
 var room_width = 280
 var room_height = 280
 var room_margin = 40
-var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
+var combat_screen = preload("res://Combat/Beta/Combat_2.tscn")
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -102,9 +102,12 @@ func Encountered():
 	var combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
-	combat.position = %Player3.position
+	combat.position.x = %Player3.position.x - 550
+	combat.position.y = %Player3.position.y - 400
+	%Camera2D.zoom = Vector2(0.4, 0.4)
 	get_tree().paused = true
-	%Camera2D.zoom = Vector2(1.2, 1.2)
+
 
 func combat_finished():
-	%Camera2D.zoom = Vector2(2, 2)
+	get_tree().paused = false
+	%Camera2D.zoom = Vector2(1.7, 1.7)

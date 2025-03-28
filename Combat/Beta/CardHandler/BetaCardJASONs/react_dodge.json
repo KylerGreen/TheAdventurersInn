@@ -1,6 +1,6 @@
 {
 	"name": "Dodge",
-	"front_image": "general_card_scaled.png",
+	"front_image": "dodge_asset.png",
 	"type": "Reaction",
 	"cr": "2",
 	"ability": "Avoid an instance of damage"

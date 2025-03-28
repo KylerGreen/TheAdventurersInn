@@ -144,6 +144,7 @@ offset_left = 300.0
 offset_top = 800.0
 offset_right = 300.0
 offset_bottom = 800.0
+max_hand_size = 54
 card_face_up = false
 sensor_texture = SubResource("CompressedTexture2D_cxxuu")
 
