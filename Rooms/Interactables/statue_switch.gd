@@ -1,7 +1,7 @@
 extends Node2D
 
 var only_once : bool = true
-@onready var stone = %Statue_Sound
+@onready var stone = %Statue_Sound2
 
 func _ready() -> void:
 	DungeonSignals.only_once.connect(one_time)

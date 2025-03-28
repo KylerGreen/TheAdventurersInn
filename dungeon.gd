@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn")]
+const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_3.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_4.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn")]
 const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
@@ -22,6 +22,8 @@ var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 func _ready():
 	player.global_position = Vector2(15,-15)
 	_spawn_new_room(Vector2(0,0))
+	DungeonSignals.DisplayText.emit('The Depths')
+
 	print("Active rooms after init:", active_rooms.size())
 	# Room Signals
 	DungeonSignals.Encounter.connect(Encountered)
@@ -52,13 +54,13 @@ func _spawn_new_room(pos: Vector2):
 	if active_rooms.size() < 1:
 		room_scene = SPAWN_ROOMS.pick_random()
 		
-	elif active_rooms.size() < 10:
+	elif active_rooms.size() <= 10:
 		room_scene = INTERMEDIATE_ROOMS.pick_random()
 
-	elif active_rooms.size() <= 19: 
+	elif active_rooms.size() <= 20: 
 		room_scene = ADVANCED_ROOMS.pick_random()
 		
-	elif active_rooms.size() == 20: 
+	elif active_rooms.size() == 21: 
 		room_scene = game_over
 		
 	if room_scene == null:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfna4o7w1w0kv"
+path="res://.godot/imported/lever_chains14-41056.mp3-06f7925c5c0875faa960dd0e034bf549.mp3str"
+
+[deps]
+
+source_file="res://Audio/Room Sounds/lever_chains14-41056.mp3"
+dest_files=["res://.godot/imported/lever_chains14-41056.mp3-06f7925c5c0875faa960dd0e034bf549.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
