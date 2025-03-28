@@ -189,4 +189,4 @@ script = ExtResource("1_ex4qt")
 [node name="Enemy1_Animation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_bwkdp")
-animation = &"Death"
+animation = &"Attack"

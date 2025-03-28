@@ -67,11 +67,11 @@ func _process(delta):
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	
-	#if %Enemy.HP <= 0:
-		#%Enemy.HP = 0
-		#DungeonSignals.gold += %Enemy.gold
-		#XP += %Enemy.XP
-		#DungeonSignals.combat_done.emit()
+	if %Enemy.HP <= 0:
+		%Enemy.HP = 0
+		DungeonSignals.gold += %Enemy.gold
+		XP += %Enemy.XP
+		DungeonSignals.combat_done.emit()
 		
 
 

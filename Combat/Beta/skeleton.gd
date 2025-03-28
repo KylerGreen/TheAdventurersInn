@@ -11,7 +11,8 @@ extends CharacterBody2D
 #var Counter = false
 #var Disarm = false
 #
-#func _ready():
+func _ready():
+	$"Skeleton Animation".play("Idle")
 	#var current_enemy = randi_range(0, 0)
 	#if current_enemy == 0:
 		#current_enemy = 'Skeleton'

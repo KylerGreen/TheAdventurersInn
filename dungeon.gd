@@ -102,12 +102,14 @@ func Encountered():
 	var combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
-	combat.position.x = %Player3.position.x - 550
-	combat.position.y = %Player3.position.y - 400
-	%Camera2D.zoom = Vector2(0.4, 0.4)
+	combat.scale.x = .5
+	combat.scale.y = .5
+	%Camera2D.zoom = Vector2(0.75, 0.75)
+	%Camera2D.position.x = 300
 	get_tree().paused = true
 
 
 func combat_finished():
 	get_tree().paused = false
 	%Camera2D.zoom = Vector2(1.7, 1.7)
+	%Camera2D.position.x = 0
