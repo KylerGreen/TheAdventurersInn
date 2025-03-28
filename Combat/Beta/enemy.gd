@@ -6,6 +6,7 @@ var Damage = 0
 var Heals = 0
 var XP = 0
 var gold = 0
+var MaxHP = 0
 
 #Combat States
 var Bolster = 1
@@ -21,24 +22,28 @@ func _ready():
 		var Skeleton = randi_range(0, 3)
 		if Skeleton == 0:
 			HP = 120
+			MaxHP = HP
 			Damage = 20
 			Heals = 10
 			XP = 50
 			gold = 10
 		elif Skeleton == 1:
 			HP = 60
+			MaxHP = HP
 			Damage = 25
 			Heals = 10
 			XP = 10
 			gold = 5
 		elif Skeleton == 2:
 			HP = 90
+			MaxHP = HP
 			Damage = 20
 			Heals = 15
 			XP = 30
 			gold = 5
 		elif Skeleton == 3:
 			HP = 80
+			MaxHP = HP
 			Damage = 20
 			Heals = 10
 			XP = 20
@@ -62,6 +67,12 @@ func _process(delta):
 	$Enemy_health.value = HP
 	if HP <= 0:
 		HP = 0
+		DungeonSignals.gold += %Enemy.gold
+		%Player.XP += XP
+		DungeonSignals.combat_done.emit()
+		queue_free()
+	if HP >= MaxHP:
+		HP = MaxHP
 
 
 func Bolstered():
