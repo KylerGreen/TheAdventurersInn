@@ -138,9 +138,11 @@ func player_turn(card, container):
 	if container.unique_id == 1:
 		has_action = true
 		action_card = card.card_info
+		CombatSignals.card_placed.emit()
 	elif container.unique_id == 2:
 		has_reaction = true
 		reaction_card = card.card_info
+		CombatSignals.card_placed.emit()
 			
 	if has_action == true and has_reaction == true:
 		if reaction_card["name"] == "Parry":

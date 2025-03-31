@@ -108,8 +108,6 @@ text = "
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="CardHandler" parent="BattleBackground" instance=ExtResource("11_3d1ge")]
-
 [node name="Player_damaged" type="Label" parent="BattleBackground"]
 unique_name_in_owner = true
 offset_left = -544.372
@@ -185,3 +183,5 @@ unique_name_in_owner = true
 stream = ExtResource("10_ib3g5")
 volume_db = -15.0
 parameters/looping = true
+
+[node name="CardHandler" parent="." instance=ExtResource("11_3d1ge")]
