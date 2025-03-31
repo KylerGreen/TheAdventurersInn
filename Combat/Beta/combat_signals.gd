@@ -1,12 +1,11 @@
 extends Node2D
-
-func _ready() -> void:
-	DungeonSignals.combat_done.connect(combat_finished)
 	
 
 #Global Variables
 var Action_is_there = false
 var Reaction_is_there = false
+var new_act_id = 1
+var new_react_id = 2
 
 #Card Signals
 signal type_check
@@ -22,6 +21,7 @@ signal Player_Counter
 signal card_placed
 signal player_action_phase
 signal card_used
+signal discarded
 
 #Enemy Signals
 signal Enemy_Swing
@@ -32,7 +32,3 @@ signal Enemy_Dodge
 signal Enemy_Parry
 signal Enemy_Counter
 signal enemy_action_phase
-
-
-func combat_finished():
-	queue_free()

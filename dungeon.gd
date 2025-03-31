@@ -18,6 +18,9 @@ var room_width = 280
 var room_height = 280
 var room_margin = 40
 var combat_screen = preload("res://Combat/Beta/Combat_2.tscn")
+var combat
+var saved_position_x
+var saved_position_y
 
 func _ready():
 	player.global_position = Vector2(15,-15)
@@ -97,18 +100,27 @@ func ambiance():
 	timer_1.start(wait_time_1)
 	
 func Encountered():
+	saved_position_x = %Player3.position.x
+	saved_position_y = %Player3.position.y
 	skeleton.process_mode = Node.PROCESS_MODE_ALWAYS
 	skeleton.play()
-	var combat = combat_screen.instantiate()
+	combat = combat_screen.instantiate()
 	combat.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().current_scene.add_child(combat)
+	combat.position.x = 0
+	combat.position.y = 0
 	combat.scale.x = .5
 	combat.scale.y = .5
+	%Player3.position.x = 300
+	%Player3.position.y = 200
 	%Camera2D.zoom = Vector2(0.75, 0.75)
-	%Camera2D.position.x = 300
 	get_tree().paused = true
 
 func combat_finished():
+	CombatSignals.new_act_id += 5
+	CombatSignals.new_react_id += 5
 	get_tree().paused = false
+	combat.queue_free()
 	%Camera2D.zoom = Vector2(1.7, 1.7)
-	%Camera2D.position.x = 0
+	%Player3.position.x = saved_position_x
+	%Player3.position.y = saved_position_y
