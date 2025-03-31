@@ -60,7 +60,7 @@ func _ready():
 	
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
-	CombatSignals.card_used.connect(enemy_turn)
+	CombatSignals.player_turn_over.connect(enemy_turn)
 	
 func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
@@ -90,6 +90,7 @@ func Healing():
 	HP += Heals
 	
 func Damaged():
+	print("Damage Dealt")
 	var DMG_Recieved = (%Player.Damage + %Player.Sword) * %Player.Bolster * Parry
 	%DamageCounter.text = str('-',DMG_Recieved)
 	await get_tree().create_timer(1.0).timeout

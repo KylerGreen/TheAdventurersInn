@@ -23,6 +23,7 @@ signal card_placed
 signal player_action_phase
 signal card_used
 signal discarded
+signal player_turn_over
 
 #Enemy Signals
 signal Enemy_Swing
