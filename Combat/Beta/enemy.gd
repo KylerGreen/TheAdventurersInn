@@ -69,7 +69,6 @@ func _process(delta):
 		HP = 0
 		DungeonSignals.gold += %Enemy.gold
 		%Player.XP += XP
-		DungeonSignals.combat_done.emit()
 		queue_free()
 	if HP >= MaxHP:
 		HP = MaxHP
