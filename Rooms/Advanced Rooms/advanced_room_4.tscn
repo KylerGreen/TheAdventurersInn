@@ -1,9 +1,9 @@
 [gd_scene load_steps=80 format=4 uid="uid://ujj6b1oo2fjg"]
 
-[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_8jk81"]
-[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_v1bdk"]
-[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_8q646"]
-[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_mg18s"]
+[ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_luh5h"]
+[ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_36vtl"]
+[ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_vi0qq"]
+[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_p6dsl"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -109,7 +109,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_upc1y"]
-texture = ExtResource("1_8jk81")
+texture = ExtResource("1_luh5h")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -177,7 +177,7 @@ texture = ExtResource("1_8jk81")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4x08"]
-texture = ExtResource("2_v1bdk")
+texture = ExtResource("2_36vtl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -225,7 +225,7 @@ texture = ExtResource("2_v1bdk")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdap1"]
-texture = ExtResource("3_8q646")
+texture = ExtResource("3_vi0qq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -522,7 +522,7 @@ tile_data = PackedInt32Array(0, 196608, 0)
 tile_data = PackedInt32Array(0, 131072, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbvf5"]
-texture = ExtResource("1_8jk81")
+texture = ExtResource("1_luh5h")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
@@ -590,7 +590,7 @@ texture = ExtResource("1_8jk81")
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hu82"]
-texture = ExtResource("2_v1bdk")
+texture = ExtResource("2_36vtl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -638,7 +638,7 @@ texture = ExtResource("2_v1bdk")
 5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6uodv"]
-texture = ExtResource("3_8q646")
+texture = ExtResource("3_vi0qq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -889,17 +889,17 @@ use_parent_material = true
 position = Vector2(-125, 250)
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("4_mg18s")]
+[node name="BlueEnemy" parent="." instance=ExtResource("4_p6dsl")]
 position = Vector2(-50, 67)
 
-[node name="BlueEnemy2" parent="." instance=ExtResource("4_mg18s")]
+[node name="BlueEnemy2" parent="." instance=ExtResource("4_p6dsl")]
 position = Vector2(-65, -123)
 
-[node name="BlueEnemy3" parent="." instance=ExtResource("4_mg18s")]
+[node name="BlueEnemy3" parent="." instance=ExtResource("4_p6dsl")]
 position = Vector2(-51, -356)
 
-[node name="BlueEnemy4" parent="." instance=ExtResource("4_mg18s")]
+[node name="BlueEnemy4" parent="." instance=ExtResource("4_p6dsl")]
 position = Vector2(149, -286)
 
-[node name="BlueEnemy5" parent="." instance=ExtResource("4_mg18s")]
+[node name="BlueEnemy5" parent="." instance=ExtResource("4_p6dsl")]
 position = Vector2(159, -49)
