@@ -84,25 +84,25 @@ func Floor1_Message(set_text : String):
 	label.visible = true
 	label.text = set_text
 	
-	var original_min_size = $Important_Text.custom_minimum_size.x
-	var original_font_size = label.get_theme_font_size("font_size")
-	var original_stylebox = label.get_theme_stylebox("normal")
-
-	$Important_Text.custom_minimum_size.x = (get_viewport().size.x - 600) * 0.8
-	$Important_Text.add_theme_constant_override("align", HORIZONTAL_ALIGNMENT_CENTER)
-	label.add_theme_font_size_override("font_size", original_font_size * 3)
-	var border_style = StyleBoxFlat.new()
-	border_style.border_width_top = 2
-	border_style.border_width_bottom = 2
-	border_style.border_width_left = 2
-	border_style.border_width_right = 2
-	border_style.border_color = Color(1, 1, 1)
-	label.add_theme_stylebox_override("normal", border_style)
+	#var original_min_size = $Important_Text.custom_minimum_size.x
+	#var original_font_size = label.get_theme_font_size("font_size")
+	#var original_stylebox = label.get_theme_stylebox("normal")
+#
+	#$Important_Text.custom_minimum_size.x = (get_viewport().size.x - 600) * 0.8
+	#$Important_Text.add_theme_constant_override("align", HORIZONTAL_ALIGNMENT_CENTER)
+	#label.add_theme_font_size_override("font_size", original_font_size * 3)
+	#var border_style = StyleBoxFlat.new()
+	#border_style.border_width_top = 2
+	#border_style.border_width_bottom = 2
+	#border_style.border_width_left = 2
+	#border_style.border_width_right = 2
+	#border_style.border_color = Color(1, 1, 1)
+	#label.add_theme_stylebox_override("normal", border_style)
 	
 	await get_tree().create_timer(3.0).timeout
 	
-	$Important_Text.custom_minimum_size.x = original_min_size
-	label.add_theme_stylebox_override("normal", original_stylebox)
-	label.add_theme_font_size_override("font_size", 6)
+	#$Important_Text.custom_minimum_size.x = original_min_size
+	#label.add_theme_stylebox_override("normal", original_stylebox)
+	#label.add_theme_font_size_override("font_size", 6)
 	label.visible = false
 	
