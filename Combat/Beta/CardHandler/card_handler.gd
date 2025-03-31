@@ -1,5 +1,6 @@
 extends Node
 
+#Initializes the nodes in card_handler.tscn
 @onready var card_manager = $CardManager
 @onready var card_factory = $CardManager/CardFactory
 @onready var hand = $CardManager/Hand
@@ -8,6 +9,14 @@ extends Node
 @onready var deck = $CardManager/Deck
 @onready var discard = $CardManager/Discard
 
+# Initializes path to the decklist.json
+@onready var deck_list = "res://Combat/Beta/player_decklist.json"
+
+
+func load_from_file():
+	var file = FileAccess.open("res://Combat/Beta/player_decklist.json", FileAccess.READ)
+	var content = file.get_as_text()
+	return content
 # Use to read player "decklist.json" filled with file names, sans .json
 #var deck_list = "res://Combat/Beta/player_decklist.json"
 #var json_as_text = FileAccess.get_file_as_string(deck_list)
@@ -16,9 +25,34 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(load_from_file())
 	CombatSignals.card_used.connect(_end_of_turn)
+	CombatSignals.card_placed.connect(_card_type_check)
 	_reset_deck()
 	_draw_to_five()
+
+
+func _parse_decklist_json():
+	var file_path = deck_list
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	
+	if file:
+		var content = file.get_as_text()
+		var json = JSON.new()
+		var parse_result = json.parse(content)
+		
+		if parse_result == OK:
+			var data = json.data
+			if "DeckList" in data:
+				deck_list = data["DeckList"]
+				print("Deck List:", deck_list)
+			else:
+				print("DeckList key not found in JSON.")
+		else:
+			print("Failed to parse JSON.")
+	else:
+		print("Failed to open file.")
+		return deck_list
 
 
 func _reset_deck():
@@ -30,22 +64,21 @@ func _reset_deck():
 
 func _get_randomized_card_list() -> Array:
 	# Test inputs for Decklist
-	var values = ["act_disarm", "act_disarm", "act_heal", "act_heal", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "react_bolster", "react_bolster", "react_bolster", "react_counter", "react_counter", "react_dodge", "react_parry", "react_parry", "react_parry"]
-	#var values = ["act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm", "act_disarm"]
+	_parse_decklist_json()
+	#print(deck_list)
+	var current_deck = deck_list
+	#var current_deck = ["act_disarm", "act_disarm", "act_heal", "act_heal", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "act_swing", "react_bolster", "react_bolster", "react_bolster", "react_counter", "react_counter", "react_dodge", "react_parry", "react_parry", "react_parry"]
 	
 	var card_list = []
 
-	for value in values:
+	for value in current_deck:
 		card_list.append(value)
 	
 	card_list.shuffle()
 	
+	#print(card_list)
 	return card_list
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _draw_to_five():
@@ -56,11 +89,14 @@ func _draw_to_five():
 			break
 		current_draw_number -= 1
 
-#NOTE: IN PROGRESS
+
+
 # Takes a Action/Reaction Card and it's Action/Reaction Pile
 # If Both holds_x is true, and card type == x, card stays in the pile
 # else, the card is ejected back to the hand
 func _card_type_check(card, container):
+	var player_node = 	get_parent().get_node("Player")
+	
 	var holds_action = false
 	var holds_reaction = false
 	# container.unique_id == 1 is the Action Pile
@@ -72,57 +108,35 @@ func _card_type_check(card, container):
 		holds_reaction = true
 		holds_action = false
 
-	var data = card.info
+	var data = card.card_info
 	
 	# For Adding a card to the Action Pile
-	if data["type"] == "action" and  holds_action == true:
+	if data["type"] == "Action" and  holds_action == true:
 		pass
-	elif data["type"] == "action" and  holds_action == false:
-		hand.move_cards(react_zone.get_top_cards(1))
-	# For Adding a card to the Reaction Pile
-	elif data["type"] == "reaction" and  holds_reaction == true:
-		pass
-	elif data["type"] == "reaction" and  holds_reaction == false:
-		hand.move_cards(react_zone.get_top_cards(1))
+	elif data["type"] == "Reaction" and  holds_reaction == false:
+		hand.move_cards(act_zone.get_top_cards(1))
+		#player_node.has_action = false	# Disable when Testing independant of Combat_2.tscn
 	
+	# For Adding a card to the Action Pile
+	elif data["type"] == "Reaction" and  holds_reaction == true:
+		pass
+	elif data["type"] == "Action" and  holds_action == false:
+		hand.move_cards(react_zone.get_top_cards(1))
+		#player_node.has_reaction = false	# Disable when Testing independant of Combat_2.tscn
 
-func _end_of_turn(container_id):
+func _end_of_turn():
 	# Send signals from the cards to the card_signal Manager
 	
-	if container_id == CombatSignals.discard_id:
-		var current_draw_number = 1
-		while current_draw_number > 0:
-			var result = hand.move_cards(deck.get_top_cards(current_draw_number))
-			if result:
-				break
-			current_draw_number -= 1
-			
-	elif container_id == CombatSignals.new_act_id or container_id == CombatSignals.new_react_id:
-		var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
-		discard.move_cards(cards)
-		var current_draw_number = 2
-		while current_draw_number > 0:
-			var result = hand.move_cards(deck.get_top_cards(current_draw_number))
-			if result:
-				break
-			current_draw_number -= 1
+	# Discard Cards from Action and reaction zone
+	var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
+	discard.move_cards(cards)
+	var current_draw_number = 2
+	while current_draw_number > 0:
+		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+		if result:
+			break
+		current_draw_number -= 1
 	
 
-#func _on_discard_test_pressed() -> void:
-	#_end_of_turn()
-
-
-#Cards added to a Pile are added as Grandchildren to the Pile, which means that the signal doesn't detect them.
-#func _on_reaction_child_entered_tree(node: Node) -> void:
-	#
-#
-	##if react_zone == null:
-		##pass
-	##else:
-		##var recent_card = react_zone.get_top_cards(1)
-	#
-	#print(react_zone)
-	##print(react_zone.get_top_cards(card.card_info))
-	##var card = node.get_child()
-	##_card_type_check(node, card)
-	#pass
+func _on_discard_test_pressed() -> void:
+	_end_of_turn()

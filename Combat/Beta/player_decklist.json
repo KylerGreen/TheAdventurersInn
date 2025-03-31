@@ -1,9 +1,24 @@
 {
-	"act_disarm",
-	"act_heal",
-	"act_swing",
-	"react_bolster",
-	"react_counter",
-	"react_dodge",
-	"react_parry"
+	"DeckList": [
+		"act_disarm",
+		 "act_disarm",
+		 "act_heal",
+		 "act_heal",
+		 "act_swing",
+		 "act_swing",
+		 "act_swing",
+		 "act_swing",
+		 "act_swing",
+		 "act_swing",
+		 "act_swing",
+		 "react_bolster",
+		 "react_bolster",
+		 "react_bolster",
+		 "react_counter",
+		 "react_counter",
+		 "react_dodge",
+		 "react_parry",
+		 "react_parry",
+		 "react_parry"
+		]
 }
