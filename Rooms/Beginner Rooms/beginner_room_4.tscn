@@ -1380,27 +1380,15 @@ tile_set = SubResource("TileSet_c0xg6")
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAATAO3/AwAPAAQAAAABAO3/AwAPAAQAAAABAP7/AwAPAAQAAAAKAPL/AwAPAAQAAAAHAPX/AwAPAAQAAAAKAPj/AwAPAAQAAAAKAPP/AwARAAIAAAAKAPn/AwARAAIAAAAHAPb/AwARAAIAAAANAPX/AwAPAAQAAAANAPb/AwARAAIAAAATAO7/AwARAAIAAAABAO7/AwARAAIAAAABAP//AwARAAIAAAATAP7/AwAPAAQAAAATAP//AwARAAIAAAAHAPf/AgABAAUAAAAKAPT/AgABAAUAAAANAPf/AgABAAUAAAAKAPr/AgABAAUAAAATAO//AgABAAUAAAASAP//AgABAAUAAAACAP//AgABAAUAAAABAO//AgABAAUAAAAKAPb/AwAMAAAAAAA=")
+tile_map_data = PackedByteArray("AAATAO3/AwAPAAQAAAABAO3/AwAPAAQAAAABAP7/AwAPAAQAAAAKAPL/AwAPAAQAAAAKAPP/AwARAAIAAAATAO7/AwARAAIAAAABAO7/AwARAAIAAAABAP//AwARAAIAAAATAP7/AwAPAAQAAAATAP//AwARAAIAAAAKAPn/AwAPAAQAAAAKAPr/AwARAAIAAAAKAPX/AwAMAAMAAAAKAPb/AwAMAAAAAAAOAPX/AwAPAAQAAAAOAPb/AwARAAIAAAAGAPX/AwAPAAQAAAAGAPb/AwARAAIAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
-
-[node name="Null" type="TileMapLayer" parent="."]
-y_sort_enabled = true
-use_parent_material = true
-position = Vector2(-125, 250)
-tile_set = SubResource("TileSet_c0xg6")
-
-[node name="BlueEnemy" parent="." instance=ExtResource("4_ydgan")]
-position = Vector2(-17, 204)
-
-[node name="Statue" parent="." instance=ExtResource("5_xk03r")]
-position = Vector2(-95, 174)
 
 [node name="Switch" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 249)
-tile_map_data = PackedByteArray("AAABAPv/AgACAAUAAAA=")
+tile_map_data = PackedByteArray("AAALAO7/AgACAAUAAAA=")
 tile_set = SubResource("TileSet_ox031")
 
 [node name="Switch2" type="TileMapLayer" parent="."]
@@ -1419,3 +1407,9 @@ use_parent_material = true
 position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_b6iwm")
+
+[node name="BlueEnemy" parent="." instance=ExtResource("4_ydgan")]
+position = Vector2(62, 183)
+
+[node name="Statue" parent="." instance=ExtResource("5_xk03r")]
+position = Vector2(60, -29)

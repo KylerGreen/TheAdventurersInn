@@ -859,7 +859,6 @@ unique_name_in_owner = true
 script = ExtResource("7_4b4dx")
 
 [node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
-visible = false
 position = Vector2(-1, 0)
 texture = ExtResource("6_y42l5")
 
