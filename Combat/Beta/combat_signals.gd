@@ -6,6 +6,7 @@ var Action_is_there = false
 var Reaction_is_there = false
 var new_act_id = 1
 var new_react_id = 2
+var discard_id = 3
 
 #Card Signals
 signal type_check

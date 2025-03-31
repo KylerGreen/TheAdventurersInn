@@ -160,7 +160,9 @@ func player_turn(card, container):
 		elif action_card["name"] == "Swing":
 			CombatSignals.Player_Swing.emit()
 		
-			
-		CombatSignals.card_used.emit()
+		CombatSignals.card_used.emit(container.unique_id)	
 		has_action = false
 		has_reaction = false
+		
+	if container.unique_id == CombatSignals.discard_id:
+		CombatSignals.card_used.emit(container.unique_id)

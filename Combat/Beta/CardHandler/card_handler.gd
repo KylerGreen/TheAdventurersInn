@@ -86,22 +86,30 @@ func _card_type_check(card, container):
 		hand.move_cards(react_zone.get_top_cards(1))
 	
 
-func _end_of_turn():
+func _end_of_turn(container_id):
 	# Send signals from the cards to the card_signal Manager
 	
-	# Discard Cards from Action and reaction zone
-	var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
-	discard.move_cards(cards)
-	var current_draw_number = 2
-	while current_draw_number > 0:
-		var result = hand.move_cards(deck.get_top_cards(current_draw_number))
-		if result:
-			break
-		current_draw_number -= 1
+	if container_id == CombatSignals.discard_id:
+		var current_draw_number = 1
+		while current_draw_number > 0:
+			var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+			if result:
+				break
+			current_draw_number -= 1
+			
+	elif container_id == CombatSignals.new_act_id or container_id == CombatSignals.new_react_id:
+		var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
+		discard.move_cards(cards)
+		var current_draw_number = 2
+		while current_draw_number > 0:
+			var result = hand.move_cards(deck.get_top_cards(current_draw_number))
+			if result:
+				break
+			current_draw_number -= 1
 	
 
-func _on_discard_test_pressed() -> void:
-	_end_of_turn()
+#func _on_discard_test_pressed() -> void:
+	#_end_of_turn()
 
 
 #Cards added to a Pile are added as Grandchildren to the Pile, which means that the signal doesn't detect them.

@@ -1,7 +1,7 @@
 extends Node2D
 
 var only_once : bool = true
-@onready var stone = 
+@onready var stone = true
 
 func _ready() -> void:
 	DungeonSignals.only_once.connect(one_time)
@@ -17,4 +17,4 @@ func _on_switch_3a_2d_body_entered(body: Node2D) -> void:
 		%Switch2.set_visible(true)
 		only_once = false
 		DungeonSignals.DisplayText.emit('You found the hidden switch!')
-		stone.play()
+		#stone.play()
