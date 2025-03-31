@@ -11,7 +11,7 @@ func one_time():
 
 func _on_chest_a_2d_body_entered(body: Node2D) -> void:
 	if only_once:
-		%Chest.queue_free()
+		%Chest1.queue_free()
 		%Chest2.set_visible(true)
 		only_once = false
 		DungeonSignals.only_once2.emit()

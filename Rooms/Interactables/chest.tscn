@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://6hnxehcp71av"]
+[gd_scene load_steps=4 format=3 uid="uid://6hnxehcp71av"]
 
 [ext_resource type="Script" path="res://Rooms/Interactables/chest.gd" id="1_3trks"]
+[ext_resource type="AudioStream" uid="uid://5pvqhgs4xfpo" path="res://Audio/Room Sounds/chest-opening-87569 (mp3cut.net) (1).mp3" id="2_oiacw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prhqr"]
-size = Vector2(65, 87)
+size = Vector2(23.5, 17.5)
 
 [node name="ChestNode" type="Node2D"]
 script = ExtResource("1_3trks")
@@ -16,5 +17,7 @@ shape = SubResource("RectangleShape2D_prhqr")
 
 [node name="Creak" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("2_oiacw")
+volume_db = 10.0
 
 [connection signal="body_entered" from="ChestA2D" to="." method="_on_chest_a_2d_body_entered"]
