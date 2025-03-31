@@ -41,6 +41,7 @@ func _init():
 
 
 func _ready() -> void:
+	print(unique_id)
 	#CombatSignals.Use_Cards.connect(_use_cards)
 	# Check if 'Cards' node already exists
 	if has_node("Cards"):

@@ -117,6 +117,9 @@ func Encountered():
 	get_tree().paused = true
 
 func combat_finished():
+	CombatSignals.new_act_id += 5
+	CombatSignals.new_react_id += 5
+	CombatSignals.discard_id += 5
 	get_tree().paused = false
 	combat.queue_free()
 	%Camera2D.zoom = Vector2(1.7, 1.7)

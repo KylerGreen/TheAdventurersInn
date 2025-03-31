@@ -134,13 +134,15 @@ func Disarmed():
 	
 func player_turn(card, container):
 	Dodge = false
+	print(container.unique_id)
 	
-	if container.unique_id == 1:
+	if container.unique_id == CombatSignals.new_act_id:
 		has_action = true
 		action_card = card.card_info
-	elif container.unique_id == 2:
+	elif container.unique_id == CombatSignals.new_react_id:
 		has_reaction = true
 		reaction_card = card.card_info
+		CombatSignals.card_placed.emit()
 			
 	if has_action == true and has_reaction == true:
 		if reaction_card["name"] == "Parry":
@@ -159,7 +161,9 @@ func player_turn(card, container):
 		elif action_card["name"] == "Swing":
 			CombatSignals.Player_Swing.emit()
 		
-			
-		CombatSignals.card_used.emit()
+		CombatSignals.card_used.emit(container.unique_id)	
 		has_action = false
 		has_reaction = false
+		
+	if container.unique_id == CombatSignals.discard_id:
+		CombatSignals.card_used.emit(container.unique_id)
