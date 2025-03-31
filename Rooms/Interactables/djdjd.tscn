@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmgp434qpmuit"]
+
+[ext_resource type="AudioStream" uid="uid://5pvqhgs4xfpo" path="res://Audio/Room Sounds/chest-opening-87569 (mp3cut.net) (1).mp3" id="1_d7wku"]
+
+[node name="Djdjd" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_d7wku")
+volume_db = 10.0

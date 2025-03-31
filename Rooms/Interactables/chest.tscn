@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hnxehcp71av"]
+
+[ext_resource type="Script" path="res://Rooms/Interactables/chest.gd" id="1_3trks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prhqr"]
+size = Vector2(65, 87)
+
+[node name="ChestNode" type="Node2D"]
+script = ExtResource("1_3trks")
+
+[node name="ChestA2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestA2D"]
+shape = SubResource("RectangleShape2D_prhqr")
+
+[node name="Creak" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="ChestA2D" to="." method="_on_chest_a_2d_body_entered"]
