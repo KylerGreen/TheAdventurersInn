@@ -859,7 +859,6 @@ unique_name_in_owner = true
 script = ExtResource("7_4b4dx")
 
 [node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
-visible = false
 position = Vector2(-1, 0)
 texture = ExtResource("6_y42l5")
 
@@ -867,7 +866,6 @@ texture = ExtResource("6_y42l5")
 shape = SubResource("RectangleShape2D_lvdfq")
 
 [node name="Important_Text" type="Label" parent="Player3"]
-unique_name_in_owner = true
 z_index = 1
 offset_left = -311.0
 offset_top = 43.0
@@ -880,7 +878,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player3"]
 unique_name_in_owner = true
-zoom = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
 
 [node name="ColorRect" type="ColorRect" parent="Player3/Camera2D"]
 z_index = -2

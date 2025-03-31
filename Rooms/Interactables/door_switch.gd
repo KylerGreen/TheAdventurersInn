@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var switch = %Switch_Sound
+@onready var switch = %Switch_Sound2
 var only_once : bool = true
 
 func _ready() -> void:
