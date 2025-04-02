@@ -69,6 +69,7 @@ func _process(delta):
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	
 	if %Enemy.HP <= 0:
+		await get_tree().create_timer(1.5).timeout
 		CombatSignals.Player_HP = HP
 		%Enemy.HP = 0
 		DungeonSignals.gold += %Enemy.gold

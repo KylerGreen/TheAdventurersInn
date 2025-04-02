@@ -66,6 +66,8 @@ func _process(delta):
 	%Enemy_HP.text = str('HP: ', HP)
 	$Enemy_health.value = HP
 	if HP <= 0:
+		await get_tree().create_timer(1.5).timeout
+		CombatSignals.Enemy_Dead.emit()
 		HP = 0
 		DungeonSignals.gold += %Enemy.gold
 		%Player.XP += XP
@@ -134,8 +136,8 @@ func enemy_turn():
 	await get_tree().create_timer(2.0).timeout
 	var Enemy_Action = randi_range(0, 10)
 	if Enemy_Action > 0 and Enemy_Action <= 2:
-		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Counter.emit()
+		CombatSignals.Enemy_Swing.emit()		
 	elif Enemy_Action > 2 and Enemy_Action <= 4:
 		CombatSignals.Enemy_Bolster.emit()
 		CombatSignals.Enemy_Swing.emit()
@@ -146,7 +148,7 @@ func enemy_turn():
 		CombatSignals.Enemy_Disarm.emit()
 		CombatSignals.Enemy_Dodge.emit()
 	elif Enemy_Action > 8 and Enemy_Action <= 10:
-		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Parry.emit()
+		CombatSignals.Enemy_Swing.emit()
 	
 	CombatSignals.vis_hand.emit()
