@@ -141,9 +141,13 @@ func player_turn(card, container):
 	if container.unique_id == CombatSignals.new_act_id:
 		has_action = true
 		action_card = card.card_info
+		if action_card["type"] == "Reaction":
+			has_action = false
 	elif container.unique_id == CombatSignals.new_react_id:
 		has_reaction = true
 		reaction_card = card.card_info
+		if reaction_card["type"] == "Action":
+			has_reaction = false
 			
 	if has_action == true and has_reaction == true:
 		if reaction_card["name"] == "Parry":

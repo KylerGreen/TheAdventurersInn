@@ -63,17 +63,17 @@ func _ready():
 	CombatSignals.player_turn_over.connect(enemy_turn)
 	
 func _process(delta):
+	if HP >= MaxHP:
+		HP = MaxHP
 	%Enemy_HP.text = str('HP: ', HP)
 	$Enemy_health.value = HP
 	if HP <= 0:
+		HP = 0
 		await get_tree().create_timer(1.5).timeout
 		CombatSignals.Enemy_Dead.emit()
-		HP = 0
 		DungeonSignals.gold += %Enemy.gold
 		%Player.XP += XP
 		queue_free()
-	if HP >= MaxHP:
-		HP = MaxHP
 
 
 func Bolstered():

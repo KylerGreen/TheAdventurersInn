@@ -100,11 +100,11 @@ func _card_type_check(card, container):
 	var holds_action = false
 	var holds_reaction = false
 	# container.unique_id == 1 is the Action Pile
-	if container.unique_id == 1:
+	if container.unique_id == CombatSignals.new_act_id:
 		holds_reaction = false
 		holds_action = true
 	# conntainer.unique_id == 2 is the Reaction Pile
-	elif container.unique_id == 2:
+	elif container.unique_id == CombatSignals.new_react_id:
 		holds_reaction = true
 		holds_action = false
 
