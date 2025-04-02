@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ciqh0otib2i8i" path="res://Audio/Room Sounds/punch-a-rock-161647 (mp3cut.net).mp3" id="2_8k7gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2r0c"]
-size = Vector2(65, 87)
+size = Vector2(34, 43)
 
 [node name="StatueSwitch" type="Node2D"]
 script = ExtResource("1_qbvx7")
@@ -13,6 +13,7 @@ script = ExtResource("1_qbvx7")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch2A2D"]
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_c2r0c")
 
 [node name="Statue_Sound" type="AudioStreamPlayer2D" parent="."]

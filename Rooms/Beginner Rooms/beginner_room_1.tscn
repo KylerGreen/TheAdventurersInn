@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dr6lv1sxyk816"]
+[gd_scene load_steps=36 format=4 uid="uid://dr6lv1sxyk816"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_2ep4x"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_oflc4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="7_1irmr"]
 [ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="8_gw6f0"]
 [ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="9_22mcb"]
+[ext_resource type="Script" path="res://Rooms/Beginner Rooms/path_follow_2d.gd" id="9_gyrmj"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -361,6 +362,12 @@ pattern_16 = SubResource("TileMapPattern_cjiqc")
 pattern_17 = SubResource("TileMapPattern_tws2f")
 pattern_18 = SubResource("TileMapPattern_rlobp")
 
+[sub_resource type="Curve2D" id="Curve2D_84x7m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 107, 211, 0, 0, 0, 0, 107, 178, 0, 0, 0, 0, -77, 176, 0, 0, 0, 0, -84, -43, 0, 0, 0, 0, -15, 210, 0, 0, 0, 0, 107, 211)
+}
+point_count = 6
+
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_2iogx")
@@ -411,9 +418,6 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("6_76jqx")]
-position = Vector2(-17, 204)
-
 [node name="DoorSwitch" parent="." instance=ExtResource("7_0j6vv")]
 position = Vector2(142, 210)
 
@@ -444,3 +448,17 @@ texture = ExtResource("8_gw6f0")
 
 [node name="ChestA2D" parent="." instance=ExtResource("9_22mcb")]
 position = Vector2(-37, -13)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_84x7m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(107, 211)
+rotation = 0.0252047
+progress = 1292.49
+rotates = false
+script = ExtResource("9_gyrmj")
+
+[node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("6_76jqx")]
+position = Vector2(-2.15058, -5.94771)
+rotation = -0.0252047
