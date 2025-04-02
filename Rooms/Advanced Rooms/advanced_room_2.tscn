@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://baqbpv1h5ch1u"]
+[gd_scene load_steps=55 format=4 uid="uid://baqbpv1h5ch1u"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_uohhw"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_vtjlg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="5_7o43w"]
 [ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="5_y6gdt"]
 [ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Room Sounds/lever_chains14-41056.mp3" id="6_akdvv"]
+[ext_resource type="Script" path="res://Rooms/Advanced Rooms/path_follow_2d.gd" id="6_aynfe"]
 
 [sub_resource type="GDScript" id="GDScript_4jdr2"]
 script/source = "extends Node2D
@@ -716,6 +717,12 @@ pattern_15 = SubResource("TileMapPattern_m6dk4")
 pattern_16 = SubResource("TileMapPattern_gqqcq")
 pattern_17 = SubResource("TileMapPattern_an4r5")
 
+[sub_resource type="Curve2D" id="Curve2D_4wp7o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 57, 104, 0, 0, 0, 0, 58, 18, 0, 0, 0, 0, -5, 13, 0, 0, 0, 0, -14, 213, 0, 0, 0, 0, 94, 210, 0, 0, 0, 0, 94, -23, 0, 0, 0, 0, 57, 104)
+}
+point_count = 7
+
 [node name="AdvRoom" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_4jdr2")
@@ -767,10 +774,6 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_t77id")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("5_7o43w")]
-position = Vector2(49, 99)
-rotation = 0.0175188
-
 [node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
 position = Vector2(141, 210)
 
@@ -779,3 +782,16 @@ unique_name_in_owner = true
 position = Vector2(31, -12)
 stream = ExtResource("6_akdvv")
 volume_db = 15.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4wp7o")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(57, 104)
+rotation = -1.55917
+rotates = false
+script = ExtResource("6_aynfe")
+
+[node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("5_7o43w")]
+position = Vector2(4.90665, -8.05759)
+rotation = 1.57669

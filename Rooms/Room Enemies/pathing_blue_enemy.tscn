@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://be4226mf3v1ki"]
+[gd_scene load_steps=4 format=3 uid="uid://cer5tvf048lkd"]
 
 [ext_resource type="Script" path="res://Rooms/Room Enemies/path_follow_2d.gd" id="4_gba1m"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_j1joh"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://bd8a52qswmnof"]
+[gd_scene load_steps=36 format=4 uid="uid://bd8a52qswmnof"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_5ecqi"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_cyr35"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_nc7ul"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_2qc1l"]
+[ext_resource type="Script" path="res://Rooms/Intermediate Rooms/path_follow_2d.gd" id="5_n152i"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -366,6 +367,24 @@ pattern_19 = SubResource("TileMapPattern_q2eat")
 pattern_20 = SubResource("TileMapPattern_hbkar")
 pattern_21 = SubResource("TileMapPattern_qu1qc")
 
+[sub_resource type="Curve2D" id="Curve2D_52ud1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 173, 232, 0, 0, 0, 0, 164, -27, 0, 0, 0, 0, 52, -30, 0, 0, 0, 0, 44, 107, 0, 0, 0, 0, -84, 100, 0, 0, 0, 0, -86, -17, 0, 0, 0, 0, -27, -12, 0, 0, 0, 0, -23, 214, 0, 0, 0, 0, 166, 232, 0, 0, 0, 0, 173, 232)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_wjho2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 146, 647, 0, 0, 0, 0, 145, 424)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1qlax"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -66, 646, 0, 0, 0, 0, -67, 424)
+}
+point_count = 2
+
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_2iogx")
@@ -414,20 +433,51 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAGABsAAAAAAAAAAAAGABoAAAAAAAAAAAAGABkAAAAAAAAAAAAGABgAAAAAAAAAAAAGABcAAAAAAAAAAAAGABYAAAAAAAAAAAAGABUAAAAAAAAAAAAGABQAAAAAAAAAAAAGABMAAAAAAAAAAAAGABIAAAAAAAAAAAAGABEAAAAAAAAAAAAGABAAAAAAAAAAAAAOABAAAAAAAAAAAAAOABEAAAAAAAAAAAAOABIAAAAAAAAAAAAOABMAAAAAAAAAAAAOABQAAAAAAAAAAAAOABUAAAAAAAAAAAAOABYAAAAAAAAAAAAOABcAAAAAAAAAAAAOABgAAAAAAAAAAAAOABkAAAAAAAAAAAAOABoAAAAAAAAAAAAOABsAAAAAAAAAAAAIABIAAgABAAUAAAAJAA8AAgABAAUAAAAMABEAAgABAAUAAAANABQAAgABAAUAAAAMAAwAAgABAAUAAAAJAAIAAgABAAUAAAAHAPf/AgABAAUAAAAIABQAAgABAAUAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(-73, 640)
-
 [node name="BlueEnemy2" parent="." instance=ExtResource("4_2qc1l")]
 position = Vector2(15, 648)
 
 [node name="BlueEnemy3" parent="." instance=ExtResource("4_2qc1l")]
 position = Vector2(56, 649)
 
-[node name="BlueEnemy4" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(153, 650)
-
-[node name="BlueEnemy5" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(37, 286)
-
 [node name="BlueEnemy6" parent="." instance=ExtResource("4_2qc1l")]
 position = Vector2(36, 607)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_52ud1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-23.6108, 103.303)
+rotation = -0.0384426
+progress = 576.141
+rotates = false
+script = ExtResource("5_n152i")
+
+[node name="BlueEnemy5" parent="Path2D/PathFollow2D" instance=ExtResource("4_2qc1l")]
+position = Vector2(-7.72506, -7.30231)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wjho2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(145.59, 555.46)
+rotation = -1.57528
+progress = 91.5424
+rotates = false
+script = ExtResource("5_n152i")
+
+[node name="BlueEnemy4" parent="Path2D2/PathFollow2D" instance=ExtResource("4_2qc1l")]
+position = Vector2(-84.5145, -5.9685)
+rotation = 1.57528
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1qlax")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(-66, 646)
+rotation = -1.55728
+rotates = false
+script = ExtResource("5_n152i")
+
+[node name="BlueEnemy" parent="Path2D3/PathFollow2D" instance=ExtResource("4_2qc1l")]
+position = Vector2(5.90485, -7.08043)
+rotation = 1.55728
