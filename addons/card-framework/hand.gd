@@ -24,6 +24,8 @@ extends CardContainer
 
 
 func _ready() -> void:
+	CombatSignals.invis_hand.connect(invis)
+	CombatSignals.vis_hand.connect(vis)
 	super._ready()
 	size = hand_area
 
@@ -65,3 +67,9 @@ func _update_target_positions():
 		card.move(target_pos, target_rotation)
 		card.show_front = card_face_up
 		card.can_be_interacted_with = true
+
+func invis():
+	visible = false
+	
+func vis():
+	visible = true

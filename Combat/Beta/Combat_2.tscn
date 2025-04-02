@@ -99,9 +99,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DamageCounter" type="Label" parent="BattleBackground"]
 unique_name_in_owner = true
-offset_left = 503.708
+offset_left = 263.66
 offset_top = -491.903
-offset_right = 611.708
+offset_right = 371.66
 offset_bottom = -422.903
 theme_override_font_sizes/font_size = 50
 text = "
@@ -185,3 +185,9 @@ volume_db = -15.0
 parameters/looping = true
 
 [node name="CardHandler" parent="." instance=ExtResource("11_3d1ge")]
+unique_name_in_owner = true
+
+[node name="Deck" parent="CardHandler/CardManager" index="4"]
+card_face_up = false
+
+[editable path="CardHandler"]

@@ -76,18 +76,33 @@ func _process(delta):
 
 func Bolstered():
 	Bolster = 1.5
+	%DamageCounter.text = str('The Skeleton strengthens!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Dodging():
 	Dodge = true
+	%DamageCounter.text = str('The Skeleton appears nimble!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Parrying():
 	Parry = 0.5
+	%DamageCounter.text = str('The Skeleton defends!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Countering():
 	Counter = true
+	%DamageCounter.text = str('The Skeleton reacts!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Healing():
 	HP += Heals
+	%DamageCounter.text = str('The Skeleton heals ', Heals, ' HP')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Damaged():
 	print("Damage Dealt")
@@ -116,7 +131,7 @@ func enemy_turn():
 	Dodge = false
 	Counter = false
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	var Enemy_Action = randi_range(0, 10)
 	if Enemy_Action > 0 and Enemy_Action <= 2:
 		CombatSignals.Enemy_Swing.emit()
@@ -133,3 +148,5 @@ func enemy_turn():
 	elif Enemy_Action > 8 and Enemy_Action <= 10:
 		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Parry.emit()
+	
+	CombatSignals.vis_hand.emit()
