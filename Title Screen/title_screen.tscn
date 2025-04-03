@@ -63,20 +63,23 @@ color = Color(0.439216, 0.439216, 0.439216, 0.619608)
 
 [node name="Contributers" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 943.0
-offset_top = 1.0
-offset_right = 1285.0
-offset_bottom = 717.0
+offset_left = 936.0
+offset_top = -5.0
+offset_right = 1278.0
+offset_bottom = 715.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6wp4e")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
 text = "
-
+-----------------------
 Lead Developer: 
+-----------------------
 Kyler Greenhalgh
 (The Innkeeper)
 
+-----------------------
 Developers: 
+-----------------------
 Kaitlin Heusner
 (The Cartographer)
 
@@ -86,11 +89,15 @@ Alex Broom
 Patrick Edgett
 (Shuffling Master)
 
+-----------------------
 Character Design:
+-----------------------
 Chase Hulet
 (Monster Master)
 
+-----------------------
 Music by: 
+-----------------------
 Benjamin Dahlen
 (The Musician)"
 

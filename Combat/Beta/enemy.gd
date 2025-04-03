@@ -60,36 +60,54 @@ func _ready():
 	
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
-	CombatSignals.card_used.connect(enemy_turn)
+	CombatSignals.player_turn_over.connect(enemy_turn)
 	
 func _process(delta):
+	if HP >= MaxHP:
+		HP = MaxHP
 	%Enemy_HP.text = str('HP: ', HP)
 	$Enemy_health.value = HP
 	if HP <= 0:
 		HP = 0
+		await get_tree().create_timer(1.5).timeout
+		CombatSignals.Enemy_Dead.emit()
 		DungeonSignals.gold += %Enemy.gold
 		%Player.XP += XP
 		queue_free()
-	if HP >= MaxHP:
-		HP = MaxHP
 
 
 func Bolstered():
 	Bolster = 1.5
+	%DamageCounter.text = str('The Skeleton strengthens!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Dodging():
 	Dodge = true
+	%DamageCounter.text = str('The Skeleton appears nimble!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Parrying():
 	Parry = 0.5
+	%DamageCounter.text = str('The Skeleton defends!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Countering():
 	Counter = true
+	%DamageCounter.text = str('The Skeleton reacts!')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Healing():
 	HP += Heals
+	%DamageCounter.text = str('The Skeleton heals ', Heals, ' HP')
+	await get_tree().create_timer(1.0).timeout
+	%DamageCounter.text = str('')
 	
 func Damaged():
+	print("Damage Dealt")
 	var DMG_Recieved = (%Player.Damage + %Player.Sword) * %Player.Bolster * Parry
 	%DamageCounter.text = str('-',DMG_Recieved)
 	await get_tree().create_timer(1.0).timeout
@@ -115,11 +133,11 @@ func enemy_turn():
 	Dodge = false
 	Counter = false
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	var Enemy_Action = randi_range(0, 10)
 	if Enemy_Action > 0 and Enemy_Action <= 2:
-		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Counter.emit()
+		CombatSignals.Enemy_Swing.emit()		
 	elif Enemy_Action > 2 and Enemy_Action <= 4:
 		CombatSignals.Enemy_Bolster.emit()
 		CombatSignals.Enemy_Swing.emit()
@@ -130,5 +148,7 @@ func enemy_turn():
 		CombatSignals.Enemy_Disarm.emit()
 		CombatSignals.Enemy_Dodge.emit()
 	elif Enemy_Action > 8 and Enemy_Action <= 10:
-		CombatSignals.Enemy_Swing.emit()
 		CombatSignals.Enemy_Parry.emit()
+		CombatSignals.Enemy_Swing.emit()
+	
+	CombatSignals.vis_hand.emit()

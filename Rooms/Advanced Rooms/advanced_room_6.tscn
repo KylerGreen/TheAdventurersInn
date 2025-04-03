@@ -1,8 +1,9 @@
-[gd_scene load_steps=80 format=4 uid="uid://clmtwkepocpaq"]
+[gd_scene load_steps=82 format=4 uid="uid://dhsjictq7ja46"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_sly07"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_7e0b8"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_oag1q"]
+[ext_resource type="Script" path="res://Rooms/Advanced Rooms/path_follow_2d.gd" id="4_o4d45"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_r0gih"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
@@ -835,6 +836,12 @@ pattern_30 = SubResource("TileMapPattern_kxw6x")
 pattern_31 = SubResource("TileMapPattern_s86nc")
 pattern_32 = SubResource("TileMapPattern_l0a6m")
 
+[sub_resource type="Curve2D" id="Curve2D_0ohfv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, -26, 0, 0, 0, 0, 48, 183, 0, 0, 0, 0, 32, 182, 0, 0, 0, 0, 34, -27, 0, 0, 0, 0, 52, -24)
+}
+point_count = 5
+
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
 script = SubResource("GDScript_2iogx")
@@ -875,5 +882,15 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAADAO7/AwAMAAMAAAADAO//AwAMAAAAAAARAPz/AwAMAAMAAAARAP3/AwAMAAAAAAARAO7/AwAMAAMAAAARAO//AwAMAAAAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
-[node name="BlueEnemy" parent="." instance=ExtResource("4_r0gih")]
-position = Vector2(45, 100)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_0ohfv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(52, -26)
+rotation = 1.61077
+rotates = false
+script = ExtResource("4_o4d45")
+
+[node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_r0gih")]
+position = Vector2(-4.71622, 7.19424)
+rotation = -1.61077

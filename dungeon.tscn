@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bg4h1igh01uff"]
+[gd_scene load_steps=15 format=3 uid="uid://bg4h1igh01uff"]
 
 [ext_resource type="Script" path="res://dungeon.gd" id="1_q0fi5"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="1_x40fo"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drawdtjqd8eh1" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/angel_run_anim_f1.png" id="6_y42l5"]
 [ext_resource type="Script" path="res://Rooms/player_2.gd" id="7_4b4dx"]
 [ext_resource type="AudioStream" uid="uid://c8x7uggkux61e" path="res://Audio/Room Sounds/untitled.mp3" id="7_4xnvm"]
+[ext_resource type="AudioStream" uid="uid://dro8wqx36pmiy" path="res://Audio/Room Sounds/walking-on-concrete-ver-2-268513 (mp3cut.net).mp3" id="7_lhsk1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nla4w"]
 texture = ExtResource("1_x40fo")
@@ -843,6 +844,8 @@ sources/0 = SubResource("TileSetAtlasSource_nla4w")
 sources/1 = SubResource("TileSetAtlasSource_lov3q")
 sources/2 = SubResource("TileSetAtlasSource_iec3q")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj3cd"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvdfq"]
 size = Vector2(11, 12)
 
@@ -857,6 +860,9 @@ tile_set = SubResource("TileSet_fr0ad")
 [node name="Player3" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_4b4dx")
+
+[node name="KnightAnimation" type="AnimatedSprite2D" parent="Player3"]
+sprite_frames = SubResource("SpriteFrames_oj3cd")
 
 [node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
 position = Vector2(-1, 0)
@@ -892,6 +898,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Footstep" type="AudioStreamPlayer2D" parent="Player3"]
 unique_name_in_owner = true
+stream = ExtResource("7_lhsk1")
 volume_db = 15.0
 
 [node name="Skeleton_Sound" type="AudioStreamPlayer2D" parent="Player3"]

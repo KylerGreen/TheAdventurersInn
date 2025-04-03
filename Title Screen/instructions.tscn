@@ -22,12 +22,18 @@ text = "Instructions:
 As you explore the dungeon, you'll come across enemies that 
 oppose your progress. In these instances you will use your deck
 of cards to fight them off. You will place both an action in 
-the action slot and a reaction in the reaction slot on your turn.
+the action slot and a reaction in the reaction slot on your turn. 
+If you need to, you can discard cards to the discard by dragging 
+them into the discard pile.
 
 Good luck on your escape from the dungeon!"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+[node name="Button" type="Button" parent="."]
+offset_left = 987.0
+offset_top = 613.0
+offset_right = 1212.0
+offset_bottom = 682.0
+theme_override_font_sizes/font_size = 30
+text = "Begin Adventure"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

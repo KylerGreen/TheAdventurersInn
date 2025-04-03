@@ -1,13 +1,108 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgu5khf772ywg"]
+[gd_scene load_steps=27 format=3 uid="uid://dgu5khf772ywg"]
 
 [ext_resource type="Texture2D" uid="uid://bdcbmq1khg7bq" path="res://Assets/Skeleton/Idle/skeleton_idle_frame0000.webp" id="1_j5v68"]
 [ext_resource type="Script" path="res://Combat/Beta/skeleton.gd" id="1_n0200"]
 [ext_resource type="Texture2D" uid="uid://br1i00ygcn7q6" path="res://Assets/Skeleton/Idle/skeleton_idle_frame0002.webp" id="2_02qxo"]
+[ext_resource type="Texture2D" uid="uid://buh6tvrb8p8aa" path="res://Assets/Skeleton/Idle/skeleton_attack_frame0000.webp" id="2_s4ju1"]
 [ext_resource type="Texture2D" uid="uid://bg50v1hwraprt" path="res://Assets/Skeleton/Idle/skeleton_idle_frame0004.webp" id="3_3360b"]
+[ext_resource type="Texture2D" uid="uid://7ii7kvdbfkx8" path="res://Assets/Skeleton/Idle/skeleton_attack_frame0001.webp" id="3_iswe5"]
 [ext_resource type="Texture2D" uid="uid://dhgry37gdl4b8" path="res://Assets/Skeleton/Idle/skeleton_idle_frame0006.webp" id="4_8hflv"]
+[ext_resource type="Texture2D" uid="uid://cr56a1foukgnw" path="res://Assets/Skeleton/Idle/skeleton_attack_frame0002.webp" id="4_g08n7"]
+[ext_resource type="Texture2D" uid="uid://dfvhogceku24s" path="res://Assets/Skeleton/Idle/skeleton_attack_frame0003.webp" id="5_hbfbe"]
+[ext_resource type="Texture2D" uid="uid://p4oo86iiflt1" path="res://Assets/Skeleton/Block/skeleton_block_frame0000.webp" id="6_7hlk3"]
+[ext_resource type="Texture2D" uid="uid://dtexgkh0mkypx" path="res://Assets/Skeleton/Block/skeleton_block_frame0001.webp" id="7_aarsd"]
+[ext_resource type="Texture2D" uid="uid://bs0shhqdbqxje" path="res://Assets/Skeleton/Block/skeleton_block_frame0002.webp" id="8_6utca"]
+[ext_resource type="Texture2D" uid="uid://ci6si8egjhp2n" path="res://Assets/Skeleton/Block/skeleton_block_frame0003.webp" id="9_8aw5c"]
+[ext_resource type="Texture2D" uid="uid://2oyvsrgtrc0l" path="res://Assets/Skeleton/Block/skeleton_block_frame0004.webp" id="10_74ega"]
+[ext_resource type="Texture2D" uid="uid://rba2twna2vl1" path="res://Assets/Skeleton/Block/skeleton_block_frame0005.webp" id="11_d2k51"]
+[ext_resource type="Texture2D" uid="uid://722wwqwfkwfd" path="res://Assets/Skeleton/Block/skeleton_block_frame0006.webp" id="12_wqi6d"]
+[ext_resource type="Texture2D" uid="uid://dlch8um0jhcti" path="res://Assets/Skeleton/Block/skeleton_block_frame0007.webp" id="13_y65ke"]
+[ext_resource type="Texture2D" uid="uid://13pldgljhcui" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0000.webp" id="14_ypwyb"]
+[ext_resource type="Texture2D" uid="uid://bkgd8ovdff3os" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0001.webp" id="15_m8i8y"]
+[ext_resource type="Texture2D" uid="uid://cy821rrsyhg4x" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0002.webp" id="16_g2p8k"]
+[ext_resource type="Texture2D" uid="uid://dsikmsm4mp5hq" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0003.webp" id="17_535in"]
+[ext_resource type="Texture2D" uid="uid://bxtjjrgbjwckn" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0004.webp" id="18_yuatp"]
+[ext_resource type="Texture2D" uid="uid://cwt6j1gckwfwi" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0005.webp" id="19_qx62j"]
+[ext_resource type="Texture2D" uid="uid://cwboqarsjsldi" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0006.webp" id="20_utq5y"]
+[ext_resource type="Texture2D" uid="uid://pn0obj5o7028" path="res://Assets/Skeleton/Hit/skeleton_hit_frame0007.webp" id="21_fnt8b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afx0j"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s4ju1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iswe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g08n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hbfbe")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7hlk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aarsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6utca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8aw5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_74ega")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d2k51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wqi6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y65ke")
+}],
+"loop": false,
+"name": &"Block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ypwyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m8i8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_g2p8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_535in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yuatp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qx62j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_utq5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fnt8b")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_j5v68")
@@ -33,5 +128,6 @@ script = ExtResource("1_n0200")
 position = Vector2(0, -0.500006)
 scale = Vector2(1.75, 1.65254)
 sprite_frames = SubResource("SpriteFrames_afx0j")
-animation = &"Idle"
-frame_progress = 0.455659
+animation = &"Block"
+
+[connection signal="animation_finished" from="Skeleton Animation" to="." method="_on_skeleton_animation_animation_finished"]

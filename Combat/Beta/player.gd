@@ -27,6 +27,7 @@ var action_card
 var reaction_card
 
 func _ready():
+	HP = CombatSignals.Player_HP
 	%Player_HP.text = str('HP: ', HP)
 	CombatSignals.Player_Bolster.connect(Bolstered)
 	CombatSignals.Player_Dodge.connect(Dodging)
@@ -44,7 +45,7 @@ func _process(delta):
 	$Player_health.value = HP
 	if HP <= 0:
 		HP = 0
-		DungeonSignals.combat_done.emit()
+		get_tree().change_scene_to_file("res://Game Over Screen/game_over_screen.tscn")
 	Gold = DungeonSignals.gold
 	if HP >= MaxHP:
 		HP = MaxHP
@@ -68,6 +69,8 @@ func _process(delta):
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	
 	if %Enemy.HP <= 0:
+		await get_tree().create_timer(1.5).timeout
+		CombatSignals.Player_HP = HP
 		%Enemy.HP = 0
 		DungeonSignals.gold += %Enemy.gold
 		XP += %Enemy.XP
@@ -134,15 +137,17 @@ func Disarmed():
 	
 func player_turn(card, container):
 	Dodge = false
-	print(container.unique_id)
 	
 	if container.unique_id == CombatSignals.new_act_id:
 		has_action = true
 		action_card = card.card_info
+		if action_card["type"] == "Reaction":
+			has_action = false
 	elif container.unique_id == CombatSignals.new_react_id:
 		has_reaction = true
 		reaction_card = card.card_info
-		CombatSignals.card_placed.emit()
+		if reaction_card["type"] == "Action":
+			has_reaction = false
 			
 	if has_action == true and has_reaction == true:
 		if reaction_card["name"] == "Parry":
@@ -161,9 +166,11 @@ func player_turn(card, container):
 		elif action_card["name"] == "Swing":
 			CombatSignals.Player_Swing.emit()
 		
-		CombatSignals.card_used.emit(container.unique_id)	
+		CombatSignals.invis_hand.emit()
 		has_action = false
 		has_reaction = false
+		CombatSignals.card_used.emit(container.unique_id)	
+		CombatSignals.player_turn_over.emit()
 		
-	if container.unique_id == CombatSignals.discard_id:
+	elif container.unique_id == CombatSignals.discard_id:
 		CombatSignals.card_used.emit(container.unique_id)

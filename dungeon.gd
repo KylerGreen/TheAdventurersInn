@@ -3,7 +3,7 @@ extends Node2D
 const SPAWN_ROOMS: Array = [preload("res://Rooms/Beginner Rooms/beginner_room_1.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_3.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_4.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_2.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_6.tscn"), preload("res://Rooms/Beginner Rooms/beginner_room_5.tscn")]
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Intermediate Rooms/intermediate_room_6.tscn"),preload("res://Rooms/Intermediate Rooms/intermediate_room_5.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_2.tscn"), preload("res://Rooms/Intermediate Rooms/intermediate_room_3.tscn")]
 const ADVANCED_ROOMS: Array = [preload("res://Rooms/Advanced Rooms/advanced_room_2.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_3.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_4.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_5.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_6.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_7.tscn"), preload("res://Rooms/Advanced Rooms/advanced_room_8.tscn")]
-const game_over = preload("res://Game Over Screen/game_over_screen.tscn")
+const game_win = preload("res://Title Screen/game_win.tscn")
 
 @onready var player = %Player3
 @onready var camera = $Camera2D
@@ -57,14 +57,14 @@ func _spawn_new_room(pos: Vector2):
 	if active_rooms.size() < 1:
 		room_scene = SPAWN_ROOMS.pick_random()
 		
-	elif active_rooms.size() > 1 and active_rooms.size()<= 10:
+	elif active_rooms.size() > 1 and active_rooms.size() == 11:
 		room_scene = INTERMEDIATE_ROOMS.pick_random()
 
-	elif active_rooms.size() <= 20: 
+	elif active_rooms.size() <= 21: 
 		room_scene = ADVANCED_ROOMS.pick_random()
 		
-	elif active_rooms.size() == 21: 
-		room_scene = game_over
+	elif active_rooms.size() == 22: 
+		room_scene = game_win
 		
 	if room_scene == null:
 		print("Error: No room selected")

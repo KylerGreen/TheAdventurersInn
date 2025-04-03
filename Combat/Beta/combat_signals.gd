@@ -7,6 +7,8 @@ var Reaction_is_there = false
 var new_act_id = 1
 var new_react_id = 2
 var discard_id = 3
+var Player_HP = 100
+var Current_Enemy = Node2D
 
 #Card Signals
 signal type_check
@@ -23,6 +25,8 @@ signal card_placed
 signal player_action_phase
 signal card_used
 signal discarded
+signal player_turn_over
+signal invis_hand
 
 #Enemy Signals
 signal Enemy_Swing
@@ -33,3 +37,5 @@ signal Enemy_Dodge
 signal Enemy_Parry
 signal Enemy_Counter
 signal enemy_action_phase
+signal vis_hand
+signal Enemy_Dead

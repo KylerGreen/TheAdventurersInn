@@ -1,11 +1,8 @@
-[gd_scene load_steps=45 format=4 uid="uid://bdevpijpi2mbp"]
+[gd_scene load_steps=42 format=4 uid="uid://bhgr3gfx523bx"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_ho3g6"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_s84lf"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_q5eod"]
-[ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="4_75hjk"]
-[ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="5_rboy7"]
-[ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="6_72771"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -456,19 +453,3 @@ use_parent_material = true
 position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAADAPz/AwAMAAMAAAADAP3/AwAMAAAAAAACAPr/AwAMAAMAAAACAPv/AwAMAAAAAAANAPv/AwAMAAMAAAANAPz/AwAMAAAAAAAGAP3/AwAMAAMAAAAGAP7/AwAMAAAAAAAPAP3/AwAMAAMAAAAPAP7/AwAMAAAAAAASAPv/AwAMAAMAAAASAPz/AwAMAAAAAAAHAPD/AwAMAAMAAAAHAPH/AwAMAAAAAAAEAO7/AwAMAAMAAAAEAO//AwAMAAAAAAACAO//AwAMAAMAAAACAPD/AwAMAAAAAAAJAO7/AwAMAAMAAAAJAO//AwAMAAAAAAAIAPz/AwAMAAMAAAAIAP3/AwAMAAQAAAAMAP3/AwAMAAMAAAAMAP7/AwAMAAQAAAAKAPz/AwAMAAMAAAAKAP3/AwAMAAQAAAAQAPr/AwAMAAMAAAAQAPv/AwAMAAQAAAANAO//AwAMAAMAAAANAPD/AwAMAAQAAAAHAO3/AwAMAAMAAAAHAO7/AwAMAAQAAAAQAO3/AwAMAAMAAAAQAO7/AwAMAAQAAAAMAO3/AwAMAAMAAAAMAO7/AwAMAAQAAAASAPD/AwAMAAMAAAASAPH/AwAMAAQAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
-
-[node name="Chest1" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(123, 1)
-texture = ExtResource("4_75hjk")
-
-[node name="Chest2" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-z_index = 1
-position = Vector2(-37, -14)
-texture = ExtResource("5_rboy7")
-
-[node name="ChestA2D" parent="." instance=ExtResource("6_72771")]
-position = Vector2(123, 2)

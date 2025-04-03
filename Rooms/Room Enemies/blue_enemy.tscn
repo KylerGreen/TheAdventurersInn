@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4clfg0c6jffl" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_idle_anim_f0.png" id="2_phh4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_breby"]
-size = Vector2(16, 23)
+size = Vector2(13, 16)
 
 [node name="BlueEnemy" type="Node2D"]
 script = ExtResource("1_d37s1")
@@ -14,7 +14,7 @@ position = Vector2(-2, 2)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 unique_name_in_owner = true
-position = Vector2(9, 4.5)
+position = Vector2(9.5, 4)
 shape = SubResource("RectangleShape2D_breby")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
