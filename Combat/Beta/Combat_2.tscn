@@ -119,6 +119,14 @@ text = "
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="DeckMat" type="ColorRect" parent="BattleBackground"]
+offset_left = 596.842
+offset_top = 62.9635
+offset_right = 636.842
+offset_bottom = 102.964
+scale = Vector2(9.22761, 12.1545)
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
 [node name="Player" parent="." instance=ExtResource("2_8b3ah")]
 unique_name_in_owner = true
 script = ExtResource("3_ugd0x")

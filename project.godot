@@ -14,7 +14,7 @@ config/name="The Adventurers Inn"
 run/main_scene="res://Title Screen/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://Tavern_Test.jpg"
-config/icon="res://icon.svg"
+config/icon="res://Tavern_Test.png"
 
 [autoload]
 
