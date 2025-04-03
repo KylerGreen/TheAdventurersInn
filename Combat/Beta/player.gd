@@ -43,6 +43,7 @@ func _ready():
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
 	$Player_health.value = HP
+	XP = CombatSignals.Player_XP
 	if HP <= 0:
 		HP = 0
 		get_tree().change_scene_to_file("res://Game Over Screen/game_over_screen.tscn")
@@ -73,7 +74,7 @@ func _process(delta):
 		CombatSignals.Player_HP = HP
 		%Enemy.HP = 0
 		DungeonSignals.gold += %Enemy.gold
-		XP += %Enemy.XP
+		CombatSignals.Player_XP += %Enemy.XP
 		DungeonSignals.combat_done.emit()
 		
 
