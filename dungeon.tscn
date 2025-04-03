@@ -1,13 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg4h1igh01uff"]
+[gd_scene load_steps=22 format=3 uid="uid://bg4h1igh01uff"]
 
 [ext_resource type="Script" path="res://dungeon.gd" id="1_q0fi5"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="1_x40fo"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="2_45ccu"]
 [ext_resource type="Texture2D" uid="uid://by6dw7gycpu4o" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="3_r3wro"]
-[ext_resource type="Texture2D" uid="uid://drawdtjqd8eh1" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/angel_run_anim_f1.png" id="6_y42l5"]
+[ext_resource type="Texture2D" uid="uid://dg5d2g8e24dc2" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f0.png" id="6_nluh5"]
 [ext_resource type="Script" path="res://Rooms/player_2.gd" id="7_4b4dx"]
 [ext_resource type="AudioStream" uid="uid://c8x7uggkux61e" path="res://Audio/Room Sounds/untitled.mp3" id="7_4xnvm"]
+[ext_resource type="Texture2D" uid="uid://dpc36lij7d0bx" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f1.png" id="7_7yxvv"]
 [ext_resource type="AudioStream" uid="uid://dro8wqx36pmiy" path="res://Audio/Room Sounds/walking-on-concrete-ver-2-268513 (mp3cut.net).mp3" id="7_lhsk1"]
+[ext_resource type="Texture2D" uid="uid://qaby6eriey8r" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f2.png" id="8_hkih0"]
+[ext_resource type="Texture2D" uid="uid://bl2iu5pxn1nc" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_idle_anim_f3.png" id="9_l8s07"]
+[ext_resource type="Texture2D" uid="uid://cxyqhymjddvyl" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f0.png" id="10_y7lc4"]
+[ext_resource type="Texture2D" uid="uid://c23bwcar1ik5n" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f1.png" id="11_a1vsh"]
+[ext_resource type="Texture2D" uid="uid://c6fewo8dkfpu1" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f2.png" id="12_x2tx1"]
+[ext_resource type="Texture2D" uid="uid://d1hm4si6ly1xm" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/knight_f_run_anim_f3.png" id="13_shgg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nla4w"]
 texture = ExtResource("1_x40fo")
@@ -845,9 +852,44 @@ sources/1 = SubResource("TileSetAtlasSource_lov3q")
 sources/2 = SubResource("TileSetAtlasSource_iec3q")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oj3cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nluh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7yxvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hkih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l8s07")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_y7lc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a1vsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x2tx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_shgg4")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 9.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvdfq"]
-size = Vector2(11, 12)
+size = Vector2(15, 20.5)
 
 [node name="Dungeon" type="Node2D"]
 y_sort_enabled = true
@@ -862,13 +904,12 @@ unique_name_in_owner = true
 script = ExtResource("7_4b4dx")
 
 [node name="KnightAnimation" type="AnimatedSprite2D" parent="Player3"]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_oj3cd")
-
-[node name="AngelRunAnimF1" type="Sprite2D" parent="Player3"]
-position = Vector2(-1, 0)
-texture = ExtResource("6_y42l5")
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player3"]
+position = Vector2(0, 4.25)
 shape = SubResource("RectangleShape2D_lvdfq")
 
 [node name="Important_Text" type="Label" parent="Player3"]
@@ -889,10 +930,10 @@ zoom = Vector2(2, 2)
 
 [node name="ColorRect" type="ColorRect" parent="Player3/Camera2D"]
 z_index = -2
-offset_left = -1065.0
-offset_top = -602.0
-offset_right = 1246.0
-offset_bottom = 522.0
+offset_left = -1059.0
+offset_top = -580.5
+offset_right = 1252.0
+offset_bottom = 543.5
 color = Color(0.176419, 0.176419, 0.176419, 1)
 metadata/_edit_use_anchors_ = true
 
