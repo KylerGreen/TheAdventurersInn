@@ -1,9 +1,13 @@
-[gd_scene load_steps=112 format=4 uid="uid://ce58v2ks8ky0a"]
+[gd_scene load_steps=116 format=4 uid="uid://ce58v2ks8ky0a"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_apsqq"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_lwvn6"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_7q1k6"]
 [ext_resource type="PackedScene" uid="uid://chqxslnj74bqp" path="res://Rooms/Interactables/statue.tscn" id="4_ttbwv"]
+[ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="5_x5wto"]
+[ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="6_dccnd"]
+[ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="7_0oqa1"]
+[ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="8_ijayi"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -1524,3 +1528,25 @@ tile_set = SubResource("TileSet_o88hm")
 
 [node name="Statue" parent="." instance=ExtResource("4_ttbwv")]
 position = Vector2(171, -26)
+
+[node name="Chest1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-85, 2)
+texture = ExtResource("5_x5wto")
+
+[node name="Chest2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+position = Vector2(-37, -14)
+texture = ExtResource("6_dccnd")
+
+[node name="ChestA2D" parent="." instance=ExtResource("7_0oqa1")]
+position = Vector2(-85, 3)
+
+[node name="BlueEnemy" parent="." instance=ExtResource("8_ijayi")]
+position = Vector2(-44, -14)
+
+[node name="BlueEnemy2" parent="." instance=ExtResource("8_ijayi")]
+position = Vector2(42, 12)
