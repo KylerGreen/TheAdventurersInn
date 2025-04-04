@@ -61,7 +61,8 @@ func _ready():
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
 	CombatSignals.player_turn_over.connect(enemy_turn)
-	
+	if %Player.Armor > 0:
+		Damage += 10
 func _process(delta):
 	if HP >= MaxHP:
 		HP = MaxHP

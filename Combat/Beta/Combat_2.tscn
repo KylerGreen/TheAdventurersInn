@@ -57,6 +57,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ActionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
+anchors_preset = -1
+anchor_left = -5.07832e-05
+anchor_top = -0.0123457
+anchor_right = 0.0121018
 offset_left = -236.883
 offset_top = -200.0
 offset_right = -36.8826

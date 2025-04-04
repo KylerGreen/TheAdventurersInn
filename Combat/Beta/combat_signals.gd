@@ -28,6 +28,8 @@ signal card_used
 signal discarded
 signal player_turn_over
 signal invis_hand
+signal sword_got
+signal armor_got
 
 #Enemy Signals
 signal Enemy_Swing
