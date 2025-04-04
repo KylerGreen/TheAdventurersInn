@@ -11,6 +11,7 @@ extends Node
 
 # Initializes path to the decklist.json
 @onready var deck_list = "res://Combat/Beta/player_decklist.json"
+@onready var cards_left := 0
 
 
 func load_from_file():
@@ -73,6 +74,8 @@ func _get_randomized_card_list() -> Array:
 
 	for value in current_deck:
 		card_list.append(value)
+		cards_left += 1
+		print(cards_left)
 	
 	card_list.shuffle()
 	
@@ -89,7 +92,12 @@ func _draw_to_five():
 			break
 		current_draw_number -= 1
 
-
+# WIP
+# Update a Label to Reflect the total count of cards in the Deck Pile
+func show_card_count():
+	pass
+	
+	
 
 # Takes a Action/Reaction Card and it's Action/Reaction Pile
 # If Both holds_x is true, and card type == x, card stays in the pile
@@ -134,6 +142,11 @@ func _end_of_turn(container_id):
 			if result:
 				break
 			current_draw_number -= 1
+		# Updates the display of the number of cards left in the deck
+		cards_left -= 1
+		$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
+		print(cards_left)
+
 	elif container_id == CombatSignals.new_act_id or container_id == CombatSignals.new_react_id:
 		var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
 		discard.move_cards(cards)
@@ -143,6 +156,10 @@ func _end_of_turn(container_id):
 			if result:
 				break
 			current_draw_number -= 1
+			# Updates the display of the number of cards left in the deck
+			cards_left -= 1
+			$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
+			print(cards_left)
 	
 
 #func _on_discard_test_pressed() -> void:

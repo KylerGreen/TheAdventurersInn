@@ -145,6 +145,14 @@ max_hand_size = 20
 allow_card_movement = false
 enable_drop_zone = false
 
+[node name="Card countings" type="Label" parent="CardManager/Deck"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -97.0
+offset_right = 139.0
+offset_bottom = -74.0
+text = "20 Cards Left"
+
 [node name="Discard TEST" type="Button" parent="CardManager"]
 visible = false
 layout_mode = 0
