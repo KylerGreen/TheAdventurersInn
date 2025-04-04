@@ -841,21 +841,21 @@ pattern_32 = SubResource("TileMapPattern_l0a6m")
 
 [sub_resource type="Curve2D" id="Curve2D_ln5x6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -45, -349, 0, 0, 0, 0, -69, -221, 0, 0, 0, 0, -88, -463, 0, 0, 0, 0, 2, -465, 0, 0, 0, 0, -46, -354)
+"points": PackedVector2Array(0, 0, 0, 0, -45, -349, 0, 0, 0, 0, -69, -221, 0, 0, 0, 0, -88, -463, 0, 0, 0, 0, 2, -465, 0, 0, 0, 0, -46, -354, 0, 0, 0, 0, -45, -349)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_cphgk"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 156, -282, 0, 0, 0, 0, 96, -471, 0, 0, 0, 0, 178, -476, 0, 0, 0, 0, 158, -279)
+"points": PackedVector2Array(0, 0, 0, 0, 156, -282, 0, 0, 0, 0, 96, -471, 0, 0, 0, 0, 178, -476, 0, 0, 0, 0, 158, -279, 0, 0, 0, 0, 156, -282)
 }
-point_count = 4
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_gyfmk"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 164, -43, 0, 0, 0, 0, 164, 217)
+"points": PackedVector2Array(0, 0, 0, 0, 164, -43, 0, 0, 0, 0, 178, 222, 0, 0, 0, 0, 148, 219, 0, 0, 0, 0, 164, -43)
 }
-point_count = 2
+point_count = 4
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
