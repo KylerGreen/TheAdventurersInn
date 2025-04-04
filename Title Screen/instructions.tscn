@@ -18,7 +18,7 @@ offset_bottom = 714.0
 theme_override_font_sizes/font_size = 40
 text = "Instructions:
 
-\"Arrow Keys\" - Move your character
+\"Arrow Keys\" or \"WASD\" - Move your character
 
 As you explore the dungeon, you'll come across enemies that 
 oppose your progress. In these instances you will use your deck
