@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_2b6lt"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -89.2416, -65.7098, 0, 0, 0, 0, -90.6251, 232.614, 0, 0, 0, 0, 203.842, 233.167, 0, 0, 0, 0, 203.753, -62.5637, 0, 0, 0, 0, -89.2416, -65.7098)
+"points": PackedVector2Array(0, 0, 0, 0, -90.6251, 232.614, 0, 0, 0, 0, 203.842, 233.167, 0, 0, 0, 0, 202.519, -61.4885, 0, 0, 0, 0, -94.3991, -60.9818, 0, 0, 0, 0, -90.6427, 233.705)
 }
 point_count = 5
 
@@ -18,12 +18,12 @@ scale = Vector2(0.821884, 0.916474)
 curve = SubResource("Curve2D_2b6lt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(15.8912, 232.814)
+position = Vector2(203.346, 122.793)
 rotation = 1.54456
 progress = 404.844
 rotates = false
 script = ExtResource("4_gba1m")
 
 [node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_j1joh")]
-position = Vector2(-12.6467, -0.358406)
+position = Vector2(-3.25092, 1.73444)
 rotation = -1.56915

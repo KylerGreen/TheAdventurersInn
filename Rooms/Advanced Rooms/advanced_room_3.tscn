@@ -425,7 +425,7 @@ pattern_32 = SubResource("TileMapPattern_4pbgu")
 
 [sub_resource type="Curve2D" id="Curve2D_qfyph"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 301, -165, 0, 0, 0, 0, 37, -166, 0, 0, 0, 0, 34, -141, 0, 0, 0, 0, 303, -138, 0, 0, 0, 0, 301, -165)
+"points": PackedVector2Array(0, 0, 0, 0, 34, -141, 0, 0, 0, 0, 303, -138, 0, 0, 0, 0, 303, -154, 0, 0, 0, 0, 34, -156, 0, 0, 0, 0, 34, -142)
 }
 point_count = 5
 
@@ -468,7 +468,7 @@ position = Vector2(-123, 244)
 curve = SubResource("Curve2D_qfyph")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(49.0875, -165.954)
+position = Vector2(286.047, -138.189)
 rotation = 0.011152
 progress = 252.04
 rotates = false

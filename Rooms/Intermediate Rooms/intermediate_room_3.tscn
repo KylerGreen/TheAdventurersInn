@@ -378,15 +378,15 @@ point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_wjho2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 146, 647, 0, 0, 0, 0, 145, 424)
+"points": PackedVector2Array(0, 0, 0, 0, 146, 647, 0, 0, 0, 0, 145, 424, 0, 0, 0, 0, 169, 426, 0, 0, 0, 0, 146, 647)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_1qlax"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -66, 646, 0, 0, 0, 0, -67, 424)
+"points": PackedVector2Array(0, 0, 0, 0, -66, 646, 0, 0, 0, 0, -73, 456, 0, 0, 0, 0, -53, 455, 0, 0, 0, 0, -66, 646)
 }
-point_count = 2
+point_count = 4
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true

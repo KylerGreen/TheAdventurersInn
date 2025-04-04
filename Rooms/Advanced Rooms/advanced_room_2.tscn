@@ -774,15 +774,6 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_t77id")
 
-[node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
-position = Vector2(141, 210)
-
-[node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
-unique_name_in_owner = true
-position = Vector2(31, -12)
-stream = ExtResource("6_akdvv")
-volume_db = 15.0
-
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_4wp7o")
 
@@ -795,3 +786,12 @@ script = ExtResource("6_aynfe")
 [node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("5_7o43w")]
 position = Vector2(4.90665, -8.05759)
 rotation = 1.57669
+
+[node name="DoorSwitch" parent="." instance=ExtResource("5_y6gdt")]
+position = Vector2(141, 210)
+
+[node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
+unique_name_in_owner = true
+position = Vector2(31, -12)
+stream = ExtResource("6_akdvv")
+volume_db = 15.0

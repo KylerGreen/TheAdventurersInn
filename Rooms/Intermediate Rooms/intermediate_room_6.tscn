@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=4 uid="uid://ce58v2ks8ky0a"]
+[gd_scene load_steps=121 format=4 uid="uid://ce58v2ks8ky0a"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_apsqq"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_lwvn6"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="7_od404"]
 [ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="8_g1pue"]
 [ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="9_0n366"]
+[ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="10_xme8y"]
+[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Room Sounds/lever_chains14-41056.mp3" id="11_lodb3"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -1523,10 +1525,9 @@ tile_set = SubResource("TileSet_ulnas")
 
 [node name="Switch" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 y_sort_enabled = true
 use_parent_material = true
-position = Vector2(-220, 398)
+position = Vector2(-264, 231)
 tile_map_data = PackedByteArray("AAAQAP3/AgACAAUAAAA=")
 tile_set = SubResource("TileSet_o88hm")
 
@@ -1535,7 +1536,7 @@ unique_name_in_owner = true
 visible = false
 y_sort_enabled = true
 use_parent_material = true
-position = Vector2(-220, 398)
+position = Vector2(-263, 230)
 tile_map_data = PackedByteArray("AAAQAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_o88hm")
 
@@ -1581,3 +1582,12 @@ texture = ExtResource("8_g1pue")
 
 [node name="ChestA2D" parent="." instance=ExtResource("9_0n366")]
 position = Vector2(-69, 19)
+
+[node name="DoorSwitch" parent="." instance=ExtResource("10_xme8y")]
+position = Vector2(3, 192)
+
+[node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
+unique_name_in_owner = true
+position = Vector2(31, -12)
+stream = ExtResource("11_lodb3")
+volume_db = 15.0
