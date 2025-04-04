@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1sm0ib4bb2sc"]
+[gd_scene load_steps=7 format=3 uid="uid://c1sm0ib4bb2sc"]
 
 [ext_resource type="Script" path="res://Title Screen/start.gd" id="1_2xwpo"]
 [ext_resource type="Script" path="res://Title Screen/title_screen.gd" id="1_553u5"]
+[ext_resource type="Texture2D" uid="uid://d1ns2wdf1tyeh" path="res://Tavern_Test.png" id="2_1d5a5"]
 [ext_resource type="AudioStream" uid="uid://lyrm3fortfy" path="res://Title Screen/crafterx27s-mallets-286976.mp3" id="2_2sj5x"]
 [ext_resource type="FontFile" uid="uid://daskdvxyesyso" path="res://Title Screen/Stacked pixel.ttf" id="2_6wp4e"]
 [ext_resource type="FontFile" uid="uid://dbpdqbko5u6rm" path="res://Title Screen/NicerNightie.ttf" id="4_o5pw5"]
@@ -18,33 +19,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_553u5")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_left = -4.0
-offset_top = 5.0
-offset_right = 1278.0
-offset_bottom = 720.0
-color = Color(0.394124, 0.583762, 0.638652, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(650, 333)
+texture = ExtResource("2_1d5a5")
 
-[node name="Start" type="Button" parent="ColorRect"]
+[node name="Start" type="Button" parent="Background"]
 z_index = 1
-layout_mode = 0
-offset_left = 349.0
-offset_top = 499.0
-offset_right = 554.0
-offset_bottom = 575.0
+offset_left = -286.0
+offset_top = 143.0
+offset_right = -81.0
+offset_bottom = 219.0
 theme_override_fonts/font = ExtResource("2_6wp4e")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 script = ExtResource("1_2xwpo")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 107.0
-offset_right = 921.0
-offset_bottom = 501.0
+[node name="Label" type="Label" parent="Background"]
+offset_left = -681.0
+offset_top = -304.0
+offset_right = 237.0
+offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("4_o5pw5")
 theme_override_font_sizes/font_size = 100
 text = "The 
@@ -53,20 +47,18 @@ Adventurer's Inn
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 919.0
-offset_top = -3.0
-offset_right = 1289.0
-offset_bottom = 717.0
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = 265.0
+offset_top = -331.0
+offset_right = 635.0
+offset_bottom = 389.0
 color = Color(0.439216, 0.439216, 0.439216, 0.619608)
 
-[node name="Contributers" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 936.0
-offset_top = -5.0
-offset_right = 1278.0
-offset_bottom = 715.0
+[node name="Contributers" type="Label" parent="Background"]
+offset_left = 282.0
+offset_top = -333.0
+offset_right = 624.0
+offset_bottom = 387.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6wp4e")
 theme_override_font_sizes/font_size = 24
@@ -106,4 +98,4 @@ unique_name_in_owner = true
 stream = ExtResource("2_2sj5x")
 volume_db = -30.0
 
-[connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]
+[connection signal="pressed" from="Background/Start" to="Background/Start" method="_on_pressed"]
