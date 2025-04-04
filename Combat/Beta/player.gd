@@ -127,6 +127,7 @@ func Damaged():
 		await get_tree().create_timer(1.0).timeout
 		%Player_damaged.text = str('')
 	elif Counter == true:
+		await get_tree().create_timer(1.5).timeout
 		HP -= DMG_Recieved
 		%Enemy.HP -= ((Damage + Sword) * 0.5)
 		%DamageCounter.text = str('-',((Damage + Sword) * 0.5))
