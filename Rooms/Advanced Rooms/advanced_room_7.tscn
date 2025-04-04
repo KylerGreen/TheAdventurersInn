@@ -467,7 +467,7 @@ texture = ExtResource("4_nok2m")
 unique_name_in_owner = true
 visible = false
 z_index = 1
-position = Vector2(-37, -14)
+position = Vector2(124, 2)
 texture = ExtResource("5_ak28s")
 
 [node name="ChestA2D" parent="." instance=ExtResource("6_1xhjl")]

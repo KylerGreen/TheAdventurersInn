@@ -11,6 +11,8 @@ var Player_HP = 100
 var Player_XP = 0
 var Current_Enemy = Node2D
 var cards_left
+var Global_Sword = 0
+var Global_Armor = 0
 
 #Card Signals
 signal type_check

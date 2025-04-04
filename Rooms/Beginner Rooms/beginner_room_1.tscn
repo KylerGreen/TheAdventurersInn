@@ -444,11 +444,11 @@ texture = ExtResource("7_1irmr")
 unique_name_in_owner = true
 visible = false
 z_index = 1
-position = Vector2(-37, -14)
+position = Vector2(-84, 226)
 texture = ExtResource("8_gw6f0")
 
 [node name="ChestA2D" parent="." instance=ExtResource("9_22mcb")]
-position = Vector2(-85, 227)
+position = Vector2(-85, 228)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_84x7m")
