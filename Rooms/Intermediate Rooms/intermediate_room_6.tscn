@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://ce58v2ks8ky0a"]
+[gd_scene load_steps=119 format=4 uid="uid://ce58v2ks8ky0a"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_apsqq"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_lwvn6"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://chqxslnj74bqp" path="res://Rooms/Interactables/statue.tscn" id="4_ttbwv"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="5_a51c7"]
 [ext_resource type="Script" path="res://Rooms/Intermediate Rooms/path_follow_2d.gd" id="5_qtcyo"]
+[ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="7_od404"]
+[ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="8_g1pue"]
+[ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="9_0n366"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -1562,3 +1565,19 @@ script = ExtResource("5_qtcyo")
 
 [node name="BlueEnemy2" parent="Path2D2/PathFollow2D" instance=ExtResource("5_a51c7")]
 position = Vector2(-7, -8)
+
+[node name="Chest1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-69, 18)
+texture = ExtResource("7_od404")
+
+[node name="Chest2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+position = Vector2(-37, -14)
+texture = ExtResource("8_g1pue")
+
+[node name="ChestA2D" parent="." instance=ExtResource("9_0n366")]
+position = Vector2(-69, 19)
