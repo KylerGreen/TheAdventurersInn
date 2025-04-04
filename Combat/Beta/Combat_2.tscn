@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b13cvbon0j1py"]
+[gd_scene load_steps=12 format=3 uid="uid://b13cvbon0j1py"]
 
 [ext_resource type="Script" path="res://Combat/Beta/player_hp.gd" id="1_ehlno"]
 [ext_resource type="Script" path="res://Combat/Beta/combat_signals.gd" id="1_j1xjl"]
 [ext_resource type="PackedScene" uid="uid://bkr66o7r8gc2n" path="res://Combat/Beta/player.tscn" id="2_8b3ah"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy_hp.gd" id="3_hrp41"]
-[ext_resource type="Script" path="res://Combat/Beta/player.gd" id="3_ugd0x"]
 [ext_resource type="PackedScene" uid="uid://dgu5khf772ywg" path="res://Combat/Beta/skeleton.tscn" id="4_dlgxc"]
 [ext_resource type="Texture2D" uid="uid://heg28bb6fjcc" path="res://Assets/craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds/PNG/background 1/Preview 1.png" id="8_ra4em"]
 [ext_resource type="Script" path="res://Combat/Beta/enemy.gd" id="9_8ca1b"]
@@ -58,10 +57,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ActionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
+anchors_preset = -1
+anchor_left = -5.07832e-05
+anchor_top = -0.0123457
+anchor_right = 0.0121018
 offset_left = -236.883
-offset_top = -200.0
-offset_right = -36.8826
-offset_bottom = 75.0
+offset_top = -179.012
+offset_right = -29.8826
+offset_bottom = 104.988
 color = Color(0.47788, 0.47788, 0.47788, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -79,10 +82,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ReactionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
+anchors_preset = -1
+anchor_left = -0.00569332
+anchor_top = -0.0100309
+anchor_right = -5.07832e-05
 offset_left = 38.1174
-offset_top = -200.0
-offset_right = 238.117
-offset_bottom = 75.0
+offset_top = -182.947
+offset_right = 260.117
+offset_bottom = 104.053
 color = Color(0.47788, 0.47788, 0.47788, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -119,30 +126,44 @@ text = "
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="DiscardMat" type="ColorRect" parent="BattleBackground"]
+offset_left = -926.087
+offset_top = 34.1057
+offset_right = -895.087
+offset_bottom = 69.1057
+scale = Vector2(9.22761, 12.1545)
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
 [node name="DeckMat" type="ColorRect" parent="BattleBackground"]
-offset_left = 596.842
-offset_top = 62.9635
-offset_right = 636.842
-offset_bottom = 102.964
+offset_left = 638.0
+offset_top = 75.9235
+offset_right = 669.0
+offset_bottom = 110.924
 scale = Vector2(9.22761, 12.1545)
 color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_8b3ah")]
 unique_name_in_owner = true
-script = ExtResource("3_ugd0x")
+z_index = 2000
+position = Vector2(190, 275)
 
 [node name="Player_health" type="ProgressBar" parent="Player"]
-offset_left = 47.0
-offset_top = 82.0
-offset_right = 346.0
-offset_bottom = 128.0
+offset_left = -122.0
+offset_top = -198.0
+offset_right = 177.0
+offset_bottom = -152.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_yilpf")
 rounded = true
 show_percentage = false
 
 [node name="Player_HP" type="Label" parent="Player/Player_health"]
 unique_name_in_owner = true
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.150502
+anchor_top = -0.0652174
+anchor_right = -0.150502
+anchor_bottom = -0.0652174
 offset_left = 95.0
 offset_top = -4.0
 offset_right = 291.0
@@ -154,7 +175,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Skeleton" parent="." instance=ExtResource("4_dlgxc")]
 unique_name_in_owner = true
-position = Vector2(1002, 274)
+position = Vector2(1002, 279)
 
 [node name="Enemy" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -194,6 +215,13 @@ parameters/looping = true
 
 [node name="CardHandler" parent="." instance=ExtResource("11_3d1ge")]
 unique_name_in_owner = true
+
+[node name="BackgroundAlignment" parent="CardHandler" index="0"]
+position = Vector2(602, 393)
+
+[node name="PlayerHandSpace" parent="CardHandler/BackgroundAlignment" index="0"]
+offset_top = 1.68823
+offset_bottom = 647.688
 
 [node name="Deck" parent="CardHandler/CardManager" index="4"]
 card_face_up = false

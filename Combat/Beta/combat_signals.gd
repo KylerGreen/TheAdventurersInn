@@ -8,6 +8,7 @@ var new_act_id = 1
 var new_react_id = 2
 var discard_id = 3
 var Player_HP = 100
+var Player_XP = 0
 var Current_Enemy = Node2D
 
 #Card Signals
@@ -27,6 +28,9 @@ signal card_used
 signal discarded
 signal player_turn_over
 signal invis_hand
+signal sword_got
+signal armor_got
+signal player_dead
 
 #Enemy Signals
 signal Enemy_Swing

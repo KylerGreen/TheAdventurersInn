@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://cf1jbkybk1r5u"]
+[gd_scene load_steps=79 format=4 uid="uid://cf1jbkybk1r5u"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_ohvq0"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_17prh"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_ft1bf"]
 [ext_resource type="Script" path="res://Rooms/Beginner Rooms/path_follow_2d.gd" id="5_d70f1"]
 [ext_resource type="PackedScene" uid="uid://chqxslnj74bqp" path="res://Rooms/Interactables/statue.tscn" id="7_j1353"]
+[ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_vo1oi"]
+[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Room Sounds/lever_chains14-41056.mp3" id="8_2t7nj"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -1351,296 +1353,6 @@ pattern_16 = SubResource("TileMapPattern_cjiqc")
 pattern_17 = SubResource("TileMapPattern_tws2f")
 pattern_18 = SubResource("TileMapPattern_rlobp")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8hm"]
-texture = ExtResource("1_ohvq0")
-0:0/0 = 0
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -2.875, 8, 8, 8, 8, -8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 3.125, 8, 2.875, -8)
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.875, -8, -3, 8, 8, 8, 8, -8)
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-11:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.875, -8, -2.875, 8, 8, 8, 8, -8)
-2:2/0 = 0
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 3.125, 8, 2.875, -8)
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:3/0 = 0
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3n3s2"]
-texture = ExtResource("2_17prh")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckajm"]
-texture = ExtResource("3_88l2a")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-10:0/0 = 0
-11:0/0 = 0
-12:0/size_in_atlas = Vector2i(1, 2)
-12:0/0 = 0
-12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.5, -8.375, 11.5, -5.375, 15, 5.375, 14.875, 8, 11.875, 8, 0.5)
-13:0/0 = 0
-14:0/0 = 0
-15:0/size_in_atlas = Vector2i(1, 2)
-15:0/0 = 0
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, -7, 7, 7, 6.875, 6.875, -6.875)
-16:0/size_in_atlas = Vector2i(1, 2)
-16:0/0 = 0
-16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -7, -7, 7, 6.875, 7, 6.75, -7)
-0:1/0 = 0
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, -8, -2.75, 8, 8, 8, 8, -8)
-2:1/0 = 0
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 3.125, 8, 3, -8)
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-11:2/0 = 0
-15:2/size_in_atlas = Vector2i(1, 2)
-15:2/0 = 0
-16:2/size_in_atlas = Vector2i(1, 2)
-16:2/0 = 0
-17:2/size_in_atlas = Vector2i(1, 2)
-17:2/0 = 0
-18:2/size_in_atlas = Vector2i(1, 2)
-18:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-12:3/0/y_sort_origin = 8
-13:3/0 = 0
-14:3/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-13:4/size_in_atlas = Vector2i(1, 2)
-13:4/next_alternative_id = 3
-13:4/0 = 0
-13:4/1 = 1
-13:4/2 = 2
-14:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-16:6/0 = 0
-17:6/0 = 0
-18:6/0 = 0
-19:6/0 = 0
-20:6/0 = 0
-21:6/0 = 0
-22:6/0 = 0
-23:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-16:7/0 = 0
-17:7/0 = 0
-18:7/0 = 0
-19:7/0 = 0
-20:7/0 = 0
-21:7/0 = 0
-22:7/0 = 0
-23:7/0 = 0
-12:4/size_in_atlas = Vector2i(1, 2)
-12:4/0 = 0
-12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.883884, -7.95495, 9.8995, -4.94975, 14.1421, 4.5962, 14.6725, 7.6014, 11.3137, 8, 0.353554)
-15:4/size_in_atlas = Vector2i(1, 4)
-15:4/0 = 0
-15:4/0/y_sort_origin = 12
-15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75, 11.875, -7.75, 17.25, -3.5, 20.875, 2.75, 20.75, 7.625, 17.625, 5.625, 11.625)
-
-[sub_resource type="TileSet" id="TileSet_w1ifv"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wx8hm")
-sources/2 = SubResource("TileSetAtlasSource_3n3s2")
-sources/3 = SubResource("TileSetAtlasSource_ckajm")
-pattern_0 = SubResource("TileMapPattern_j1eju")
-pattern_1 = SubResource("TileMapPattern_jhdpj")
-pattern_2 = SubResource("TileMapPattern_apsku")
-pattern_3 = SubResource("TileMapPattern_60x6l")
-pattern_4 = SubResource("TileMapPattern_fi0rv")
-pattern_5 = SubResource("TileMapPattern_j7om0")
-pattern_6 = SubResource("TileMapPattern_gbfyl")
-pattern_7 = SubResource("TileMapPattern_jmprw")
-pattern_8 = SubResource("TileMapPattern_4vw2f")
-pattern_9 = SubResource("TileMapPattern_ax1ih")
-pattern_10 = SubResource("TileMapPattern_87jvd")
-pattern_11 = SubResource("TileMapPattern_cxlsc")
-pattern_12 = SubResource("TileMapPattern_tdudo")
-pattern_13 = SubResource("TileMapPattern_g705v")
-pattern_14 = SubResource("TileMapPattern_bt28n")
-pattern_15 = SubResource("TileMapPattern_fgjsc")
-pattern_16 = SubResource("TileMapPattern_cjiqc")
-pattern_17 = SubResource("TileMapPattern_tws2f")
-pattern_18 = SubResource("TileMapPattern_rlobp")
-
 [sub_resource type="Curve2D" id="Curve2D_iwc6t"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 34, 105, 0, 0, 0, 0, 33, 213, 0, 0, 0, 0, -71, 218, 0, 0, 0, 0, -76, 48, 0, 0, 0, 0, 75, 48, 0, 0, 0, 0, 72, 211, 0, 0, 0, 0, 135, 212, 0, 0, 0, 0, 128, -10, 0, 0, 0, 0, -75, -10, 0, 0, 0, 0, 34, 105)
@@ -1705,14 +1417,6 @@ position = Vector2(-125, 250)
 tile_map_data = PackedByteArray("AAASAP3/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_4k6ro")
 
-[node name="Doorway2" type="TileMapLayer" parent="."]
-unique_name_in_owner = true
-y_sort_enabled = true
-use_parent_material = true
-position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
-tile_set = SubResource("TileSet_w1ifv")
-
 [node name="Statue" parent="." instance=ExtResource("7_j1353")]
 position = Vector2(171, 209)
 
@@ -1728,3 +1432,12 @@ script = ExtResource("5_d70f1")
 [node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_ft1bf")]
 position = Vector2(-4.92571, 8.04595)
 rotation = -1.58006
+
+[node name="DoorSwitch" parent="." instance=ExtResource("7_vo1oi")]
+position = Vector2(171, 209)
+
+[node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
+unique_name_in_owner = true
+position = Vector2(31, -12)
+stream = ExtResource("8_2t7nj")
+volume_db = 15.0

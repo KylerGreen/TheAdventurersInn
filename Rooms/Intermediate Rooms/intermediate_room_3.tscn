@@ -1,10 +1,13 @@
-[gd_scene load_steps=36 format=4 uid="uid://bd8a52qswmnof"]
+[gd_scene load_steps=39 format=4 uid="uid://bd8a52qswmnof"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_5ecqi"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_cyr35"]
 [ext_resource type="Texture2D" uid="uid://c1d6esiunp4x3" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_nc7ul"]
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_2qc1l"]
 [ext_resource type="Script" path="res://Rooms/Intermediate Rooms/path_follow_2d.gd" id="5_n152i"]
+[ext_resource type="Texture2D" uid="uid://bmuqhybklkpap" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_full_open_anim_f0.png" id="6_oywab"]
+[ext_resource type="Texture2D" uid="uid://blbjotbc4iywr" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/chest_empty_open_anim_f2.png" id="7_ew1mf"]
+[ext_resource type="PackedScene" uid="uid://6hnxehcp71av" path="res://Rooms/Interactables/chest.tscn" id="8_dr860"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -375,15 +378,15 @@ point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_wjho2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 146, 647, 0, 0, 0, 0, 145, 424)
+"points": PackedVector2Array(0, 0, 0, 0, 146, 647, 0, 0, 0, 0, 145, 424, 0, 0, 0, 0, 169, 426, 0, 0, 0, 0, 146, 647)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_1qlax"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -66, 646, 0, 0, 0, 0, -67, 424)
+"points": PackedVector2Array(0, 0, 0, 0, -66, 646, 0, 0, 0, 0, -73, 456, 0, 0, 0, 0, -53, 455, 0, 0, 0, 0, -66, 646)
 }
-point_count = 2
+point_count = 4
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
@@ -434,13 +437,10 @@ tile_map_data = PackedByteArray("AAAGABsAAAAAAAAAAAAGABoAAAAAAAAAAAAGABkAAAAAAAA
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="BlueEnemy2" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(15, 648)
+position = Vector2(18, 608)
 
 [node name="BlueEnemy3" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(56, 649)
-
-[node name="BlueEnemy6" parent="." instance=ExtResource("4_2qc1l")]
-position = Vector2(36, 607)
+position = Vector2(57, 607)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_52ud1")
@@ -481,3 +481,19 @@ script = ExtResource("5_n152i")
 [node name="BlueEnemy" parent="Path2D3/PathFollow2D" instance=ExtResource("4_2qc1l")]
 position = Vector2(5.90485, -7.08043)
 rotation = 1.55728
+
+[node name="Chest1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(47, 662)
+texture = ExtResource("6_oywab")
+
+[node name="Chest2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+position = Vector2(-37, -14)
+texture = ExtResource("7_ew1mf")
+
+[node name="ChestA2D" parent="." instance=ExtResource("8_dr860")]
+position = Vector2(47, 663)

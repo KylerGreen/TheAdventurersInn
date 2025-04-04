@@ -28,21 +28,29 @@ var reaction_card
 
 func _ready():
 	HP = CombatSignals.Player_HP
+	$"Player Animation".play("Idle")
 	%Player_HP.text = str('HP: ', HP)
 	CombatSignals.Player_Bolster.connect(Bolstered)
 	CombatSignals.Player_Dodge.connect(Dodging)
 	CombatSignals.Player_Parry.connect(Parrying)
+	CombatSignals.Player_Parry.connect(block_anim)
 	CombatSignals.Player_Counter.connect(Countering)
 	CombatSignals.Player_Heal.connect(Healing)
 	CombatSignals.card_placed.connect(player_turn)
+	CombatSignals.player_dead.connect(death)
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
+	CombatSignals.Enemy_Swing.connect(hurt_anim)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
+	CombatSignals.Player_Swing.connect(attack_anim)
+	CombatSignals.armor_got.connect(armor)
+	CombatSignals.sword_got.connect(sword)
 	%"BattleMusic".play()
 	
 func _process(delta):
 	%Player_HP.text = str('HP: ', HP)
 	$Player_health.value = HP
+	XP = CombatSignals.Player_XP
 	if HP <= 0:
 		HP = 0
 		get_tree().change_scene_to_file("res://Game Over Screen/game_over_screen.tscn")
@@ -58,12 +66,13 @@ func _process(delta):
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 300:
 		if Level == 2:
+			Sword += 5
 			HP = MaxHP
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 700:
 		if Level == 3:
-			MaxHP = 160
+			MaxHP = 150
 			HP = MaxHP
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
@@ -73,7 +82,7 @@ func _process(delta):
 		CombatSignals.Player_HP = HP
 		%Enemy.HP = 0
 		DungeonSignals.gold += %Enemy.gold
-		XP += %Enemy.XP
+		CombatSignals.Player_XP += %Enemy.XP
 		DungeonSignals.combat_done.emit()
 		
 
@@ -174,3 +183,24 @@ func player_turn(card, container):
 		
 	elif container.unique_id == CombatSignals.discard_id:
 		CombatSignals.card_used.emit(container.unique_id)
+		
+func attack_anim():
+	$"Player Animation".play("Attack")
+	
+func hurt_anim():
+	$"Player Animation".play("Hurt")
+
+func block_anim():
+	$"Player Animation".play("Block")
+
+func _on_player_animation_animation_finished() -> void:
+	$"Player Animation".play("Idle")
+
+func sword():
+	Sword += 5
+	
+func armor():
+	Armor += 5
+
+func death():
+	HP = 0

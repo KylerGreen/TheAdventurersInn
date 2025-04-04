@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://or0pilxodkj7"]
+[gd_scene load_steps=3 format=3 uid="uid://or0pilxodkj7"]
 
 [ext_resource type="Script" path="res://Title Screen/instructions.gd" id="1_56vb6"]
+[ext_resource type="AudioStream" uid="uid://lyrm3fortfy" path="res://Title Screen/crafterx27s-mallets-286976.mp3" id="2_5dhst"]
 
 [node name="Instructions" type="Node2D"]
 script = ExtResource("1_56vb6")
@@ -17,7 +18,7 @@ offset_bottom = 714.0
 theme_override_font_sizes/font_size = 40
 text = "Instructions:
 
-\"Arrow Keys\" - Move your character
+\"Arrow Keys\" or \"WASD\" - Move your character
 
 As you explore the dungeon, you'll come across enemies that 
 oppose your progress. In these instances you will use your deck
@@ -35,5 +36,10 @@ offset_right = 1212.0
 offset_bottom = 682.0
 theme_override_font_sizes/font_size = 30
 text = "Begin Adventure"
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_5dhst")
+volume_db = -30.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

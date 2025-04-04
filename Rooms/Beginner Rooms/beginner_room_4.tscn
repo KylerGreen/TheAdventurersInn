@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://dp6pk1mrf3nyk"]
+[gd_scene load_steps=79 format=4 uid="uid://dp6pk1mrf3nyk"]
 
 [ext_resource type="Texture2D" uid="uid://cvvdpll8ecywd" path="res://Assets/atlas_walls_low-16x16.png" id="1_qscic"]
 [ext_resource type="Texture2D" uid="uid://p0p7hennx45f" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_lfgm1"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cln5o4snj8geo" path="res://Rooms/Room Enemies/blue_enemy.tscn" id="4_ydgan"]
 [ext_resource type="Script" path="res://Rooms/Beginner Rooms/path_follow_2d.gd" id="5_ohqyi"]
 [ext_resource type="PackedScene" uid="uid://chqxslnj74bqp" path="res://Rooms/Interactables/statue.tscn" id="5_xk03r"]
+[ext_resource type="PackedScene" uid="uid://gvgnnq7p12q7" path="res://Rooms/Interactables/door_switch.tscn" id="7_w548x"]
+[ext_resource type="AudioStream" uid="uid://dfna4o7w1w0kv" path="res://Audio/Room Sounds/lever_chains14-41056.mp3" id="8_gy8fo"]
 
 [sub_resource type="GDScript" id="GDScript_2iogx"]
 script/source = "extends Node2D
@@ -1431,3 +1433,12 @@ script = ExtResource("5_ohqyi")
 [node name="BlueEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("4_ydgan")]
 position = Vector2(8.09385, 6.89127)
 rotation = 3.12808
+
+[node name="DoorSwitch" parent="." instance=ExtResource("7_w548x")]
+position = Vector2(59, -29)
+
+[node name="Switch_Sound2" type="AudioStreamPlayer2D" parent="DoorSwitch"]
+unique_name_in_owner = true
+position = Vector2(31, -12)
+stream = ExtResource("8_gy8fo")
+volume_db = 15.0

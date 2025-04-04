@@ -455,4 +455,4 @@ tile_map_data = PackedByteArray("AAAKAPX/AwAMAAMAAAAKAPb/AwAMAAQAAAA=")
 tile_set = SubResource("TileSet_c0xg6")
 
 [node name="PathingBlueEnemy" parent="." instance=ExtResource("4_wj1qn")]
-position = Vector2(-2, 6)
+position = Vector2(1, 3)

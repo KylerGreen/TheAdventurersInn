@@ -61,7 +61,8 @@ func _ready():
 	CombatSignals.Player_Swing.connect(Damaged)
 	CombatSignals.Player_Disarm.connect(Disarmed)
 	CombatSignals.player_turn_over.connect(enemy_turn)
-	
+	if %Player.Armor > 0:
+		Damage += 10
 func _process(delta):
 	if HP >= MaxHP:
 		HP = MaxHP
@@ -134,21 +135,22 @@ func enemy_turn():
 	Counter = false
 	
 	await get_tree().create_timer(2.0).timeout
-	var Enemy_Action = randi_range(0, 10)
-	if Enemy_Action > 0 and Enemy_Action <= 2:
-		CombatSignals.Enemy_Counter.emit()
-		CombatSignals.Enemy_Swing.emit()		
-	elif Enemy_Action > 2 and Enemy_Action <= 4:
-		CombatSignals.Enemy_Bolster.emit()
-		CombatSignals.Enemy_Swing.emit()
-	elif Enemy_Action > 4 and Enemy_Action <= 6:
-		CombatSignals.Enemy_Heal.emit()
-		CombatSignals.Enemy_Parry.emit()
-	elif Enemy_Action > 6 and Enemy_Action <= 8:
-		CombatSignals.Enemy_Disarm.emit()
-		CombatSignals.Enemy_Dodge.emit()
-	elif Enemy_Action > 8 and Enemy_Action <= 10:
-		CombatSignals.Enemy_Parry.emit()
-		CombatSignals.Enemy_Swing.emit()
-	
-	CombatSignals.vis_hand.emit()
+	if HP > 0:
+		var Enemy_Action = randi_range(0, 10)
+		if Enemy_Action > 0 and Enemy_Action <= 2:
+			CombatSignals.Enemy_Counter.emit()
+			CombatSignals.Enemy_Swing.emit()		
+		elif Enemy_Action > 2 and Enemy_Action <= 4:
+			CombatSignals.Enemy_Bolster.emit()
+			CombatSignals.Enemy_Swing.emit()
+		elif Enemy_Action > 4 and Enemy_Action <= 6:
+			CombatSignals.Enemy_Heal.emit()
+			CombatSignals.Enemy_Parry.emit()
+		elif Enemy_Action > 6 and Enemy_Action <= 8:
+			CombatSignals.Enemy_Disarm.emit()
+			CombatSignals.Enemy_Dodge.emit()
+		elif Enemy_Action > 8 and Enemy_Action <= 10:
+			CombatSignals.Enemy_Parry.emit()
+			CombatSignals.Enemy_Swing.emit()
+		
+		CombatSignals.vis_hand.emit()
