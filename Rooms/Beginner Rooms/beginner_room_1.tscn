@@ -404,6 +404,7 @@ tile_set = SubResource("TileSet_c0xg6")
 
 [node name="Switch2" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
@@ -436,7 +437,7 @@ volume_db = 10.0
 [node name="Chest1" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(-37, -14)
+position = Vector2(-85, 226)
 texture = ExtResource("7_1irmr")
 
 [node name="Chest2" type="Sprite2D" parent="."]
@@ -447,7 +448,7 @@ position = Vector2(-37, -14)
 texture = ExtResource("8_gw6f0")
 
 [node name="ChestA2D" parent="." instance=ExtResource("9_22mcb")]
-position = Vector2(-37, -13)
+position = Vector2(-85, 227)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_84x7m")

@@ -8,6 +8,7 @@ var new_act_id = 1
 var new_react_id = 2
 var discard_id = 3
 var Player_HP = 100
+var Player_XP = 0
 var Current_Enemy = Node2D
 
 #Card Signals
