@@ -37,6 +37,7 @@ func _ready():
 	CombatSignals.Player_Counter.connect(Countering)
 	CombatSignals.Player_Heal.connect(Healing)
 	CombatSignals.card_placed.connect(player_turn)
+	CombatSignals.player_dead.connect(death)
 	
 	CombatSignals.Enemy_Swing.connect(Damaged)
 	CombatSignals.Enemy_Swing.connect(hurt_anim)
@@ -65,12 +66,13 @@ func _process(delta):
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 300:
 		if Level == 2:
+			Sword += 5
 			HP = MaxHP
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
 	elif XP >= 700:
 		if Level == 3:
-			MaxHP = 160
+			MaxHP = 150
 			HP = MaxHP
 			Level += 1
 			DungeonSignals.DisplayText.emit('You Leveled Up!')
@@ -199,3 +201,6 @@ func sword():
 	
 func armor():
 	Armor += 5
+
+func death():
+	HP = 0
