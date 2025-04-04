@@ -1581,3 +1581,19 @@ texture = ExtResource("8_g1pue")
 
 [node name="ChestA2D" parent="." instance=ExtResource("9_0n366")]
 position = Vector2(-69, 19)
+
+[node name="Chest3" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(11, 194)
+texture = ExtResource("7_od404")
+
+[node name="Chest4" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+position = Vector2(-37, -14)
+texture = ExtResource("8_g1pue")
+
+[node name="ChestA2D2" parent="." instance=ExtResource("9_0n366")]
+position = Vector2(11, 195)
