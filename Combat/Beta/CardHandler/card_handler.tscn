@@ -143,6 +143,7 @@ offset_right = 1110.0
 offset_bottom = 505.0
 max_hand_size = 20
 allow_card_movement = false
+enable_drop_zone = false
 
 [node name="Discard TEST" type="Button" parent="CardManager"]
 visible = false
