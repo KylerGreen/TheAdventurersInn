@@ -12,7 +12,7 @@ const game_win = preload("res://Title Screen/game_win.tscn")
 
 var active_rooms := []
 var occupied_positions := {} 
-var max_rooms := 20
+var max_rooms := 23
 var room_width = 280
 var room_height = 280
 var room_margin = 40

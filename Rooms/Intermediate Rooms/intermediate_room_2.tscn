@@ -378,15 +378,15 @@ tile_set = SubResource("TileSet_c0xg6")
 [node name="Chest1" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(43, 98)
+position = Vector2(40, 98)
 texture = ExtResource("4_b778t")
 
 [node name="Chest2" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
 z_index = 1
-position = Vector2(43, 98)
+position = Vector2(40, 98)
 texture = ExtResource("5_4v8eg")
 
 [node name="ChestA2D" parent="." instance=ExtResource("6_7jr7v")]
-position = Vector2(43, 99)
+position = Vector2(40, 98)
