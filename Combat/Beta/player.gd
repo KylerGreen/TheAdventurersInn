@@ -43,11 +43,13 @@ func _ready():
 	CombatSignals.Enemy_Swing.connect(hurt_anim)
 	CombatSignals.Enemy_Disarm.connect(Disarmed)
 	CombatSignals.Player_Swing.connect(attack_anim)
-	CombatSignals.armor_got.connect(armor)
-	CombatSignals.sword_got.connect(sword)
+	#CombatSignals.armor_got.connect(armor)
+	#CombatSignals.sword_got.connect(sword)
 	%"BattleMusic".play()
 	
 func _process(delta):
+	Sword = CombatSignals.Global_Sword
+	Armor = CombatSignals.Global_Armor
 	%Player_HP.text = str('HP: ', HP)
 	$Player_health.value = HP
 	XP = CombatSignals.Player_XP
@@ -198,11 +200,11 @@ func block_anim():
 func _on_player_animation_animation_finished() -> void:
 	$"Player Animation".play("Idle")
 
-func sword():
-	Sword += 5
-	
-func armor():
-	Armor += 5
+#func sword():
+	#Sword += 5
+	#
+#func armor():
+	#Armor += 5
 
 func death():
 	HP = 0
