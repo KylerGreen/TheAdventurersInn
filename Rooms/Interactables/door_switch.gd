@@ -8,13 +8,16 @@ func _ready() -> void:
 
 func _on_switch_a_2d_body_entered(body: Node2D) -> void:
 	if only_once:
-		if $SwitchA2D:
+		if %SwitchA2D:
 			%SwitchA2D.queue_free()
-		if $DoorSwitch:
-			$DoorSwitch.queue_free()
-		%Doorway.queue_free()
-		%Switch.queue_free()
-		%Switch2.set_visible(true)
+		if %DoorSwitch:
+			%DoorSwitch.queue_free()
+		if %Doorway:
+			%Doorway.queue_free()
+		if %Switch:
+			%Switch.queue_free()
+		if %Switch2:
+			%Switch2.set_visible(true)
 		only_once = false
 		DungeonSignals.only_once.emit()
 		switch.play()
