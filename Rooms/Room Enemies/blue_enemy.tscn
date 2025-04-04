@@ -1,10 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://cln5o4snj8geo"]
+[gd_scene load_steps=11 format=3 uid="uid://cln5o4snj8geo"]
 
 [ext_resource type="Script" path="res://Rooms/Room Enemies/blue_enemy.gd" id="1_d37s1"]
 [ext_resource type="Texture2D" uid="uid://b4clfg0c6jffl" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_idle_anim_f0.png" id="2_phh4u"]
+[ext_resource type="Texture2D" uid="uid://dehjhmj7m1psc" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_idle_anim_f1.png" id="3_h4dcl"]
+[ext_resource type="Texture2D" uid="uid://b15bfxxpalsiq" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_run_anim_f0.png" id="3_ohojm"]
+[ext_resource type="Texture2D" uid="uid://dkcprjkt5vdre" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_idle_anim_f2.png" id="4_eb3i1"]
+[ext_resource type="Texture2D" uid="uid://bavvcqyqctarv" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_run_anim_f1.png" id="4_nhw0o"]
+[ext_resource type="Texture2D" uid="uid://c7hy7oa0x5dwf" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_run_anim_f2.png" id="5_b1cfd"]
+[ext_resource type="Texture2D" uid="uid://dcqy544oh62q5" path="res://Assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7/frames/skelet_run_anim_f3.png" id="6_cv52v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_breby"]
 size = Vector2(13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnghn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_phh4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h4dcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eb3i1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_phh4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ohojm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nhw0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b1cfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cv52v")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
 
 [node name="BlueEnemy" type="Node2D"]
 script = ExtResource("1_d37s1")
@@ -14,11 +57,13 @@ position = Vector2(-2, 2)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 unique_name_in_owner = true
-position = Vector2(9.5, 4)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_breby")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-position = Vector2(9, 3)
-texture = ExtResource("2_phh4u")
+[node name="SkeletonAnimation" type="AnimatedSprite2D" parent="Area2D2"]
+unique_name_in_owner = true
+position = Vector2(2, -2)
+sprite_frames = SubResource("SpriteFrames_mnghn")
+animation = &"Move"
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
