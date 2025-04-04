@@ -20,7 +20,8 @@ grow_vertical = 2
 script = ExtResource("1_553u5")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(650, 333)
+position = Vector2(655, 333)
+scale = Vector2(1.00809, 1)
 texture = ExtResource("2_1d5a5")
 
 [node name="Start" type="Button" parent="Background"]

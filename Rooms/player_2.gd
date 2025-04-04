@@ -5,6 +5,7 @@ var combat_screen = preload("res://Combat/Alpha/combat_screen.tscn")
 @onready var footsteps = %Footstep
 @onready var skeleton = %Skeleton_Sound
 var current_display = null
+var facing_right = true
 
 func _ready() -> void:
 	$Important_Text.visible = false
@@ -13,6 +14,12 @@ func _ready() -> void:
 	
 # Player Movement
 func _physics_process(delta):
+	if Input.is_action_pressed("move_right") and not facing_right:
+		$KnightAnimation.flip_h = false
+		facing_right = true
+	elif Input.is_action_pressed("move_left") and facing_right:
+		$KnightAnimation.flip_h = true
+		facing_right = false
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * 200
 	

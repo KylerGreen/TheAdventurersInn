@@ -29,6 +29,11 @@ const PILE_Z_INDEX := 3000
 @export var align_drop_zone_with_top_card := true
 
 
+func _physics_process(delta):
+	if max_hand_size == 20:
+		if _held_cards.size() >= max_hand_size:
+			CombatSignals.player_dead.emit()
+
 
 func get_top_cards(n: int) -> Array:
 	var arr_size = _held_cards.size()

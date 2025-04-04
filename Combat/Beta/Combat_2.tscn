@@ -57,10 +57,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ActionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
+anchors_preset = -1
+anchor_left = -5.07832e-05
+anchor_top = -0.0123457
+anchor_right = 0.0121018
 offset_left = -236.883
-offset_top = -200.0
-offset_right = -36.8826
-offset_bottom = 75.0
+offset_top = -179.012
+offset_right = -29.8826
+offset_bottom = 104.988
 color = Color(0.47788, 0.47788, 0.47788, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -78,10 +82,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ReactionSlot" type="ColorRect" parent="BattleBackground"]
 self_modulate = Color(1, 1, 1, 0.839216)
+anchors_preset = -1
+anchor_left = -0.00569332
+anchor_top = -0.0100309
+anchor_right = -5.07832e-05
 offset_left = 38.1174
-offset_top = -200.0
-offset_right = 238.117
-offset_bottom = 75.0
+offset_top = -182.947
+offset_right = 260.117
+offset_bottom = 104.053
 color = Color(0.47788, 0.47788, 0.47788, 1)
 metadata/_edit_use_anchors_ = true
 
