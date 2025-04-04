@@ -1685,7 +1685,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUAPf/AwABAAEAAAAUAPb/AwABAAEAAAAUAPX/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_vrvix")
 
 [node name="Switch" type="TileMapLayer" parent="."]
@@ -1710,7 +1710,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(-125, 250)
-tile_map_data = PackedByteArray("AAAUAPX/AwABAAEAAAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUAPb/AwABAAEAAAAUAPf/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_w1ifv")
 
 [node name="Statue" parent="." instance=ExtResource("7_j1353")]
