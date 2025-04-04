@@ -425,9 +425,9 @@ pattern_32 = SubResource("TileMapPattern_4pbgu")
 
 [sub_resource type="Curve2D" id="Curve2D_qfyph"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 34, -141, 0, 0, 0, 0, 303, -138, 0, 0, 0, 0, 303, -154, 0, 0, 0, 0, 34, -156, 0, 0, 0, 0, 34, -142)
+"points": PackedVector2Array(0, 0, 0, 0, 34, -141, 0, 0, 0, 0, 303, -138, 0, 0, 0, 0, 303, -154, 0, 0, 0, 0, 34, -156, 0, 0, 0, 0, 34, -142, 0, 0, 0, 0, 34, -141)
 }
-point_count = 5
+point_count = 6
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true

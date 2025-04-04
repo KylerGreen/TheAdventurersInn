@@ -1355,9 +1355,9 @@ pattern_18 = SubResource("TileMapPattern_rlobp")
 
 [sub_resource type="Curve2D" id="Curve2D_a4huc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 70, 190, 0, 0, 0, 0, -78, 188, 0, 0, 0, 0, -69, 5, 0, 0, 0, 0, 165, 1, 0, 0, 0, 0, 164, 188, 0, 0, 0, 0, 71, 187)
+"points": PackedVector2Array(0, 0, 0, 0, 70, 190, 0, 0, 0, 0, -78, 188, 0, 0, 0, 0, -69, 5, 0, 0, 0, 0, 165, 1, 0, 0, 0, 0, 164, 188, 0, 0, 0, 0, 71, 187, 0, 0, 0, 0, 70, 190)
 }
-point_count = 6
+point_count = 7
 
 [node name="BegRoom1" type="Node2D"]
 y_sort_enabled = true
