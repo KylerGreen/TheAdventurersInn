@@ -22,11 +22,11 @@ func _on_chest_a_2d_body_entered(body: Node2D) -> void:
 		if item >= 0 and item <2:
 			await get_tree().create_timer(1.0).timeout
 			DungeonSignals.DisplayText.emit('You got a better Sword!')
-			CombatSignals.sword_got.emit()
+			CombatSignals.Global_Sword += 5
 		elif item >= 3 and item < 5:
 			await get_tree().create_timer(1.0).timeout
 			DungeonSignals.DisplayText.emit('You got better Armor!')
-			CombatSignals.armor_got.emit()
+			CombatSignals.Global_Armor += 5
 		elif item >= 5:
 			await get_tree().create_timer(1.0).timeout
 			DungeonSignals.DisplayText.emit('You got 10 Gold!')
