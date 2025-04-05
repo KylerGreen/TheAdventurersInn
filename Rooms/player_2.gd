@@ -14,6 +14,8 @@ func _ready() -> void:
 	
 # Player Movement
 func _physics_process(delta):
+	$ColorRect/GoldLabel.text = str("Gold: ", DungeonSignals.gold)
+	
 	if Input.is_action_pressed("move_right") and not facing_right:
 		$KnightAnimation.flip_h = false
 		facing_right = true

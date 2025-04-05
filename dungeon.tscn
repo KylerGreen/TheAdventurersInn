@@ -956,6 +956,21 @@ max_polyphony = 3
 panning_strength = 1.51
 parameters/looping = true
 
+[node name="ColorRect" type="ColorRect" parent="Player3"]
+offset_left = 86.0
+offset_top = -89.0
+offset_right = 159.0
+offset_bottom = -69.0
+color = Color(0, 0, 0, 1)
+
+[node name="GoldLabel" type="Label" parent="Player3/ColorRect"]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 10
+text = "Gold: "
+
 [node name="Dungeon_Echo" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 volume_db = -10.0

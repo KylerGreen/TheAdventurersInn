@@ -16,8 +16,8 @@ var Counter = false
 var Disarm = false
 
 func _ready():
-	var current_enemy = randi_range(0, 0)
-	if current_enemy == 0:
+	var current_enemy = randi_range(0, 100)
+	if current_enemy <= 99:
 		current_enemy = 'Skeleton'
 		var Skeleton = randi_range(0, 3)
 		if Skeleton == 0:
@@ -48,7 +48,14 @@ func _ready():
 			Heals = 10
 			XP = 20
 			gold = 5
-			
+	else:
+		%Fred.visible = true
+		HP = 150
+		MaxHP = HP
+		Damage = 15
+		Heals = 15
+		XP = 150
+		gold = 100
 	%Enemy_HP.text = str('HP: ', HP)
 	$Enemy_health.max_value = HP
 	$Enemy_health.value = HP
