@@ -91,13 +91,12 @@ func _draw_to_five():
 		if result:
 			break
 		current_draw_number -= 1
+	# Updates the number of cards left in the deck
+	cards_left -= current_draw_number
+	$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
+	print(cards_left)
 
-# WIP
-# Update a Label to Reflect the total count of cards in the Deck Pile
-func show_card_count():
-	pass
-	
-	
+
 
 # Takes a Action/Reaction Card and it's Action/Reaction Pile
 # If Both holds_x is true, and card type == x, card stays in the pile
@@ -143,9 +142,10 @@ func _end_of_turn(container_id):
 				break
 			current_draw_number -= 1
 		# Updates the display of the number of cards left in the deck
-		cards_left -= 1
-		$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
-		print(cards_left)
+		if cards_left > 0:
+			cards_left -= 1
+			$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
+			print(cards_left)
 
 	elif container_id == CombatSignals.new_act_id or container_id == CombatSignals.new_react_id:
 		var cards = act_zone.get_top_cards(1) + react_zone.get_top_cards(1)
@@ -156,10 +156,10 @@ func _end_of_turn(container_id):
 			if result:
 				break
 			current_draw_number -= 1
-			# Updates the display of the number of cards left in the deck
-			cards_left -= 1
-			$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
-			print(cards_left)
+			## Updates the display of the number of cards left in the deck
+			#cards_left -= 1
+			#$"CardManager/Deck/Card countings".text = str(cards_left," Cards Left")
+			#print(cards_left)
 	
 
 #func _on_discard_test_pressed() -> void:
