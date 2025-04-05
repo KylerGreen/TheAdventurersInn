@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ba6iw1128vnkq"]
+[gd_scene load_steps=2 format=3 uid="uid://ba6iw1128vnkq"]
+
+[ext_resource type="Script" path="res://Title Screen/game_win.gd" id="1_ouc88"]
 
 [node name="Game Win" type="Node2D"]
+script = ExtResource("1_ouc88")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -36,3 +39,5 @@ offset_bottom = 623.0
 theme_override_font_sizes/font_size = 40
 text = "Title Screen"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Title" to="." method="_on_title_pressed"]

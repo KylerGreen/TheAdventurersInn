@@ -1470,13 +1470,13 @@ pattern_18 = SubResource("TileMapPattern_eyk6n")
 
 [sub_resource type="Curve2D" id="Curve2D_17iy3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 11, -2, 0, 0, 0, 0, 132, -4, 0, 0, 0, 0, 132, -38, 0, 0, 0, 0, -92, -41, 0, 0, 0, 0, 11, -2)
+"points": PackedVector2Array(0, 0, 0, 0, 11, -2, 0, 0, 0, 0, 132, -4, 0, 0, 0, 0, 126, -32, 0, 0, 0, 0, -78, -33, 0, 0, 0, 0, 11, -2)
 }
 point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_pxsyb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -78, 221, 0, 0, 0, 0, -82, 162, 0, 0, 0, 0, 86, 157, 0, 0, 0, 0, 88, 225, 0, 0, 0, 0, -79, 219, 0, 0, 0, 0, -78, 221)
+"points": PackedVector2Array(0, 0, 0, 0, -78, 221, 0, 0, 0, 0, -82, 169, 0, 0, 0, 0, 84, 168, 0, 0, 0, 0, 85, 221, 0, 0, 0, 0, -79, 219, 0, 0, 0, 0, -78, 221)
 }
 point_count = 6
 

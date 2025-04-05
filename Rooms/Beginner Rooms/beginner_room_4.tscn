@@ -1406,7 +1406,7 @@ unique_name_in_owner = true
 visible = false
 y_sort_enabled = true
 use_parent_material = true
-position = Vector2(-125, 250)
+position = Vector2(35, 40)
 tile_map_data = PackedByteArray("AAABAPv/AgADAAUAAAA=")
 tile_set = SubResource("TileSet_l2vc7")
 
