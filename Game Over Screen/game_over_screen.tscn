@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Game Over Screen/game_over_screen.gd" id="1_wlv7w"]
 
 [node name="GameOverScreen" type="Node2D"]
+z_index = 4096
 script = ExtResource("1_wlv7w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
