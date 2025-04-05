@@ -372,9 +372,9 @@ pattern_21 = SubResource("TileMapPattern_qu1qc")
 
 [sub_resource type="Curve2D" id="Curve2D_52ud1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 173, 232, 0, 0, 0, 0, 164, -27, 0, 0, 0, 0, 52, -30, 0, 0, 0, 0, 44, 107, 0, 0, 0, 0, -84, 100, 0, 0, 0, 0, -86, -17, 0, 0, 0, 0, -27, -12, 0, 0, 0, 0, -23, 214, 0, 0, 0, 0, 166, 232, 0, 0, 0, 0, 173, 232)
+"points": PackedVector2Array(0, 0, 0, 0, 171, 205, 0, 0, 0, 0, 164, -27, 0, 0, 0, 0, 52, -30, 0, 0, 0, 0, 44, 107, 0, 0, 0, 0, -84, 100, 0, 0, 0, 0, -86, -17, 0, 0, 0, 0, -22, -12, 0, 0, 0, 0, -23, 214, 0, 0, 0, 0, 165, 210, 0, 0, 0, 0, 170, 208, 0, 0, 0, 0, 171, 205)
 }
-point_count = 10
+point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_wjho2"]
 _data = {
@@ -446,7 +446,7 @@ position = Vector2(57, 607)
 curve = SubResource("Curve2D_52ud1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-23.6108, 103.303)
+position = Vector2(-50.6281, 101.825)
 rotation = -0.0384426
 progress = 576.141
 rotates = false
@@ -490,6 +490,7 @@ texture = ExtResource("6_oywab")
 
 [node name="Chest2" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 position = Vector2(47, 662)
 texture = ExtResource("7_ew1mf")
